@@ -1,6 +1,9 @@
 import { createHash } from 'node:crypto';
+import { setDefaultResultOrder } from 'node:dns';
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
+
+setDefaultResultOrder('ipv4first');
 
 const root = resolve(import.meta.dirname, '..');
 const sourcesPath = resolve(root, 'config/sources.json');
@@ -77,14 +80,30 @@ function parseAnchors(html, baseUrl) {
 }
 
 async function fetchText(url) {
-  const response = await fetch(url, {
-    redirect: 'follow',
-    signal: AbortSignal.timeout(20000),
-    headers: {
-      'user-agent': 'LiaoningArtAdmissionsRadar/1.0 (+public admissions monitoring)',
-      accept: 'text/html,application/xhtml+xml,application/pdf;q=0.8,*/*;q=0.5'
+  const candidates = [url];
+  if (url.startsWith('https://')) candidates.push(url.replace(/^https:/, 'http:'));
+  let response;
+  let lastError;
+  for (const candidate of candidates) {
+    for (let attempt = 0; attempt < 2; attempt += 1) {
+      try {
+        response = await fetch(candidate, {
+          redirect: 'follow',
+          signal: AbortSignal.timeout(25000),
+          headers: {
+            'user-agent': 'Mozilla/5.0 (compatible; LiaoningArtAdmissionsRadar/1.0; +https://github.com/zhangjingyu816-ctrl/liaoning-art-admissions-radar)',
+            accept: 'text/html,application/xhtml+xml,application/pdf;q=0.8,*/*;q=0.5',
+            'accept-language': 'zh-CN,zh;q=0.9,en;q=0.6'
+          }
+        });
+        break;
+      } catch (error) {
+        lastError = error;
+      }
     }
-  });
+    if (response) break;
+  }
+  if (!response) throw lastError || new Error('network request failed');
   if (!response.ok) throw new Error(`HTTP ${response.status}`);
   const contentType = response.headers.get('content-type') || '';
   if (contentType.includes('application/pdf') || url.toLowerCase().endsWith('.pdf')) return '';
@@ -194,7 +213,13 @@ async function scanSource(source) {
 async function main() {
   const sources = (await loadJson(sourcesPath, [])).filter(source => source.enabled !== false && source.url);
   const previous = await loadJson(noticesPath, { records: [] });
-  const byUrl = new Map((previous.records || []).filter(record => record.automated !== true).map(record => [record.url, record]));
+  const previousRecords = previous.records || [];
+  const byUrl = new Map(previousRecords.filter(record => record.automated !== true).map(record => [record.url, record]));
+  const previousAutomatedBySchool = new Map();
+  previousRecords.filter(record => record.automated === true).forEach(record => {
+    if (!previousAutomatedBySchool.has(record.school)) previousAutomatedBySchool.set(record.school, []);
+    previousAutomatedBySchool.get(record.school).push(record);
+  });
   const results = [];
 
   for (const source of sources) {
@@ -204,8 +229,11 @@ async function main() {
       results.push({ school: source.school, ok: true, found: found.length });
       console.log(`OK  ${source.school}: ${found.length}`);
     } catch (error) {
-      results.push({ school: source.school, ok: false, error: error.message });
-      console.error(`ERR ${source.school}: ${error.message}`);
+      const preserved = previousAutomatedBySchool.get(source.school) || [];
+      preserved.forEach(record => byUrl.set(record.url, record));
+      const detail = [error.message, error.cause?.code, error.cause?.message].filter(Boolean).join(' · ');
+      results.push({ school: source.school, ok: false, error: detail, preserved: preserved.length });
+      console.error(`ERR ${source.school}: ${detail}`);
     }
   }
 
