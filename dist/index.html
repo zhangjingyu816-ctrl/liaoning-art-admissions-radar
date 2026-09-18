@@ -1,0 +1,637 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="面向辽宁考生的美术与设计类本科招生官方信息监测站。" />
+  <title>辽宁美术设计招生雷达</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23091320'/%3E%3Ccircle cx='32' cy='32' r='19' fill='none' stroke='%232fd1c5' stroke-width='4'/%3E%3Cpath d='M32 11v8M32 45v8M11 32h8M45 32h8' stroke='%23ffb45c' stroke-width='4' stroke-linecap='round'/%3E%3Ccircle cx='32' cy='32' r='6' fill='%23ffb45c'/%3E%3C/svg%3E" />
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg:#071019;
+      --surface:#0c1824;
+      --surface-2:#101f2d;
+      --line:#213448;
+      --text:#eef5f7;
+      --muted:#91a6b7;
+      --cyan:#35d2c7;
+      --amber:#ffb45c;
+      --red:#ff756f;
+      --blue:#70a9ff;
+      --green:#7bd99c;
+      --shadow:0 24px 70px rgba(0,0,0,.32);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:radial-gradient(circle at 74% -15%,rgba(53,210,199,.11),transparent 32rem),var(--bg);color:var(--text);font-family:"Microsoft YaHei UI","PingFang SC","Noto Sans CJK SC",system-ui,sans-serif;font-size:16px;line-height:1.65}
+    button,input,select{font:inherit}
+    a{color:inherit}
+    .shell{width:min(1220px,calc(100% - 36px));margin:0 auto}
+    .topbar{position:sticky;top:0;z-index:20;border-bottom:1px solid rgba(145,166,183,.16);background:rgba(7,16,25,.88);backdrop-filter:blur(18px)}
+    .topbar-inner{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:12px;min-width:0}
+    .mark{width:38px;height:38px;border:1px solid var(--line);border-radius:12px;display:grid;place-items:center;background:#0b1722;box-shadow:inset 0 0 0 5px rgba(53,210,199,.04)}
+    .mark svg{width:24px;height:24px}
+    .brand h1{font-size:1.05rem;line-height:1.25;margin:0;font-weight:760;letter-spacing:.02em}
+    .brand p{margin:1px 0 0;color:var(--muted);font-size:.78rem}
+    .verified{display:flex;align-items:center;gap:8px;color:#b7cad5;font-size:.84rem;white-space:nowrap}
+    .pulse{width:8px;height:8px;border-radius:50%;background:var(--cyan);box-shadow:0 0 0 5px rgba(53,210,199,.1)}
+    .pulse.loading{background:var(--amber);box-shadow:0 0 0 5px rgba(255,180,92,.1)}
+    main{padding:34px 0 72px}
+    .headline{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(280px,.7fr);gap:28px;align-items:end;margin-bottom:26px}
+    .eyebrow{margin:0 0 8px;color:var(--cyan);font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700}
+    .headline h2{font-size:clamp(2rem,4.8vw,4.15rem);line-height:1.04;letter-spacing:-.055em;margin:0;max-width:850px}
+    .headline-copy{color:#b6c8d2;margin:0 0 5px;max-width:420px}
+    .scope-note{display:flex;gap:10px;align-items:flex-start;padding:14px 16px;border:1px solid var(--line);border-radius:16px;background:linear-gradient(135deg,rgba(53,210,199,.07),rgba(112,169,255,.035));font-size:.88rem;color:#c0d0d9}
+    .scope-note strong{color:var(--text)}
+    .scope-note svg{flex:none;margin-top:3px}
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:18px}
+    .stat{padding:18px 19px;border:1px solid var(--line);border-radius:17px;background:linear-gradient(160deg,rgba(16,31,45,.96),rgba(10,22,32,.96));box-shadow:0 14px 32px rgba(0,0,0,.12)}
+    .stat b{display:block;font-size:1.9rem;line-height:1.1;letter-spacing:-.04em}
+    .stat span{display:block;color:var(--muted);font-size:.82rem;margin-top:5px}
+    .stat.accent b{color:var(--amber)}
+    .toolbar{position:sticky;top:72px;z-index:15;padding:12px;border:1px solid var(--line);border-radius:18px;background:rgba(12,24,36,.92);backdrop-filter:blur(16px);box-shadow:var(--shadow);margin-bottom:22px}
+    .tabs{display:flex;gap:7px;margin-bottom:11px}
+    .tab{border:0;border-radius:10px;padding:8px 13px;color:var(--muted);background:transparent;cursor:pointer;font-weight:650}
+    .tab.active{color:#071019;background:var(--cyan)}
+    .filters{display:grid;grid-template-columns:minmax(210px,1.5fr) repeat(2,minmax(150px,.7fr));gap:9px}
+    .control{width:100%;min-height:44px;border:1px solid #294056;border-radius:11px;background:#08141f;color:var(--text);padding:9px 12px;outline:none}
+    .control:focus{border-color:var(--cyan);box-shadow:0 0 0 3px rgba(53,210,199,.11)}
+    .search-wrap{position:relative}
+    .search-wrap svg{position:absolute;left:13px;top:13px;color:var(--muted)}
+    .search-wrap input{padding-left:42px}
+    .result-head{display:flex;align-items:center;justify-content:space-between;gap:18px;margin:0 2px 13px}
+    .result-head h3{margin:0;font-size:1rem}
+    .result-head span{font-size:.82rem;color:var(--muted)}
+    .feed{display:grid;gap:12px}
+    .card{position:relative;display:grid;grid-template-columns:112px minmax(0,1fr);border:1px solid var(--line);border-radius:18px;overflow:hidden;background:linear-gradient(145deg,rgba(16,31,45,.9),rgba(8,20,31,.96));transition:transform .18s ease,border-color .18s ease}
+    .card:hover{transform:translateY(-2px);border-color:#38546b}
+    .date-rail{padding:22px 16px;border-right:1px solid var(--line);background:rgba(3,11,18,.28)}
+    .date-rail b{display:block;font-size:1.35rem;line-height:1;color:var(--text)}
+    .date-rail span{font-size:.77rem;color:var(--muted)}
+    .card-body{padding:19px 21px 20px}
+    .meta{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:8px}
+    .school{font-weight:750;color:#f6fafb}
+    .chip{display:inline-flex;align-items:center;min-height:24px;padding:2px 8px;border:1px solid #2a4357;border-radius:999px;color:#aac0cd;background:#0b1925;font-size:.73rem;white-space:nowrap}
+    .chip.important{color:#ffd7a2;border-color:#6c4f2d;background:#231b13}
+    .chip.liaoning{color:#aaf4d0;border-color:#2e6049;background:#10241c}
+    .chip.national{color:#bcd8ff;border-color:#33557b;background:#101e31}
+    .chip.pending{color:#d1c6ff;border-color:#53477c;background:#1a1730}
+    .card h4{font-size:1.13rem;line-height:1.45;margin:0 0 7px;letter-spacing:-.01em}
+    .summary{margin:0;color:#b6c8d2;font-size:.92rem}
+    .majors{display:flex;flex-wrap:wrap;gap:6px;margin-top:13px}
+    .major{padding:4px 8px;border-radius:7px;background:#132638;color:#c6d6df;font-size:.75rem}
+    .actions{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:16px;padding-top:14px;border-top:1px solid rgba(41,64,86,.72)}
+    .source-note{font-size:.76rem;color:var(--muted)}
+    .official{display:inline-flex;align-items:center;gap:7px;text-decoration:none;color:var(--cyan);font-size:.84rem;font-weight:700}
+    .official:hover{text-decoration:underline}
+    .empty{display:none;padding:64px 24px;text-align:center;border:1px dashed #2b4357;border-radius:18px;color:var(--muted)}
+    .directory{display:none}
+    .directory-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+    .school-row{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:13px 14px;border:1px solid var(--line);border-radius:13px;background:#0c1925}
+    .school-row b{font-size:.9rem;font-weight:650}
+    .school-row span{font-size:.72rem;color:var(--muted);white-space:nowrap}
+    .school-row.checked span{color:var(--green)}
+    .notice{margin-top:22px;padding:18px 20px;border:1px solid #384c60;border-radius:16px;background:#0c1721;color:#aebfca;font-size:.84rem}
+    .notice strong{color:#e9f1f4}
+    footer{border-top:1px solid var(--line);padding:22px 0 35px;color:var(--muted);font-size:.78rem}
+    .footer-inner{display:flex;justify-content:space-between;gap:20px}
+    @media(max-width:900px){
+      .headline{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.directory-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media(max-width:650px){
+      .shell{width:min(100% - 22px,1220px)}.topbar-inner{min-height:66px}.brand p,.verified span{display:none}main{padding-top:24px}.headline h2{font-size:2.45rem}.stats{gap:8px}.stat{padding:15px}.toolbar{top:66px}.filters{grid-template-columns:1fr}.card{grid-template-columns:1fr}.date-rail{display:flex;gap:8px;align-items:baseline;padding:13px 17px;border-right:0;border-bottom:1px solid var(--line)}.card-body{padding:17px}.directory-grid{grid-template-columns:1fr}.footer-inner{display:block}.actions{align-items:flex-start;flex-direction:column}.official{align-self:flex-end}
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <div class="brand">
+        <div class="mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="10" stroke="#35d2c7" stroke-width="2"/><circle cx="16" cy="16" r="3" fill="#ffb45c"/><path d="M16 2v5M16 25v5M2 16h5M25 16h5" stroke="#ffb45c" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <div><h1>辽宁美术设计招生雷达</h1><p>只收录院校官方来源 · 2026.07.01 起</p></div>
+      </div>
+      <div class="verified"><i id="syncPulse" class="pulse loading"></i><span id="lastUpdated">正在读取最新数据</span></div>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="headline">
+      <div>
+        <p class="eyebrow">Admission intelligence / Liaoning</p>
+        <h2>把分散的官方招生公告，整理成一条清楚的信息流。</h2>
+      </div>
+      <div>
+        <p class="headline-copy">面向辽宁美术与设计类考生，保留全国性公告，并区分辽宁明确、全国适用和待确认状态。</p>
+        <div class="scope-note">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#35d2c7" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
+          <span><strong>证据规则：</strong>搜索用于发现，院校招生官网或官方附件才作为发布依据。</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats" aria-label="监测概况">
+      <div class="stat accent"><b id="statImportant">0</b><span>重要政策变化</span></div>
+      <div class="stat"><b id="statRecords">0</b><span>已收录公告</span></div>
+      <div class="stat"><b id="statSchools">0</b><span>院校监测名单</span></div>
+      <div class="stat"><b id="statLatest">—</b><span>当前最新发布日期</span></div>
+    </section>
+
+    <section class="toolbar" aria-label="筛选工具">
+      <div class="tabs" role="tablist">
+        <button class="tab active" data-tab="feed" role="tab" aria-selected="true">招生动态</button>
+        <button class="tab" data-tab="directory" role="tab" aria-selected="false">院校清单</button>
+      </div>
+      <div class="filters">
+        <label class="search-wrap">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <input id="search" class="control" type="search" placeholder="搜索学校、公告或专业" aria-label="搜索学校、公告或专业" />
+        </label>
+        <select id="scopeFilter" class="control" aria-label="辽宁适用状态">
+          <option value="all">全部适用状态</option>
+          <option value="liaoning">辽宁明确</option>
+          <option value="national">全国适用</option>
+          <option value="pending">辽宁待确认</option>
+        </select>
+        <select id="typeFilter" class="control" aria-label="信息类型">
+          <option value="all">全部信息类型</option>
+          <option value="policy">录取方式调整</option>
+          <option value="score">录取分数与结果</option>
+          <option value="notice">招生通知</option>
+        </select>
+      </div>
+    </section>
+
+    <section id="feedPanel">
+      <div class="result-head"><h3>官方信息流</h3><span id="resultCount"></span></div>
+      <div id="feed" class="feed"></div>
+      <div id="empty" class="empty">没有符合当前筛选条件的信息。</div>
+    </section>
+
+    <section id="directoryPanel" class="directory">
+      <div class="result-head"><h3>院校监测清单</h3><span id="schoolCount"></span></div>
+      <div id="directoryGrid" class="directory-grid"></div>
+    </section>
+
+    <div class="notice" id="dataStatus">
+      <strong>数据完整性说明：</strong>人工核验记录与定时规则抓取结果合并展示。自动发现的公告会明确标注“待人工复核”；全国性校考、招生方式调整和录取公告均保留，普通校园新闻、研究生招生和非美术设计类信息不收录。
+    </div>
+  </main>
+
+  <footer>
+    <div class="shell footer-inner"><span>辽宁美术设计招生雷达</span><span>信息以院校原文及辽宁省招生考试机构最终公布为准</span></div>
+  </footer>
+
+  <script>
+    const rawSchools = `
+浙江大学
+中国人民大学
+北京航空航天大学
+北京理工大学
+北京师范大学
+华东师范大学
+哈尔滨工业大学
+西安交通大学
+北京电影学院
+北京师范大学（珠海校区）
+东华大学
+江南大学
+东华大学
+江南大学
+南开大学
+天津大学
+南京艺术学院
+北京科技大学
+厦门大学
+北京交通大学
+上海戏剧学院
+苏州大学
+中国地质大学（北京）
+中国戏曲学院
+上海大学
+大连理工大学
+西南大学
+浙江传媒学院
+吉林大学
+北京林业大学
+东北师范大学
+北京工业大学
+陕西师范大学
+首都师范大学
+西南交通大学
+北京服装学院
+北京化工大学
+山东大学威海分校
+东北大学
+北京印刷学院
+上海师范大学
+浙江理工大学
+南京信息工程大学
+福州大学
+深圳技术大学
+西北农林科技大学
+北方工业大学
+天津外国语大学
+成都大学
+河北工业大学
+天津工业大学
+西安美术学院
+四川美术学院
+景德镇陶瓷大学
+湖北美术学院
+海南大学
+东北林业大学
+太原理工大学
+中南财经政法大学
+金陵科技学院
+北京联合大学
+辽宁大学
+山东工艺美术学院
+天津科技大学
+北京工商大学
+东北农业大学
+西安建筑科技大学
+湖南工商大学
+山东艺术学院
+天津财经大学
+西安科技大学
+苏州科技大学
+鲁迅美术学院
+成都美术学院
+南京工程学院
+青岛科技大学
+辽宁师范大学
+燕山大学
+南京传媒学院
+山东财经大学
+云南艺术学院
+东北电力大学
+华北理工大学
+西安工程大学
+哈尔滨师范大学
+南通大学
+天津商业大学
+长沙学院
+广西师范大学
+广西艺术学院
+河南工业大学
+吉林艺术学院
+沈阳航空航天大学
+西北师范大学
+中华女子学院
+桂林电子科技大学
+海南师范大学
+齐鲁工业大学
+天津城建大学
+郑州轻工业大学
+大连民族大学
+山西传媒学院
+大连交通大学
+大连大学
+上海视觉艺术学院
+苏州工学院
+福州外语外贸学院
+沈阳建筑大学
+河北师范大学
+大连工业大学
+大连外国语大学
+曲阜师范大学
+河北地质大学
+吉林艺术学院
+长沙师范学院
+吉林师范大学
+北京城市学院
+山西农业大学
+大连医科大学
+北方民族大学
+沈阳师范大学
+长春师范大学
+河北工程大学
+上海中侨职业技术大学
+沈阳音乐学院
+四川电影电视学院
+北华大学
+河南工程学院
+东北石油大学
+桂林理工大学
+四川传媒学院
+上海外国语大学贤达经济人文学院
+吉林建筑大学
+沈阳理工大学
+大连海洋大学
+湖南女子学院
+郑州航空工业管理学院
+黑龙江大学
+广东轻工职业技术大学
+湘南学院
+西北民族大学
+哈尔滨商业大学
+成都东软学院
+渤海大学
+太原师范学院
+辽宁工业大学
+沈阳大学
+江西科技师范大学
+辽宁科技大学
+安阳工学院
+内江师范学院
+沈阳工业大学
+衡阳师范学院
+河北环境工程学院
+珠海科技学院
+河北科技大学
+吉林农业大学
+华北水利水电大学
+辽宁工程技术大学
+喀什大学
+吉林工商学院
+河北传媒学院
+江西服装学院
+南阳理工学院
+青岛城市学院
+鞍山师范学院
+邵阳学院
+沈阳化工大学
+安阳师范学院
+九江学院
+辽宁石油化工大学
+长春工程学院
+西安外事学院
+许昌学院
+辽东学院
+曲靖师范学院
+渭南师范学院
+广州华立学院
+吉林动画学院
+广东理工学院
+朝阳师范学院
+辽宁科技学院
+燕京理工学院
+辽宁对外经贸学院
+青岛电影学院
+四川文化艺术学院
+新疆和田学院
+衡阳师范学院南岳学院
+天津传媒学院
+白城师范学院
+天津仁爱学院
+江西师范大学科学技术学院
+景德镇艺术职业大学
+成都艺术职业大学
+烟台南山学院
+沈阳工学院
+大连艺术学院
+长春建筑学院
+吉林师范大学博达学院
+郑州美术学院
+北海艺术设计学院
+长春科技学院
+河北美术学院
+青岛恒星科技学院
+北京工业大学耿丹学院
+长春光华学院
+南昌工学院
+天津商业大学宝德学院
+沈阳城市学院
+长春人文学院
+黑龙江财经学院
+吉林建筑科技学院
+青岛黄海学院
+西安科技大学高新学院
+长春大学旅游学院
+辽宁传媒学院
+吉利学院
+华北理工大学轻工学院
+大连科技学院
+长春工业大学人文信息学院
+大连东软信息学院
+大连工业大学艺术与信息工程学院
+宁夏理工学院
+辽宁师范大学海华学院
+沈阳城市建设学院
+大连医科大学中山学院
+大连工程学院（大连理工大学城市学院）
+保定理工学院
+三亚学院
+哈尔滨剑桥学院
+辽宁何氏医学院
+广西外国语学院
+桂林信息科技学院
+黑龙江工商学院
+昆明城市学院
+昆明传媒学院
+丽江文化旅游学院
+柳州工学院
+陕西服装工程学院
+天津天狮学院
+新疆政法学院
+中央民族大学
+中国传媒大学`;
+
+    const schools = [...new Set(rawSchools.split('\n').map(s => s.trim()).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'zh-CN'));
+    const schoolAliases = {
+      '新疆政法学院':'原石河子大学科技学院'
+    };
+    const automaticDataBase='https://raw.githubusercontent.com/zhangjingyu816-ctrl/liaoning-art-admissions-radar/main/dist/data';
+    const seedRecords = [
+      {
+        date:'2026-09-14', school:'上海戏剧学院', type:'policy', scope:'national', important:true,
+        title:'2027年本科艺术类专业招生录取方式公告',
+        summary:'戏剧影视美术设计继续组织校考；数字媒体艺术、数字演艺设计、绘画改走省级统考。影视摄影与制作2027年暂停招生，智能影像艺术进入普通批次。',
+        majors:['戏剧影视美术设计','数字媒体艺术','数字演艺设计','绘画','影视摄影与制作'],
+        url:'https://zs.sta.edu.cn/f0/32/c1816a127026/page.htm', source:'上海戏剧学院招生办公室'
+      },
+      {
+        date:'2026-09-14', school:'中央民族大学', type:'policy', scope:'national', important:true,
+        title:'2027年艺术类本科专业招生录取方式公告',
+        summary:'美术学、中国画、服装与服饰设计、环境设计进入艺术类统考；绘画（油画）、视觉传达设计继续校考。',
+        majors:['美术学','中国画','服装与服饰设计','环境设计','绘画（油画）','视觉传达设计'],
+        url:'https://zb.muc.edu.cn/content/zs/ysl/15724ff1-ae89-11f1-98a5-6c92bf4353bb.htm', source:'中央民族大学本科招生网'
+      },
+      {
+        date:'2026-08-04', school:'上海戏剧学院', type:'score', scope:'liaoning', important:false,
+        title:'2026年本科新生录取名单及各专业录取分数线（统考及普通批次）',
+        summary:'发布统考及普通批次录取名单、专业分数线。该校2026统考简章明确数字媒体艺术在辽宁安排美术与设计类招生计划。',
+        majors:['数字媒体艺术','数字演艺设计'],
+        url:'https://zs.sta.edu.cn/ef/05/c1816a126725/page.htm', source:'上海戏剧学院招生办公室'
+      },
+      {
+        date:'2026-08-03', school:'中国传媒大学', type:'policy', scope:'national', important:true,
+        title:'2027年本科艺术类专业招生录取方式公告',
+        summary:'视觉传达设计（中外合作办学）进入省统考批次；影视摄影与制作、环境设计（光影空间艺术）、艺术与科技（电子竞技）进入普通批次。',
+        majors:['视觉传达设计（中外合作）','影视摄影与制作','环境设计','艺术与科技'],
+        url:'https://zhaosheng.cuc.edu.cn/2026/0801/c5842a273087/page.htm', source:'中国传媒大学本科招生网'
+      },
+      {
+        date:'2026-08-02', school:'鲁迅美术学院', type:'score', scope:'national', important:false,
+        title:'2026年本科招生艺术类统考专业、普通类专业录取情况公告',
+        summary:'公布统考专业和普通类专业最低录取情况，并提醒产品设计、环境设计、美术学录取新生填报专业方向。',
+        majors:['产品设计','环境设计','美术学'],
+        url:'https://www.lumei.edu.cn/zsjyc/info/1006/1803.htm', source:'鲁迅美术学院招生就业处'
+      },
+      {
+        date:'2026-07-26', school:'湖北美术学院', type:'score', scope:'pending', important:false,
+        title:'2026年普通本科招生录取分数线公告',
+        summary:'学校发布2026年普通本科招生录取分数线公告；网页正文以图片展示分省数据，辽宁项目仍需结合原图进一步复核。',
+        majors:['美术与设计类'],
+        url:'https://zjc.hifa.edu.cn/info/1079/2790.htm', source:'湖北美术学院招生就业处'
+      },
+      {
+        date:'2026-07-24', school:'西安美术学院', type:'score', scope:'liaoning', important:false,
+        title:'2026年本科招生艺术提前批统考类专业录取分数线公告',
+        summary:'明确公布辽宁历史类与物理类录取分数；历史类包含陶瓷艺术设计、视觉传达设计、产品设计、环境设计、服装与服饰设计，物理类包含视觉传达设计。',
+        majors:['陶瓷艺术设计','视觉传达设计','产品设计','环境设计','服装与服饰设计'],
+        url:'https://zhshch.xafa.edu.cn/info/1014/4716.htm', source:'西安美术学院招生信息网'
+      },
+      {
+        date:'2026-07-22', school:'北京服装学院', type:'score', scope:'national', important:false,
+        title:'2026年艺术类校考专业录取情况',
+        summary:'公布服装与服饰设计、数字媒体艺术、视觉传达设计校考录取最低成绩及破格录取信息；校考专业面向全国招生。',
+        majors:['服装与服饰设计','数字媒体艺术','视觉传达设计'],
+        url:'https://bkzs.bift.edu.cn/docs/2026-07/13f9b067695b4eb69f9eae57f4e0f07b.pdf', source:'北京服装学院本科招生网'
+      },
+      {
+        date:'2026-07-22', school:'四川美术学院', type:'score', scope:'national', important:false,
+        title:'2026年本科录取分数线（艺术类本科批）公告',
+        summary:'公布艺术类本科批省统考类各专业录取分数线，并说明投档成绩同分时使用计划投放省份的同分排序规则。',
+        majors:['省统考类美术与设计专业'],
+        url:'https://www.scfai.edu.cn/zsb/info/1002/4686.htm', source:'四川美术学院招生处'
+      },
+      {
+        date:'2026-07-20', school:'西安美术学院', type:'notice', scope:'national', important:false,
+        title:'关于填报2026级绘画专业培养方向分流志愿的通知',
+        summary:'绘画专业录取考生须填报油画、版画、水彩、综绘四个培养方向的志愿顺序，分配依据校考成绩。',
+        majors:['绘画','油画','版画','水彩','综绘'],
+        url:'https://zhshch.xafa.edu.cn/info/1014/4706.htm', source:'西安美术学院招生信息网'
+      },
+      {
+        date:'2026-07-15', school:'西安美术学院', type:'score', scope:'national', important:false,
+        title:'2026年本科招生艺术提前批校考类专业录取分数线公告',
+        summary:'公布中国画、绘画、雕塑三个校考专业的录取分数线及破格录取最低分。',
+        majors:['中国画','绘画','雕塑'],
+        url:'https://zhshch.xafa.edu.cn/info/1014/4676.htm', source:'西安美术学院招生信息网'
+      },
+      {
+        date:'2026-07-14', school:'上海戏剧学院', type:'score', scope:'national', important:false,
+        title:'2026年本科艺术类校考专业录取名单及分数线',
+        summary:'公布艺术类校考专业录取名单与分数线；美术与设计相关校考专业包括戏剧影视美术设计和绘画。',
+        majors:['戏剧影视美术设计','绘画'],
+        url:'https://zs.sta.edu.cn/ee/9c/c1816a126620/page.htm', source:'上海戏剧学院招生办公室'
+      },
+      {
+        date:'2026-07-14', school:'上海大学', type:'score', scope:'national', important:false,
+        title:'2026年艺术类本科专业录取分数线（校考）',
+        summary:'上海大学本科招生网发布艺术类校考专业录取分数线；校考美术相关专业采用全国招生、不编制分省计划的方式。',
+        majors:['中国画','绘画','雕塑'],
+        url:'https://bkzsw.shu.edu.cn/', source:'上海大学本科招生网'
+      },
+      {
+        date:'2026-07-11', school:'四川美术学院', type:'score', scope:'national', important:false,
+        title:'2026年本科录取分数线（艺术类提前批）公告',
+        summary:'公布艺术类提前批校考专业录取分数线及破格录取公示安排，适用于取得相应校考资格的全国考生。',
+        majors:['造型类','设计类'],
+        url:'https://www.scfai.edu.cn/zsb/info/1002/4646.htm', source:'四川美术学院招生处'
+      }
+    ].sort((a,b)=>b.date.localeCompare(a.date));
+
+    let records = [...seedRecords];
+
+    const typeNames={policy:'录取方式调整',score:'录取分数与结果',notice:'招生通知'};
+    const scopeNames={liaoning:'辽宁明确',national:'全国适用',pending:'辽宁待确认'};
+    const q=document.querySelector.bind(document);
+    let activeTab='feed';
+
+    function refreshStats(){
+      q('#statImportant').textContent=records.filter(r=>r.important).length;
+      q('#statRecords').textContent=records.length;
+      q('#statSchools').textContent=schools.length;
+      q('#statLatest').textContent=records[0]?.date?.slice(5).replace('-','·')||'—';
+    }
+
+    function esc(value=''){
+      return String(value).replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
+    }
+    function safeUrl(value=''){
+      try{const url=new URL(value);return ['http:','https:'].includes(url.protocol)?url.href:'#'}catch{return '#'}
+    }
+    function recordKey(record){
+      const title=String(record.title||'').replace(/20\d{2}[年./-]\d{1,2}[月./-]\d{1,2}日?/g,'').replace(/\s+/g,'');
+      return `${record.school||''}|${title}`;
+    }
+
+    function dateParts(date){const [,m,d]=date.split('-');return {big:`${m}·${d}`,year:date.slice(0,4)}}
+    function matches(record,term,scope,type){
+      const hay=[record.school,record.title,record.summary,...record.majors].join(' ').toLowerCase();
+      return (!term||hay.includes(term))&&(scope==='all'||record.scope===scope)&&(type==='all'||record.type===type);
+    }
+    function renderFeed(){
+      const term=q('#search').value.trim().toLowerCase();
+      const scope=q('#scopeFilter').value;
+      const type=q('#typeFilter').value;
+      const shown=records.filter(r=>matches(r,term,scope,type));
+      q('#resultCount').textContent=`显示 ${shown.length} / ${records.length} 条`;
+      q('#feed').innerHTML=shown.map(r=>{
+        const dp=dateParts(r.date);
+        return `<article class="card">
+          <div class="date-rail"><b>${dp.big}</b><span>${dp.year} 发布</span></div>
+          <div class="card-body">
+            <div class="meta"><span class="school">${esc(r.school)}</span><span class="chip">${esc(typeNames[r.type]||'招生通知')}</span><span class="chip ${esc(r.scope)}">${esc(scopeNames[r.scope]||'辽宁待确认')}</span>${r.important?'<span class="chip important">重要变化</span>':''}${r.verified===false?'<span class="chip pending">自动发现 · 待复核</span>':''}</div>
+            <h4>${esc(r.title)}</h4><p class="summary">${esc(r.summary)}</p>
+            <div class="majors">${(r.majors||[]).map(m=>`<span class="major">${esc(m)}</span>`).join('')}</div>
+            <div class="actions"><span class="source-note">来源：${esc(r.source)} · ${r.verified===false?'规则自动发现':'已核验官方原文'}</span><a class="official" href="${safeUrl(r.url)}" target="_blank" rel="noopener">查看官方原文 <span aria-hidden="true">↗</span></a></div>
+          </div>
+        </article>`;
+      }).join('');
+      q('#empty').style.display=shown.length?'none':'block';
+    }
+    function renderDirectory(){
+      const term=q('#search').value.trim().toLowerCase();
+      const filtered=schools.filter(s=>`${s} ${schoolAliases[s]||''}`.toLowerCase().includes(term));
+      const verified=new Map(); records.forEach(r=>{if(!verified.has(r.school)||verified.get(r.school)<r.date)verified.set(r.school,r.date)});
+      q('#schoolCount').textContent=`显示 ${filtered.length} / ${schools.length} 所`;
+      q('#directoryGrid').innerHTML=filtered.map(s=>`<div class="school-row ${verified.has(s)?'checked':''}"><b>${esc(s)}</b><span>${verified.has(s)?`已收录 · ${verified.get(s).slice(5).replace('-','.')}`:'待首轮核验'}</span></div>`).join('');
+    }
+    async function loadAutomaticData(){
+      try{
+        const payload=await fetchFirstJson([`${automaticDataBase}/notices.json`,'./data/notices.json']);
+        const merged=new Map(seedRecords.map(record=>[recordKey(record),record]));
+        (payload.records||[]).forEach(record=>{const key=recordKey(record);if(!merged.has(key))merged.set(key,record)});
+        records=[...merged.values()].sort((a,b)=>b.date.localeCompare(a.date));
+        const stamp=payload.updatedAt?new Date(payload.updatedAt):null;
+        q('#lastUpdated').textContent=stamp&&!Number.isNaN(stamp.valueOf())?`自动更新：${stamp.toLocaleString('zh-CN',{timeZone:'Asia/Shanghai',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'})}`:'自动更新已启用';
+        q('#syncPulse').classList.remove('loading');
+        refreshStats();render();
+      }catch{
+        q('#lastUpdated').textContent=location.protocol==='file:'?'本地预览 · 自动数据需通过网页访问':'使用内置核验数据';
+        q('#syncPulse').classList.remove('loading');
+      }
+      try{
+        const status=await fetchFirstJson([`${automaticDataBase}/status.json`,'./data/status.json']);
+        if(!status.updatedAt)return;
+        q('#dataStatus').innerHTML=`<strong>自动监测状态：</strong>北京时间每日 09:00—21:30 每半小时更新。本轮已检查 ${Number(status.successfulSources)||0} 个官方栏目，${Number(status.failedSources)||0} 个暂时访问失败；自动发现信息均标注“待人工复核”。`;
+      }catch{}
+    }
+    async function fetchFirstJson(urls){
+      let lastError;
+      for(const url of urls){
+        try{const response=await fetch(url,{cache:'no-store'});if(!response.ok)throw new Error(`HTTP ${response.status}`);return await response.json()}catch(error){lastError=error}
+      }
+      throw lastError||new Error('没有可用的数据源');
+    }
+    function render(){activeTab==='feed'?renderFeed():renderDirectory()}
+    document.querySelectorAll('.tab').forEach(btn=>btn.addEventListener('click',()=>{
+      activeTab=btn.dataset.tab;
+      document.querySelectorAll('.tab').forEach(b=>{b.classList.toggle('active',b===btn);b.setAttribute('aria-selected',b===btn)});
+      q('#feedPanel').style.display=activeTab==='feed'?'block':'none';
+      q('#directoryPanel').style.display=activeTab==='directory'?'block':'none';
+      q('#scopeFilter').disabled=activeTab==='directory';q('#typeFilter').disabled=activeTab==='directory';render();
+    }));
+    ['#search','#scopeFilter','#typeFilter'].forEach(id=>q(id).addEventListener(id==='#search'?'input':'change',render));
+    refreshStats();renderFeed();renderDirectory();loadAutomaticData();
+  </script>
+</body>
+</html>
+
