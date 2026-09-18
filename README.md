@@ -6,7 +6,7 @@
 
 - GitHub Actions 按北京时间每天 09:00—21:30 每 30 分钟运行一次 `scripts/update-admissions.mjs`；22:00—次日 08:59 停止，不调用任何 AI 模型。
 - 院校来源配置位于 `config/sources.json`。
-- 自动发现结果写入 `dist/data/notices.json`。
+- 自动发现结果写入 `dist/data/notices.json`，网页使用合并后的 `dist/data/feed.json`。
 - 抓取运行状态写入 `dist/data/status.json`。
 - 网站优先读取 GitHub 自动更新的数据，同时保留人工核验的内置记录和本地数据作为故障回退。
 
