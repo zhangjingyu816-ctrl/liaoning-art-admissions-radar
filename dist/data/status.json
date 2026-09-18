@@ -1,9 +1,9 @@
 {
-  "updatedAt": "2026-09-18T07:14:56.131Z",
+  "updatedAt": "2026-09-18T07:26:09.757Z",
   "cutoff": "2026-07-01",
   "configuredSources": 15,
-  "successfulSources": 14,
-  "failedSources": 1,
+  "successfulSources": 13,
+  "failedSources": 2,
   "discoveredRecords": 18,
   "discoveredHistoryRecords": 91,
   "results": [
@@ -60,13 +60,14 @@
     {
       "school": "中央美术学院",
       "ok": false,
-      "error": "fetch failed · UNABLE_TO_VERIFY_LEAF_SIGNATURE · unable to verify the first certificate; if the root CA is installed locally, try running Node.js with --use-system-ca",
+      "error": "fetch failed · UNABLE_TO_VERIFY_LEAF_SIGNATURE · unable to verify the first certificate",
       "preserved": 0
     },
     {
       "school": "中国美术学院",
-      "ok": true,
-      "found": 10
+      "ok": false,
+      "error": "fetch failed · EAI_AGAIN · getaddrinfo EAI_AGAIN zb.caa.edu.cn",
+      "preserved": 0
     },
     {
       "school": "清华大学美术学院",
@@ -85,4 +86,3 @@
     }
   ]
 }
-
