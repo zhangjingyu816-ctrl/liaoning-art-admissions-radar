@@ -10,7 +10,9 @@ const sourcesPath = resolve(root, 'config/sources.json');
 const noticesPath = resolve(root, 'dist/data/notices.json');
 const statusPath = resolve(root, 'dist/data/status.json');
 const feedPath = resolve(root, 'dist/data/feed.json');
+const historyPath = resolve(root, 'dist/data/history.json');
 const cutoff = '2026-07-01';
+const historyCutoff = '2024-01-01';
 
 const topicWords = [
   '美术与设计', '美术类', '美术学', '绘画', '中国画', '雕塑', '视觉传达', '环境设计',
@@ -188,7 +190,7 @@ async function scanSource(source) {
     const evidence = `${candidate.title} ${detail.slice(0, 30000)}`;
     if (!isRelevant(candidate.title, evidence, source)) continue;
     const date = parsePublishDate(detail.slice(0, 8000)) || parseDate(candidate.title) || candidate.date;
-    if (!date || date < cutoff) continue;
+    if (!date || date < historyCutoff) continue;
     const majors = extractMajors(evidence);
     const scope = classifyScope(evidence);
     const record = {
@@ -214,8 +216,11 @@ async function scanSource(source) {
 async function main() {
   const sources = (await loadJson(sourcesPath, [])).filter(source => source.enabled !== false && source.url);
   const previous = await loadJson(noticesPath, { records: [] });
+  const previousHistory = await loadJson(historyPath, { records: [] });
   const previousRecords = previous.records || [];
+  const previousHistoryRecords = previousHistory.records || [];
   const byUrl = new Map(previousRecords.filter(record => record.automated !== true).map(record => [record.url, record]));
+  const historyByUrl = new Map(previousHistoryRecords.map(record => [record.url, record]));
   const previousAutomatedBySchool = new Map();
   previousRecords.filter(record => record.automated === true).forEach(record => {
     if (!previousAutomatedBySchool.has(record.school)) previousAutomatedBySchool.set(record.school, []);
@@ -226,12 +231,16 @@ async function main() {
   for (const source of sources) {
     try {
       const found = await scanSource(source);
-      found.forEach(record => byUrl.set(record.url, { ...byUrl.get(record.url), ...record }));
+      found.forEach(record => {
+        historyByUrl.set(record.url, { ...historyByUrl.get(record.url), ...record });
+        if (record.date >= cutoff) byUrl.set(record.url, { ...byUrl.get(record.url), ...record });
+      });
       results.push({ school: source.school, ok: true, found: found.length });
       console.log(`OK  ${source.school}: ${found.length}`);
     } catch (error) {
       const preserved = previousAutomatedBySchool.get(source.school) || [];
       preserved.forEach(record => byUrl.set(record.url, record));
+      previousHistoryRecords.filter(record => record.school === source.school).forEach(record => historyByUrl.set(record.url, record));
       const detail = [error.message, error.cause?.code, error.cause?.message].filter(Boolean).join(' · ');
       results.push({ school: source.school, ok: false, error: detail, preserved: preserved.length });
       console.error(`ERR ${source.school}: ${detail}`);
@@ -242,7 +251,11 @@ async function main() {
     .filter(record => record.date >= cutoff)
     .sort((a, b) => b.date.localeCompare(a.date) || a.school.localeCompare(b.school, 'zh-CN'));
   const updatedAt = new Date().toISOString();
+  const historyRecords = [...historyByUrl.values()]
+    .filter(record => record.date >= historyCutoff)
+    .sort((a, b) => b.date.localeCompare(a.date) || a.school.localeCompare(b.school, 'zh-CN'));
   const noticesPayload = { updatedAt, cutoff, records };
+  const historyPayload = { updatedAt, cutoff: historyCutoff, records: historyRecords };
   const statusPayload = {
     updatedAt,
     cutoff,
@@ -250,12 +263,14 @@ async function main() {
     successfulSources: results.filter(result => result.ok).length,
     failedSources: results.filter(result => !result.ok).length,
     discoveredRecords: records.length,
+    discoveredHistoryRecords: historyRecords.length,
     results
   };
   await mkdir(dirname(noticesPath), { recursive: true });
   await writeFile(noticesPath, `${JSON.stringify(noticesPayload, null, 2)}\n`, 'utf8');
+  await writeFile(historyPath, `${JSON.stringify(historyPayload, null, 2)}\n`, 'utf8');
   await writeFile(statusPath, `${JSON.stringify(statusPayload, null, 2)}\n`, 'utf8');
-  await writeFile(feedPath, `${JSON.stringify({ ...noticesPayload, status: statusPayload }, null, 2)}\n`, 'utf8');
+  await writeFile(feedPath, `${JSON.stringify({ ...noticesPayload, historyRecords, status: statusPayload }, null, 2)}\n`, 'utf8');
 }
 
 await main();
