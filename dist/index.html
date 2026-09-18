@@ -88,6 +88,17 @@
     .source-note{font-size:.76rem;color:var(--muted)}
     .official{display:inline-flex;align-items:center;gap:7px;text-decoration:none;color:var(--cyan);font-size:.84rem;font-weight:700}
     .official:hover{text-decoration:underline}
+    .duplicate-box{margin-top:12px;border:1px dashed #294056;border-radius:12px;background:rgba(5,15,24,.58);overflow:hidden}
+    .duplicate-box summary{cursor:pointer;list-style:none;padding:9px 12px;color:#aac0cd;font-size:.76rem;font-weight:650}
+    .duplicate-box summary::-webkit-details-marker{display:none}
+    .duplicate-box summary::after{content:'＋';float:right;color:var(--cyan)}
+    .duplicate-box[open] summary::after{content:'－'}
+    .duplicate-list{border-top:1px solid rgba(41,64,86,.72);padding:0 12px}
+    .duplicate-record{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding:10px 0;color:var(--muted);font-size:.74rem}
+    .duplicate-record+.duplicate-record{border-top:1px solid rgba(41,64,86,.5)}
+    .duplicate-record b{color:#c7d7df}
+    .duplicate-record a{flex:none;color:var(--cyan);text-decoration:none;font-weight:650}
+    .duplicate-record a:hover{text-decoration:underline}
     .empty{display:none;padding:64px 24px;text-align:center;border:1px dashed #2b4357;border-radius:18px;color:var(--muted)}
     .directory{display:none}
     .directory-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
@@ -103,7 +114,7 @@
       .headline{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.directory-grid{grid-template-columns:repeat(2,1fr)}
     }
     @media(max-width:650px){
-      .shell{width:min(100% - 22px,1220px)}.topbar-inner{min-height:72px;gap:10px}.brand p{display:none}.brand h1{font-size:.9rem}.verified{gap:7px;font-size:.68rem}.time-status span:last-child{font-size:.66rem}main{padding-top:24px}.headline h2{font-size:2.45rem}.stats{gap:8px}.stat{padding:15px}.toolbar{top:72px}.filters{grid-template-columns:1fr}.card{grid-template-columns:1fr}.date-rail{display:flex;gap:8px;align-items:baseline;padding:13px 17px;border-right:0;border-bottom:1px solid var(--line)}.card-body{padding:17px}.directory-grid{grid-template-columns:1fr}.footer-inner{display:block}.actions{align-items:flex-start;flex-direction:column}.official{align-self:flex-end}
+      .shell{width:min(100% - 22px,1220px)}.topbar-inner{min-height:72px;gap:10px}.brand p{display:none}.brand h1{font-size:.9rem}.verified{gap:7px;font-size:.68rem}.time-status span:last-child{font-size:.66rem}main{padding-top:24px}.headline h2{font-size:2.45rem}.stats{gap:8px}.stat{padding:15px}.toolbar{top:72px}.filters{grid-template-columns:1fr}.card{grid-template-columns:1fr}.date-rail{display:flex;gap:8px;align-items:baseline;padding:13px 17px;border-right:0;border-bottom:1px solid var(--line)}.card-body{padding:17px}.directory-grid{grid-template-columns:1fr}.footer-inner{display:block}.actions{align-items:flex-start;flex-direction:column}.official{align-self:flex-end}.duplicate-record{flex-direction:column;gap:5px}
     }
   </style>
 </head>
@@ -567,8 +578,30 @@
       try{const url=new URL(value);return ['http:','https:'].includes(url.protocol)?url.href:'#'}catch{return '#'}
     }
     function recordKey(record){
-      const title=String(record.title||'').replace(/20\d{2}[年./-]\d{1,2}[月./-]\d{1,2}日?/g,'').replace(/\s+/g,'');
+      const school=String(record.school||'').trim();
+      const title=String(record.title||'')
+        .split(school).join('')
+        .replace(/20\d{2}[年./-]\d{1,2}[月./-]\d{1,2}日?/g,'')
+        .replace(/[^\u3400-\u9fffA-Za-z0-9]/g,'');
       return `${record.school||''}|${title}`;
+    }
+    function isAutomaticRecord(record){return record?.automated===true||record?.verified===false}
+    function plainRecord(record){const {duplicates,...plain}=record;return plain}
+    function mergeRecords(items){
+      const merged=new Map();
+      items.forEach(item=>{
+        const incoming={...item,duplicates:[]};
+        const key=recordKey(incoming);
+        const existing=merged.get(key);
+        if(!existing){merged.set(key,incoming);return}
+        if(isAutomaticRecord(incoming)&&!isAutomaticRecord(existing)){
+          incoming.duplicates=[plainRecord(existing),...(existing.duplicates||[]).map(plainRecord)];
+          merged.set(key,incoming);
+        }else{
+          existing.duplicates=[...(existing.duplicates||[]),plainRecord(incoming)];
+        }
+      });
+      return [...merged.values()].sort((a,b)=>b.date.localeCompare(a.date));
     }
 
     function dateParts(date){const [,m,d]=date.split('-');return {big:`${m}·${d}`,year:date.slice(0,4)}}
@@ -591,6 +624,11 @@
       q('#resultCount').textContent=`显示 ${shown.length} / ${pool.length} 条`;
       q('#feed').innerHTML=shown.map(r=>{
         const dp=dateParts(r.date);
+        const duplicates=r.duplicates||[];
+        const duplicateDetails=duplicates.length?`<details class="duplicate-box">
+          <summary>已折叠 ${duplicates.length} 条重复记录${isAutomaticRecord(r)?' · 主卡保留自动刷新版本':''}</summary>
+          <div class="duplicate-list">${duplicates.map(item=>`<div class="duplicate-record"><span><b>${isAutomaticRecord(item)?'自动发现版本':'人工核验版本'}</b> · ${esc(item.title)} · 来源：${esc(item.source)}</span><a href="${safeUrl(item.url)}" target="_blank" rel="noopener">查看原文 ↗</a></div>`).join('')}</div>
+        </details>`:'';
         return `<article class="card">
           <div class="date-rail"><b>${dp.big}</b><span>${dp.year} 发布</span></div>
           <div class="card-body">
@@ -598,6 +636,7 @@
             <h4>${esc(r.title)}</h4><p class="summary">${esc(r.summary)}</p>
             <div class="majors">${(r.majors||[]).map(m=>`<span class="major">${esc(m)}</span>`).join('')}</div>
             <div class="actions"><span class="source-note">来源：${esc(r.source)} · ${r.verified===false?'规则自动发现':'已核验官方原文'}</span><a class="official" href="${safeUrl(r.url)}" target="_blank" rel="noopener">查看官方原文 <span aria-hidden="true">↗</span></a></div>
+            ${duplicateDetails}
           </div>
         </article>`;
       }).join('');
@@ -629,9 +668,7 @@
           const [notices,status]=await Promise.all([fetchFirstJson([`./data/notices.json?t=${cacheBust}`]),fetchFirstJson([`./data/status.json?t=${cacheBust}`])]);
           payload={...notices,status};
         }
-        const merged=new Map(seedRecords.map(record=>[recordKey(record),record]));
-        (payload.records||[]).forEach(record=>{const key=recordKey(record);if(!merged.has(key))merged.set(key,record)});
-        records=[...merged.values()].sort((a,b)=>b.date.localeCompare(a.date));
+        records=mergeRecords([...seedRecords,...(payload.records||[])]);
         const stamp=payload.updatedAt?new Date(payload.updatedAt):null;
         q('#lastUpdated').textContent=stamp&&!Number.isNaN(stamp.valueOf())?`上次数据更新时间：${formatBeijingTime(stamp)}`:'上次数据更新时间：等待首次更新';
         q('#syncPulse').classList.remove('loading');
