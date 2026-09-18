@@ -118,8 +118,7 @@
     #chinaMap{position:relative;width:100%;height:650px;overflow:hidden;cursor:grab;touch-action:none;user-select:none;outline:none}
     #chinaMap.is-dragging{cursor:grabbing}
     #chinaMap:focus-visible{box-shadow:inset 0 0 0 3px rgba(16,122,181,.42)}
-    .map-camera{position:absolute;z-index:1;inset:0;transform-origin:0 0;will-change:transform;--map-marker-scale:1}
-    .map-camera.is-animating{transition:transform .24s cubic-bezier(.2,.72,.22,1)}
+    .map-camera{position:absolute;z-index:1;left:0;top:0;width:100%;height:100%;--map-marker-scale:1}
     .map-title-card{position:absolute;z-index:10;top:20px;left:22px;padding:10px 13px;border:1px solid rgba(115,143,162,.34);border-radius:10px;background:rgba(245,250,253,.82);box-shadow:0 8px 24px rgba(75,100,118,.12);backdrop-filter:blur(7px);color:#234259;pointer-events:none}
     .map-title-card b{display:block;font-size:.84rem}.map-title-card span{display:block;margin-top:2px;color:#6f8798;font-size:.66rem}
     .map-caption{position:absolute;z-index:10;left:22px;bottom:18px;padding:8px 11px;border:1px solid rgba(121,148,166,.3);border-radius:9px;background:rgba(247,251,253,.84);color:#587286;font-size:.68rem;box-shadow:0 7px 22px rgba(77,105,123,.1);backdrop-filter:blur(6px);pointer-events:none}
@@ -128,12 +127,12 @@
     .map-controls button:hover,.map-controls button:focus-visible{border-color:#3988b6;background:#e9f7ff;outline:none}
     .map-controls .map-reset{grid-column:1/-1;width:78px;font-size:.68rem;font-weight:750}
     .map-level-badge{position:absolute;z-index:10;right:18px;bottom:18px;min-width:118px;padding:8px 11px;border:1px solid rgba(73,123,151,.32);border-radius:10px;background:rgba(15,91,133,.88);box-shadow:0 7px 22px rgba(57,91,112,.15);color:#f4fcff;text-align:center;font-size:.68rem;font-weight:750;pointer-events:none}
-    .native-map-svg{position:absolute;z-index:2;inset:7% 4% 7%;width:92%;height:86%;overflow:visible;filter:drop-shadow(0 27px 19px rgba(70,92,108,.28));transform:perspective(1050px) rotateX(13deg) rotateZ(-1.2deg);transform-origin:50% 64%}
-    .map-points{position:absolute;z-index:5;inset:7% 4% 7%;pointer-events:none;transform:perspective(1050px) rotateX(13deg) rotateZ(-1.2deg);transform-origin:50% 64%}
-    .province-label-layer text{fill:#2e5b76;paint-order:stroke;stroke:rgba(245,251,255,.88);stroke-width:3.5px;stroke-linejoin:round;font-size:15px;font-weight:800;letter-spacing:.04em;pointer-events:none;transition:opacity .2s ease}
+    .native-map-svg{position:absolute;z-index:2;overflow:visible;shape-rendering:geometricPrecision}
+    .map-points{position:absolute;z-index:5;pointer-events:none}
+    .province-label-layer text{fill:#214f69;paint-order:stroke;stroke:#eef9ff;stroke-linejoin:round;font-size:var(--province-font,15px);font-weight:650;pointer-events:none}
     .city-boundary-layer{opacity:0;transition:opacity .24s ease}.city-boundary-layer path{fill:none;stroke:#f8fdff;stroke-opacity:.92;stroke-width:.7;vector-effect:non-scaling-stroke}
     .map-stage[data-map-level="cities"] .city-boundary-layer,.map-stage[data-map-level="schools"] .city-boundary-layer{opacity:.86}
-    .map-stage[data-map-level="cities"] .province-label-layer text,.map-stage[data-map-level="schools"] .province-label-layer text{opacity:.3}
+    .map-stage[data-map-level="cities"] .province-label-layer text{opacity:.6}.map-stage[data-map-level="schools"] .province-label-layer text{opacity:0}
     .map-point{position:absolute;z-index:2;width:34px;height:34px;padding:0;border:0;background:transparent;color:#15384f;cursor:pointer;pointer-events:auto;opacity:1;transform:translate(-50%,-50%) scale(var(--map-marker-scale));transform-origin:50% 50%;transition:opacity .18s ease}
     .map-point::before{content:'';position:absolute;left:8px;top:8px;width:18px;height:18px;border:1px solid rgba(255,255,255,.8);border-radius:50%;background:rgba(45,144,201,.13)}
     .map-point i{position:absolute;left:12px;top:12px;display:block;width:10px;height:10px;border:2px solid #f7fdff;border-radius:50%;background:#2f93c9;box-shadow:0 2px 7px rgba(30,88,123,.38);transition:transform .18s ease,background .18s ease}
@@ -194,6 +193,18 @@
     @media(max-width:650px){
       .shell{width:min(100% - 22px,1220px)}.topbar-inner{min-height:72px;gap:10px}.brand p{display:none}.brand h1{font-size:.9rem}.verified{gap:7px;font-size:.68rem}.time-status span:last-child{font-size:.66rem}main{padding-top:24px}.headline h2{font-size:2.45rem}.stats{gap:8px}.stat{padding:15px}.toolbar{top:72px}.tabs{overflow-x:auto}.tab{white-space:nowrap}.filters{grid-template-columns:1fr}.card{grid-template-columns:1fr}.date-rail{display:flex;gap:8px;align-items:baseline;padding:13px 17px;border-right:0;border-bottom:1px solid var(--line)}.card-body{padding:17px}.directory-grid{grid-template-columns:1fr}.footer-inner{display:block}.actions{align-items:flex-start;flex-direction:column}.official{align-self:flex-end}.duplicate-record{flex-direction:column;gap:5px}.map-stage,#chinaMap{min-height:480px;height:480px}.native-map-svg,.map-points{inset:11% 1% 7%;width:98%;height:82%;transform:perspective(1200px) rotateX(7deg) rotateZ(-.7deg)}.map-title-card{top:12px;left:12px;padding:7px 9px;max-width:215px}.map-controls{top:10px;right:10px;transform:scale(.9);transform-origin:100% 0}.map-level-badge{right:12px;bottom:48px}.map-caption{left:12px;bottom:9px;right:12px;text-align:center}.map-stage[data-map-level="cities"] .map-point.major span{display:none}.map-stage[data-map-level="schools"] .map-point span{display:block}.city-school-bubble{max-height:230px}.map-point.hub span,.map-point:hover span,.map-point:focus-visible span{display:block}.modal{padding:10px}.modal-card{max-height:calc(100vh - 20px)}.modal-head,.profile-body{padding-left:15px;padding-right:15px}
     }
+    .native-map-svg,.map-points{inset:auto;transform:none}
+    .map-stage::after{background:none;box-shadow:inset 0 0 30px rgba(73,99,118,.08)}
+    .map-point span{font-size:12px;box-shadow:none;line-height:1.45}
+    .map-controls .map-fullscreen{grid-column:1/-1;width:78px;font-size:12px;background:#176b99;color:#fff;border-color:#176b99}
+    .map-caption{max-width:calc(100% - 170px);font-size:11px}
+    #mapPanel.map-expanded{position:fixed;inset:0;z-index:1000;display:flex!important;flex-direction:column;width:100%;height:100dvh;box-sizing:border-box;padding:16px;background:#091623;overflow:hidden}
+    #mapPanel.map-expanded>.result-head{flex:none;margin:0 0 12px}
+    #mapPanel.map-expanded .map-layout{flex:1;min-height:0;grid-template-columns:minmax(0,1fr) 290px}
+    #mapPanel.map-expanded .map-stage,#mapPanel.map-expanded #chinaMap{height:100%;min-height:0}
+    #mapPanel.map-expanded .map-sidebar{max-height:none;min-height:0}
+    #mapPanel:fullscreen{max-width:none}
+    @media(max-width:650px){#mapPanel.map-expanded{padding:8px}#mapPanel.map-expanded>.result-head{display:none}#mapPanel.map-expanded .map-layout{grid-template-columns:1fr}#mapPanel.map-expanded .map-sidebar{display:none}.map-caption{max-width:none;font-size:10px}.map-controls{transform:none}.map-title-card{max-width:calc(100% - 124px)}}
     @media(prefers-reduced-motion:reduce){.school-row,.map-point i,.map-camera{transition:none!important}}
   </style>
 </head>
@@ -905,7 +916,7 @@
       document.body.style.overflow='hidden';
       q('#modalClose').focus();
     }
-    function closeSchoolProfile(){q('#schoolModal').classList.remove('open');document.body.style.overflow=''}
+    function closeSchoolProfile(){q('#schoolModal').classList.remove('open');document.body.style.overflow=mapExpanded?'hidden':''}
     function cityGroups(){
       const grouped=new Map();
       schools.forEach(school=>{const location=schoolLocation(school);if(!grouped.has(location.city))grouped.set(location.city,{...location,schools:[]});grouped.get(location.city).schools.push(school)});
@@ -921,7 +932,41 @@
       q('#cityList').innerHTML=groups.map((group,index)=>`<details class="city-card" ${city||index<3?'open':''}><summary>${esc(group.city)} · ${esc(group.province)}<span>${group.schools.length} 所</span></summary><div class="city-schools">${group.schools.map(school=>`<button class="city-school" type="button" data-school="${esc(school)}">${esc(school)}${nineAcademies.has(school)?' · 九大美院':''}</button>`).join('')}</div></details>`).join('')||'<div class="empty" style="display:block;padding:28px 14px">没有符合搜索条件的院校。</div>';
     }
     const mapView={scale:1,x:0,y:0,pointerId:null,startX:0,startY:0,originX:0,originY:0,moved:false};
-    let mapTransitionTimer=0;
+    let mapAnimation=0,mapDrawn={scale:1,x:0,y:0},mapExpanded=false,mapFullscreenNative=false;
+    let mapReturnAnchor=null,mapModalAnchor=null,mapSavedOverflow='';
+    function setMapExpanded(expanded){
+      const panel=q('#mapPanel'),modal=q('#schoolModal');
+      if(expanded===mapExpanded)return;
+      mapExpanded=expanded;
+      if(expanded){
+        mapReturnAnchor=document.createComment('map return position');panel.before(mapReturnAnchor);document.body.append(panel);
+        mapModalAnchor=document.createComment('modal return position');modal.before(mapModalAnchor);panel.append(modal);
+        mapSavedOverflow=document.body.style.overflow;document.body.style.overflow='hidden';
+      }else{
+        mapReturnAnchor?.replaceWith(panel);mapModalAnchor?.replaceWith(modal);
+        document.body.style.overflow=modal.classList.contains('open')?'hidden':mapSavedOverflow;
+      }
+      panel.classList.toggle('map-expanded',expanded);
+      const button=q('[data-map-action="fullscreen"]');
+      if(button){button.textContent=expanded?'退出全屏':'全屏查看';button.setAttribute('aria-pressed',String(expanded))}
+      requestAnimationFrame(()=>{applyMapView();button?.focus({preventScroll:true})});
+    }
+    async function toggleMapFullscreen(){
+      if(mapExpanded){
+        if(document.fullscreenElement){await document.exitFullscreen();}
+        setMapExpanded(false);return;
+      }
+      setMapExpanded(true);
+      try{if(q('#mapPanel').requestFullscreen&&document.fullscreenEnabled){await q('#mapPanel').requestFullscreen();mapFullscreenNative=true}}
+      catch{mapFullscreenNative=false; /* Embedded browsers still get a full-window map. */}
+    }
+    document.addEventListener('fullscreenchange',()=>{
+      if(document.fullscreenElement===q('#mapPanel'))mapFullscreenNative=true;
+      else if(mapFullscreenNative){mapFullscreenNative=false;setMapExpanded(false)}
+    });
+    document.addEventListener('keydown',event=>{
+      if(event.key==='Escape'&&mapExpanded&&!q('#schoolModal').classList.contains('open')&&!document.fullscreenElement){event.preventDefault();setMapExpanded(false)}
+    });
     function mapLevel(scale=mapView.scale){return scale>=2.65?'schools':scale>=1.55?'cities':'national'}
     function cleanRegionName(name=''){return name.replace(/特别行政区|维吾尔自治区|壮族自治区|回族自治区|自治区|省|市/g,'')}
     function clampMapView(){
@@ -949,18 +994,35 @@
       const camera=q('#mapCamera'),stage=q('.map-stage'),badge=q('#mapLevelBadge');
       if(!camera||!stage)return;
       clampMapView();
-      clearTimeout(mapTransitionTimer);
-      camera.classList.toggle('is-animating',animate);
-      camera.style.setProperty('--map-marker-scale',(1/mapView.scale).toFixed(4));
-      camera.style.transform=`translate3d(${mapView.x.toFixed(1)}px,${mapView.y.toFixed(1)}px,0) scale(${mapView.scale.toFixed(4)})`;
+      cancelAnimationFrame(mapAnimation);
+      const target={scale:mapView.scale,x:mapView.x,y:mapView.y};
+      const draw=view=>{
+        mapDrawn={...view};
+        const map=q('#chinaMap'),w=map.clientWidth,h=map.clientHeight;
+        // Resize the vector viewport instead of magnifying a composited bitmap.
+        const baseWidth=Math.min(w*.94,h*.83*900/570),baseHeight=baseWidth*570/900;
+        camera.style.left=`${view.x}px`;camera.style.top=`${view.y}px`;
+        camera.style.width=`${w*view.scale}px`;camera.style.height=`${h*view.scale}px`;
+        camera.querySelectorAll('.native-map-svg,.map-points').forEach(layer=>{
+          layer.style.left=`${(w-baseWidth)/2*view.scale}px`;layer.style.top=`${(h-baseHeight)/2*view.scale}px`;
+          layer.style.width=`${baseWidth*view.scale}px`;layer.style.height=`${baseHeight*view.scale}px`;
+        });
+        const fontSize=12/(baseWidth/900*view.scale);
+        camera.style.setProperty('--province-font',`${fontSize}px`);
+        camera.querySelector('.province-label-layer').style.strokeWidth=`${fontSize/8}px`;
+        positionMapBubble();
+      };
       const level=mapLevel();
       stage.dataset.mapLevel=level;
       if(badge){
         const label=level==='national'?'全国视图':level==='cities'?'省市边界':'城市院校';
         badge.textContent=`${label} · ${mapView.scale.toFixed(1)}×`;
       }
-      requestAnimationFrame(positionMapBubble);
-      if(animate)mapTransitionTimer=setTimeout(()=>{camera.classList.remove('is-animating');positionMapBubble()},280);
+      if(animate&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
+        const start={...mapDrawn},started=performance.now();
+        const frame=now=>{const t=Math.min(1,(now-started)/220),ease=1-Math.pow(1-t,3);draw({scale:start.scale+(target.scale-start.scale)*ease,x:start.x+(target.x-start.x)*ease,y:start.y+(target.y-start.y)*ease});if(t<1)mapAnimation=requestAnimationFrame(frame)};
+        mapAnimation=requestAnimationFrame(frame);
+      }else draw(target);
     }
     function zoomMapAt(clientX,clientY,targetScale,{animate=false}={}){
       const map=q('#chinaMap');if(!map)return;
@@ -1040,7 +1102,7 @@
         path:ringsFor(feature.geometry).map(pathFor).join(' ')
       })).filter(feature=>feature.path);
       const baseShapes=featurePaths.map(feature=>`<path d="${feature.path}" fill-rule="evenodd"/>`).join('');
-      const topShapes=featurePaths.map(feature=>`<path d="${feature.path}" fill="${feature.name.includes('辽宁')?'url(#liaoningIce)':'url(#iceTop)'}" stroke="#f9fdff" stroke-opacity=".88" stroke-width="1.15" fill-rule="evenodd"/>`).join('');
+      const topShapes=featurePaths.map(feature=>`<path d="${feature.path}" fill="${feature.name.includes('辽宁')?'url(#liaoningIce)':'url(#iceTop)'}" stroke="#f9fdff" stroke-opacity=".95" stroke-width="1.1" vector-effect="non-scaling-stroke" fill-rule="evenodd"/>`).join('');
       const cityShapes=cityData.features.map(feature=>ringsFor(feature.geometry).map(pathFor).join(' ')).filter(Boolean).map(path=>`<path d="${path}"/>`).join('');
       const provinceLabels=featurePaths.filter(feature=>Array.isArray(feature.center)&&!feature.name.includes('南海')).map(feature=>{const [x,y]=project(feature.center);return `<text x="${x.toFixed(1)}" y="${y.toFixed(1)}" text-anchor="middle">${esc(cleanRegionName(feature.name))}</text>`}).join('');
       const points=groups.map(group=>{
@@ -1059,13 +1121,12 @@
               <linearGradient id="iceSide" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#8dbdd9"/><stop offset="1" stop-color="#4e7f9e"/></linearGradient>
               <pattern id="iceGrid" width="42" height="42" patternUnits="userSpaceOnUse"><path d="M42 0H0V42" fill="none" stroke="#ffffff" stroke-opacity=".22" stroke-width="1"/></pattern>
               <clipPath id="chinaClip">${baseShapes}</clipPath>
-              <filter id="iceTexture" x="-15%" y="-15%" width="130%" height="130%"><feTurbulence type="fractalNoise" baseFrequency=".018" numOctaves="3" seed="8" result="noise"/><feColorMatrix in="noise" type="matrix" values="1 0 0 0 .08 0 1 0 0 .13 0 0 1 0 .18 0 0 0 .18 0" result="frost"/><feBlend in="SourceGraphic" in2="frost" mode="screen"/></filter>
             </defs>
-            <g transform="translate(0 30)" fill="#4b7792" opacity=".78">${baseShapes}</g>
-            <g transform="translate(0 24)" fill="#5989a6" opacity=".86">${baseShapes}</g>
-            <g transform="translate(0 18)" fill="#6799b7" opacity=".92">${baseShapes}</g>
-            <g transform="translate(0 12)" fill="url(#iceSide)">${baseShapes}</g>
-            <g filter="url(#iceTexture)">${topShapes}</g>
+            <g transform="translate(0 16)" fill="#4b7792" opacity=".78">${baseShapes}</g>
+            <g transform="translate(0 12)" fill="#5989a6" opacity=".86">${baseShapes}</g>
+            <g transform="translate(0 8)" fill="#6799b7" opacity=".92">${baseShapes}</g>
+            <g transform="translate(0 4)" fill="url(#iceSide)">${baseShapes}</g>
+            <g>${topShapes}</g>
             <rect x="0" y="0" width="900" height="570" fill="url(#iceGrid)" clip-path="url(#chinaClip)" opacity=".46"/>
             <ellipse cx="330" cy="150" rx="235" ry="95" fill="#ffffff" opacity=".13" clip-path="url(#chinaClip)"/>
             <g class="city-boundary-layer">${cityShapes}</g>
@@ -1073,7 +1134,7 @@
           </svg>
           <div class="map-points">${points}</div>
         </div>
-        <div class="map-controls" role="group" aria-label="地图缩放控制"><button type="button" data-map-action="zoom-in" aria-label="放大地图">＋</button><button type="button" data-map-action="zoom-out" aria-label="缩小地图">−</button><button type="button" class="map-reset" data-map-action="reset">返回全国</button></div>
+        <div class="map-controls" role="group" aria-label="地图缩放控制"><button type="button" class="map-fullscreen" data-map-action="fullscreen" aria-pressed="false">全屏查看</button><button type="button" data-map-action="zoom-in" aria-label="放大地图">＋</button><button type="button" data-map-action="zoom-out" aria-label="缩小地图">−</button><button type="button" class="map-reset" data-map-action="reset">返回全国</button></div>
         <div class="map-level-badge" id="mapLevelBadge" aria-live="polite">全国视图 · 1.0×</div>
         <div class="city-school-bubble" id="citySchoolBubble" aria-live="polite"></div>
         <div class="map-caption">${schools.length} 所院校 · ${groups.length} 个城市 · 城市中心定位（非校区坐标）· 行政边界为 DataV 公开数据快照</div>`;
@@ -1082,13 +1143,14 @@
       map.querySelectorAll('[data-map-action]').forEach(button=>button.addEventListener('click',event=>{
         event.stopPropagation();
         const rect=map.getBoundingClientRect();
+        if(button.dataset.mapAction==='fullscreen'){toggleMapFullscreen();return}
         if(button.dataset.mapAction==='reset')resetMapView();
         else zoomMapAt(rect.left+rect.width/2,rect.top+rect.height/2,mapView.scale*(button.dataset.mapAction==='zoom-in'?1.45:.69),{animate:true});
       }));
-      map.addEventListener('wheel',event=>{event.preventDefault();const step=Math.max(-.18,Math.min(.18,-event.deltaY*.00135));zoomMapAt(event.clientX,event.clientY,mapView.scale*Math.exp(step),{animate:true})},{passive:false});
+      map.addEventListener('wheel',event=>{if(event.target.closest('.city-school-bubble'))return;event.preventDefault();const step=Math.max(-.18,Math.min(.18,-event.deltaY*.00135));zoomMapAt(event.clientX,event.clientY,mapView.scale*Math.exp(step),{animate:true})},{passive:false});
       map.addEventListener('dblclick',event=>{if(event.target.closest('button'))return;event.preventDefault();zoomMapAt(event.clientX,event.clientY,mapView.scale*1.6,{animate:true})});
       map.addEventListener('pointerdown',event=>{
-        if(event.button!==0||event.target.closest('button'))return;
+        if(event.button!==0||event.target.closest('button,.city-school-bubble'))return;
         mapView.pointerId=event.pointerId;mapView.startX=event.clientX;mapView.startY=event.clientY;mapView.originX=mapView.x;mapView.originY=mapView.y;mapView.moved=false;
         map.setPointerCapture(event.pointerId);map.classList.add('is-dragging');
       });
@@ -1107,7 +1169,7 @@
         else if(event.key==='0'){event.preventDefault();resetMapView()}
         else if(['ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(event.key)){event.preventDefault();mapView.x+=event.key==='ArrowLeft'?42:event.key==='ArrowRight'?-42:0;mapView.y+=event.key==='ArrowUp'?42:event.key==='ArrowDown'?-42:0;applyMapView()}
       });
-      window.addEventListener('resize',()=>applyMapView());
+      new ResizeObserver(()=>applyMapView()).observe(map);
       q('#mapLoading').style.display='none';
       mapInstance={ready:true,groups};
       applyMapView();
