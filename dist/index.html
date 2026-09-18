@@ -435,7 +435,7 @@
     const schoolAliases = {
       '新疆政法学院':'原石河子大学科技学院'
     };
-    const automaticDataBase='https://raw.githubusercontent.com/zhangjingyu816-ctrl/liaoning-art-admissions-radar/main/dist/data';
+    const automaticFeedUrl='https://api.github.com/repos/zhangjingyu816-ctrl/liaoning-art-admissions-radar/contents/dist/data/feed.json?ref=main';
     const seedRecords = [
       {
         date:'2026-09-14', school:'上海戏剧学院', type:'policy', scope:'national', important:true,
@@ -595,8 +595,12 @@
       q('#directoryGrid').innerHTML=filtered.map(s=>`<div class="school-row ${verified.has(s)?'checked':''}"><b>${esc(s)}</b><span>${verified.has(s)?`已收录 · ${verified.get(s).slice(5).replace('-','.')}`:'待首轮核验'}</span></div>`).join('');
     }
     async function loadAutomaticData(){
+      let payload;
       try{
-        const payload=await fetchFirstJson([`${automaticDataBase}/notices.json`,'./data/notices.json']);
+        try{payload=await fetchFirstJson([automaticFeedUrl,'./data/feed.json'])}catch{
+          const [notices,status]=await Promise.all([fetchFirstJson(['./data/notices.json']),fetchFirstJson(['./data/status.json'])]);
+          payload={...notices,status};
+        }
         const merged=new Map(seedRecords.map(record=>[recordKey(record),record]));
         (payload.records||[]).forEach(record=>{const key=recordKey(record);if(!merged.has(key))merged.set(key,record)});
         records=[...merged.values()].sort((a,b)=>b.date.localeCompare(a.date));
@@ -604,20 +608,28 @@
         q('#lastUpdated').textContent=stamp&&!Number.isNaN(stamp.valueOf())?`自动更新：${stamp.toLocaleString('zh-CN',{timeZone:'Asia/Shanghai',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'})}`:'自动更新已启用';
         q('#syncPulse').classList.remove('loading');
         refreshStats();render();
-      }catch{
+        const status=payload.status;
+        if(status?.updatedAt)q('#dataStatus').innerHTML=`<strong>自动监测状态：</strong>北京时间每日 09:00—21:30 每半小时更新。本轮已检查 ${Number(status.successfulSources)||0} 个官方栏目，${Number(status.failedSources)||0} 个暂时访问失败；自动发现信息均标注“待人工复核”。`;
+      }catch(error){
         q('#lastUpdated').textContent=location.protocol==='file:'?'本地预览 · 自动数据需通过网页访问':'使用内置核验数据';
         q('#syncPulse').classList.remove('loading');
+        console.warn('自动数据读取失败',error);
       }
-      try{
-        const status=await fetchFirstJson([`${automaticDataBase}/status.json`,'./data/status.json']);
-        if(!status.updatedAt)return;
-        q('#dataStatus').innerHTML=`<strong>自动监测状态：</strong>北京时间每日 09:00—21:30 每半小时更新。本轮已检查 ${Number(status.successfulSources)||0} 个官方栏目，${Number(status.failedSources)||0} 个暂时访问失败；自动发现信息均标注“待人工复核”。`;
-      }catch{}
     }
     async function fetchFirstJson(urls){
       let lastError;
       for(const url of urls){
-        try{const response=await fetch(url,{cache:'no-store'});if(!response.ok)throw new Error(`HTTP ${response.status}`);return await response.json()}catch(error){lastError=error}
+        try{
+          const response=await fetch(url,{cache:'no-store',headers:url.includes('api.github.com')?{Accept:'application/vnd.github+json'}:{}});
+          if(!response.ok)throw new Error(`HTTP ${response.status}`);
+          const payload=await response.json();
+          if(payload?.encoding==='base64'&&payload?.content){
+            const binary=atob(payload.content.replace(/\s/g,''));
+            const bytes=Uint8Array.from(binary,char=>char.charCodeAt(0));
+            return JSON.parse(new TextDecoder().decode(bytes));
+          }
+          return payload;
+        }catch(error){lastError=error}
       }
       throw lastError||new Error('没有可用的数据源');
     }
