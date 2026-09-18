@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-18T07:08:28.440Z",
+  "updatedAt": "2026-09-18T07:14:56.131Z",
   "cutoff": "2026-07-01",
   "records": [
     {
@@ -85,6 +85,23 @@
       "id": "1c167e4891b1caad702c"
     },
     {
+      "date": "2026-07-28",
+      "school": "天津美术学院",
+      "type": "score",
+      "scope": "pending",
+      "important": false,
+      "title": "天津美术学院2026年普通类专业录取分数线",
+      "summary": "页面涉及：美术学；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学"
+      ],
+      "url": "https://zsbgs.tjarts.edu.cn/info/1003/3124.htm",
+      "source": "天津美术学院招生办公室",
+      "verified": false,
+      "automated": true,
+      "id": "d57c4cf85094d591b00f"
+    },
+    {
       "date": "2026-07-25",
       "school": "西安美术学院",
       "type": "policy",
@@ -151,6 +168,23 @@
       "id": "eaee6961dc11065e4a98"
     },
     {
+      "date": "2026-07-22",
+      "school": "天津美术学院",
+      "type": "score",
+      "scope": "pending",
+      "important": false,
+      "title": "天津美术学院2026年艺术类统考专业录取分数线",
+      "summary": "页面涉及：美术学；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学"
+      ],
+      "url": "https://zsbgs.tjarts.edu.cn/info/1003/3094.htm",
+      "source": "天津美术学院招生办公室",
+      "verified": false,
+      "automated": true,
+      "id": "1e97eb7d1f09773c314e"
+    },
+    {
       "date": "2026-07-16",
       "school": "鲁迅美术学院",
       "type": "score",
@@ -168,6 +202,23 @@
       "verified": false,
       "automated": true,
       "id": "7f8e200bdf795eeefe16"
+    },
+    {
+      "date": "2026-07-15",
+      "school": "天津美术学院",
+      "type": "notice",
+      "scope": "pending",
+      "important": false,
+      "title": "天津美术学院2026年本科招生录取工作安排",
+      "summary": "页面涉及：美术学；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学"
+      ],
+      "url": "https://zsbgs.tjarts.edu.cn/info/1003/3084.htm",
+      "source": "天津美术学院招生办公室",
+      "verified": false,
+      "automated": true,
+      "id": "f7b9d5a52ff23b3428bc"
     },
     {
       "date": "2026-07-15",
@@ -193,6 +244,23 @@
     },
     {
       "date": "2026-07-12",
+      "school": "天津美术学院",
+      "type": "score",
+      "scope": "pending",
+      "important": false,
+      "title": "天津美术学院2026年本科艺术类校考批录取最低分数线",
+      "summary": "页面涉及：美术学；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学"
+      ],
+      "url": "https://zsbgs.tjarts.edu.cn/info/1003/3074.htm",
+      "source": "天津美术学院招生办公室",
+      "verified": false,
+      "automated": true,
+      "id": "3cf5dee5534dcbc5171f"
+    },
+    {
+      "date": "2026-07-12",
       "school": "中央民族大学",
       "type": "score",
       "scope": "national",
@@ -213,6 +281,34 @@
       "verified": false,
       "automated": true,
       "id": "7c2fb66fe379cadffd97"
+    },
+    {
+      "date": "2026-07-11",
+      "school": "广州美术学院",
+      "type": "score",
+      "scope": "national",
+      "important": false,
+      "title": "广州美术学院2026年普通本科录取情况公布（持续更新） 2026-07-11",
+      "summary": "页面涉及：美术与设计、美术学、绘画、中国画、雕塑、视觉传达、环境设计、产品设计、数字媒体艺术、工艺美术、服装与服饰设计、公共艺术；内容属于全国性信息。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术与设计",
+        "美术学",
+        "绘画",
+        "中国画",
+        "雕塑",
+        "视觉传达",
+        "环境设计",
+        "产品设计",
+        "数字媒体艺术",
+        "工艺美术",
+        "服装与服饰设计",
+        "公共艺术"
+      ],
+      "url": "https://zs.gzarts.edu.cn/info/1037/4799.htm",
+      "source": "广州美术学院招生考试中心",
+      "verified": false,
+      "automated": true,
+      "id": "41306867543a61f189c2"
     },
     {
       "date": "2026-07-11",
@@ -249,15 +345,1930 @@
       "verified": false,
       "automated": true,
       "id": "8390bf7d8df5b58f3a4a"
+    },
+    {
+      "date": "2026-07-05",
+      "school": "广州美术学院",
+      "type": "score",
+      "scope": "national",
+      "important": false,
+      "title": "广州美术学院2026普通本科招生录取工作声明 2026-07-05",
+      "summary": "页面涉及：美术学；内容属于全国性信息。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学"
+      ],
+      "url": "https://zs.gzarts.edu.cn/info/1037/4779.htm",
+      "source": "广州美术学院招生考试中心",
+      "verified": false,
+      "automated": true,
+      "id": "0dd4816a4cefc2bb3d10"
+    }
+  ],
+  "historyRecords": [
+    {
+      "date": "2026-09-14",
+      "school": "中央民族大学",
+      "type": "policy",
+      "scope": "national",
+      "important": false,
+      "title": "中央民族大学2027年艺术类本科专业招生录取方式公告 2026-09-14",
+      "summary": "页面涉及：美术类、美术学、绘画、中国画、视觉传达、环境设计、服装与服饰设计；内容属于全国性信息。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术类",
+        "美术学",
+        "绘画",
+        "中国画",
+        "视觉传达",
+        "环境设计",
+        "服装与服饰设计"
+      ],
+      "url": "https://zb.muc.edu.cn/content/zs/ysl/15724ff1-ae89-11f1-98a5-6c92bf4353bb.htm",
+      "source": "中央民族大学本科招生网",
+      "verified": false,
+      "automated": true,
+      "id": "6e43a0951d6719b41d0d"
+    },
+    {
+      "date": "2026-08-03",
+      "school": "中国传媒大学",
+      "type": "policy",
+      "scope": "national",
+      "important": false,
+      "title": "中国传媒大学2027年本科艺术类专业招生录取方式公告",
+      "summary": "页面涉及：视觉传达、环境设计、数字媒体艺术、摄影、动画、戏剧影视美术设计、艺术与科技；内容属于全国性信息。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "视觉传达",
+        "环境设计",
+        "数字媒体艺术",
+        "摄影",
+        "动画",
+        "戏剧影视美术设计",
+        "艺术与科技"
+      ],
+      "url": "https://zhaosheng.cuc.edu.cn/2026/0801/c5842a273087/page.htm",
+      "source": "中国传媒大学本科招生网",
+      "verified": false,
+      "automated": true,
+      "id": "3125f04bbf0efe2f1caf"
+    },
+    {
+      "date": "2026-08-02",
+      "school": "鲁迅美术学院",
+      "type": "score",
+      "scope": "national",
+      "important": false,
+      "title": "鲁迅美术学院2026年本科招生艺术类统考专业、普通类专业录取情况公告 2026.08.02",
+      "summary": "页面涉及：美术学、环境设计、产品设计；内容属于全国性信息。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学",
+        "环境设计",
+        "产品设计"
+      ],
+      "url": "https://www.lumei.edu.cn/info/1207/64865.htm",
+      "source": "鲁迅美术学院招生就业处",
+      "verified": false,
+      "automated": true,
+      "id": "de46d24b7f307a9c6f53"
+    },
+    {
+      "date": "2026-07-28",
+      "school": "四川美术学院",
+      "type": "score",
+      "scope": "national",
+      "important": false,
+      "title": "四川美术学院2026年本科录取分数线...",
+      "summary": "页面涉及：美术学；内容属于全国性信息。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学"
+      ],
+      "url": "https://www.scfai.edu.cn/zsb/info/1002/4706.htm",
+      "source": "四川美术学院招生处",
+      "verified": false,
+      "automated": true,
+      "id": "1c167e4891b1caad702c"
+    },
+    {
+      "date": "2026-07-28",
+      "school": "天津美术学院",
+      "type": "score",
+      "scope": "pending",
+      "important": false,
+      "title": "天津美术学院2026年普通类专业录取分数线",
+      "summary": "页面涉及：美术学；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学"
+      ],
+      "url": "https://zsbgs.tjarts.edu.cn/info/1003/3124.htm",
+      "source": "天津美术学院招生办公室",
+      "verified": false,
+      "automated": true,
+      "id": "d57c4cf85094d591b00f"
+    },
+    {
+      "date": "2026-07-25",
+      "school": "西安美术学院",
+      "type": "policy",
+      "scope": "pending",
+      "important": false,
+      "title": "2026级艺术本科提前批校考类、统考类新生录取通知...",
+      "summary": "页面涉及：美术学、中国画、雕塑、工艺美术、动画；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学",
+        "中国画",
+        "雕塑",
+        "工艺美术",
+        "动画"
+      ],
+      "url": "https://zhshch.xafa.edu.cn/info/1014/4726.htm",
+      "source": "西安美术学院招生信息网",
+      "verified": false,
+      "automated": true,
+      "id": "72932f6823834b114978"
+    },
+    {
+      "date": "2026-07-24",
+      "school": "西安美术学院",
+      "type": "score",
+      "scope": "liaoning",
+      "important": false,
+      "title": "西安美术学院2026年本科招生艺术提前批统考类专业...",
+      "summary": "页面涉及：美术学、中国画、雕塑、视觉传达、环境设计、产品设计、数字媒体艺术、工艺美术、服装与服饰设计、公共艺术、摄影、动画；正文提及辽宁。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学",
+        "中国画",
+        "雕塑",
+        "视觉传达",
+        "环境设计",
+        "产品设计",
+        "数字媒体艺术",
+        "工艺美术",
+        "服装与服饰设计",
+        "公共艺术",
+        "摄影",
+        "动画"
+      ],
+      "url": "https://zhshch.xafa.edu.cn/info/1014/4716.htm",
+      "source": "西安美术学院招生信息网",
+      "verified": false,
+      "automated": true,
+      "id": "74491247479e3540afbe"
+    },
+    {
+      "date": "2026-07-22",
+      "school": "四川美术学院",
+      "type": "score",
+      "scope": "national",
+      "important": false,
+      "title": "四川美术学院2026年本科录取分数线...",
+      "summary": "页面涉及：美术学；内容属于全国性信息。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学"
+      ],
+      "url": "https://www.scfai.edu.cn/zsb/info/1002/4686.htm",
+      "source": "四川美术学院招生处",
+      "verified": false,
+      "automated": true,
+      "id": "eaee6961dc11065e4a98"
+    },
+    {
+      "date": "2026-07-22",
+      "school": "天津美术学院",
+      "type": "score",
+      "scope": "pending",
+      "important": false,
+      "title": "天津美术学院2026年艺术类统考专业录取分数线",
+      "summary": "页面涉及：美术学；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学"
+      ],
+      "url": "https://zsbgs.tjarts.edu.cn/info/1003/3094.htm",
+      "source": "天津美术学院招生办公室",
+      "verified": false,
+      "automated": true,
+      "id": "1e97eb7d1f09773c314e"
+    },
+    {
+      "date": "2026-07-16",
+      "school": "鲁迅美术学院",
+      "type": "score",
+      "scope": "national",
+      "important": false,
+      "title": "鲁迅美术学院2026年本科招生艺术类校考专业录取情况公告 2026.07.16",
+      "summary": "页面涉及：美术学、环境设计、产品设计；内容属于全国性信息。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学",
+        "环境设计",
+        "产品设计"
+      ],
+      "url": "https://www.lumei.edu.cn/info/1207/64745.htm",
+      "source": "鲁迅美术学院招生就业处",
+      "verified": false,
+      "automated": true,
+      "id": "7f8e200bdf795eeefe16"
+    },
+    {
+      "date": "2026-07-15",
+      "school": "天津美术学院",
+      "type": "notice",
+      "scope": "pending",
+      "important": false,
+      "title": "天津美术学院2026年本科招生录取工作安排",
+      "summary": "页面涉及：美术学；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学"
+      ],
+      "url": "https://zsbgs.tjarts.edu.cn/info/1003/3084.htm",
+      "source": "天津美术学院招生办公室",
+      "verified": false,
+      "automated": true,
+      "id": "f7b9d5a52ff23b3428bc"
+    },
+    {
+      "date": "2026-07-15",
+      "school": "西安美术学院",
+      "type": "score",
+      "scope": "national",
+      "important": false,
+      "title": "西安美术学院2026年本科招生艺术提前批校考类专业...",
+      "summary": "页面涉及：美术学、绘画、中国画、雕塑、工艺美术、动画；内容属于全国性信息。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学",
+        "绘画",
+        "中国画",
+        "雕塑",
+        "工艺美术",
+        "动画"
+      ],
+      "url": "https://zhshch.xafa.edu.cn/info/1014/4676.htm",
+      "source": "西安美术学院招生信息网",
+      "verified": false,
+      "automated": true,
+      "id": "0c352b619e713acc44fb"
+    },
+    {
+      "date": "2026-07-12",
+      "school": "天津美术学院",
+      "type": "score",
+      "scope": "pending",
+      "important": false,
+      "title": "天津美术学院2026年本科艺术类校考批录取最低分数线",
+      "summary": "页面涉及：美术学；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学"
+      ],
+      "url": "https://zsbgs.tjarts.edu.cn/info/1003/3074.htm",
+      "source": "天津美术学院招生办公室",
+      "verified": false,
+      "automated": true,
+      "id": "3cf5dee5534dcbc5171f"
+    },
+    {
+      "date": "2026-07-12",
+      "school": "中央民族大学",
+      "type": "score",
+      "scope": "national",
+      "important": false,
+      "title": "中央民族大学2026年艺术类校考专业拟录取原则及分数线 2026-07-12",
+      "summary": "页面涉及：美术类、美术学、绘画、中国画、视觉传达、环境设计、服装与服饰设计；内容属于全国性信息。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术类",
+        "美术学",
+        "绘画",
+        "中国画",
+        "视觉传达",
+        "环境设计",
+        "服装与服饰设计"
+      ],
+      "url": "https://zb.muc.edu.cn/content/zs/ysl/351084db-7da4-11f1-98a5-6c92bf4353bb.htm",
+      "source": "中央民族大学本科招生网",
+      "verified": false,
+      "automated": true,
+      "id": "7c2fb66fe379cadffd97"
+    },
+    {
+      "date": "2026-07-11",
+      "school": "广州美术学院",
+      "type": "score",
+      "scope": "national",
+      "important": false,
+      "title": "广州美术学院2026年普通本科录取情况公布（持续更新） 2026-07-11",
+      "summary": "页面涉及：美术与设计、美术学、绘画、中国画、雕塑、视觉传达、环境设计、产品设计、数字媒体艺术、工艺美术、服装与服饰设计、公共艺术；内容属于全国性信息。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术与设计",
+        "美术学",
+        "绘画",
+        "中国画",
+        "雕塑",
+        "视觉传达",
+        "环境设计",
+        "产品设计",
+        "数字媒体艺术",
+        "工艺美术",
+        "服装与服饰设计",
+        "公共艺术"
+      ],
+      "url": "https://zs.gzarts.edu.cn/info/1037/4799.htm",
+      "source": "广州美术学院招生考试中心",
+      "verified": false,
+      "automated": true,
+      "id": "41306867543a61f189c2"
+    },
+    {
+      "date": "2026-07-11",
+      "school": "四川美术学院",
+      "type": "score",
+      "scope": "national",
+      "important": false,
+      "title": "四川美术学院2026年本科录取分数线...",
+      "summary": "页面涉及：美术学；内容属于全国性信息。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学"
+      ],
+      "url": "https://www.scfai.edu.cn/zsb/info/1002/4646.htm",
+      "source": "四川美术学院招生处",
+      "verified": false,
+      "automated": true,
+      "id": "b6b72d4ae8316ebd70ac"
+    },
+    {
+      "date": "2026-07-10",
+      "school": "上海大学",
+      "type": "score",
+      "scope": "pending",
+      "important": false,
+      "title": "上海大学2026年艺术类本科专业录取分数线(校考)",
+      "summary": "页面涉及：绘画、中国画、雕塑；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "绘画",
+        "中国画",
+        "雕塑"
+      ],
+      "url": "https://mp.weixin.qq.com/s/wDJNQpLBZ4YqNP2Ds7WleA",
+      "source": "上海大学本科招生网",
+      "verified": false,
+      "automated": true,
+      "id": "8390bf7d8df5b58f3a4a"
+    },
+    {
+      "date": "2026-07-05",
+      "school": "广州美术学院",
+      "type": "score",
+      "scope": "national",
+      "important": false,
+      "title": "广州美术学院2026普通本科招生录取工作声明 2026-07-05",
+      "summary": "页面涉及：美术学；内容属于全国性信息。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学"
+      ],
+      "url": "https://zs.gzarts.edu.cn/info/1037/4779.htm",
+      "source": "广州美术学院招生考试中心",
+      "verified": false,
+      "automated": true,
+      "id": "0dd4816a4cefc2bb3d10"
+    },
+    {
+      "date": "2026-06-25",
+      "school": "湖北美术学院",
+      "type": "score",
+      "scope": "pending",
+      "important": false,
+      "title": "本科招生 Undergraduate Enrollment",
+      "summary": "页面涉及：美术学；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学"
+      ],
+      "url": "https://zjc.hifa.edu.cn/bkzs.htm",
+      "source": "湖北美术学院招生就业处",
+      "verified": false,
+      "automated": true,
+      "id": "79755fea5d035c104f59"
+    },
+    {
+      "date": "2026-06-18",
+      "school": "天津美术学院",
+      "type": "notice",
+      "scope": "pending",
+      "important": false,
+      "title": "天津美术学院2026年本科招生政策解读及志愿填报指南",
+      "summary": "页面涉及：美术学；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学"
+      ],
+      "url": "https://zsbgs.tjarts.edu.cn/info/1003/3064.htm",
+      "source": "天津美术学院招生办公室",
+      "verified": false,
+      "automated": true,
+      "id": "cad49d888f148dd8465c"
+    },
+    {
+      "date": "2026-06-18",
+      "school": "天津美术学院",
+      "type": "notice",
+      "scope": "pending",
+      "important": false,
+      "title": "天津美术学院2026年本科招生录取咨询方式",
+      "summary": "页面涉及：美术学；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学"
+      ],
+      "url": "https://zsbgs.tjarts.edu.cn/info/1003/3054.htm",
+      "source": "天津美术学院招生办公室",
+      "verified": false,
+      "automated": true,
+      "id": "27aeca3118eca1cf3888"
+    },
+    {
+      "date": "2026-06-17",
+      "school": "鲁迅美术学院",
+      "type": "score",
+      "scope": "pending",
+      "important": false,
+      "title": "鲁迅美术学院2026年本科招生计划 2026.06.17",
+      "summary": "页面涉及：美术学；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学"
+      ],
+      "url": "https://www.lumei.edu.cn/info/1207/64475.htm",
+      "source": "鲁迅美术学院招生就业处",
+      "verified": false,
+      "automated": true,
+      "id": "a36e70689e4b06e60c14"
+    },
+    {
+      "date": "2026-06-15",
+      "school": "中国美术学院",
+      "type": "policy",
+      "scope": "national",
+      "important": false,
+      "title": "中国美术学院2026年普通高校招生章程",
+      "summary": "页面涉及：美术与设计、美术学、绘画、中国画、雕塑、视觉传达、环境设计、产品设计、数字媒体艺术、工艺美术、服装与服饰设计、公共艺术；内容属于全国性信息。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术与设计",
+        "美术学",
+        "绘画",
+        "中国画",
+        "雕塑",
+        "视觉传达",
+        "环境设计",
+        "产品设计",
+        "数字媒体艺术",
+        "工艺美术",
+        "服装与服饰设计",
+        "公共艺术"
+      ],
+      "url": "https://zb.caa.edu.cn/info/1013/7121.htm",
+      "source": "中国美术学院招生办公室",
+      "verified": false,
+      "automated": true,
+      "id": "53bb047b91351fc55582"
+    },
+    {
+      "date": "2026-06-12",
+      "school": "天津美术学院",
+      "type": "notice",
+      "scope": "pending",
+      "important": false,
+      "title": "天津美术学院2026年普通本科招生章程",
+      "summary": "页面涉及：美术学；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学"
+      ],
+      "url": "https://zsbgs.tjarts.edu.cn/info/1003/3024.htm",
+      "source": "天津美术学院招生办公室",
+      "verified": false,
+      "automated": true,
+      "id": "9a066fa14482e396821e"
+    },
+    {
+      "date": "2026-06-11",
+      "school": "湖北美术学院",
+      "type": "notice",
+      "scope": "pending",
+      "important": false,
+      "title": "2026.06.11 湖北美术学院2026年普通本科招生现场咨询公告",
+      "summary": "页面涉及：美术学；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学"
+      ],
+      "url": "https://zjc.hifa.edu.cn/info/1090/2693.htm",
+      "source": "湖北美术学院招生就业处",
+      "verified": false,
+      "automated": true,
+      "id": "2d457f80ffea6a56e296"
+    },
+    {
+      "date": "2026-06-10",
+      "school": "西安美术学院",
+      "type": "policy",
+      "scope": "national",
+      "important": false,
+      "title": "西安美术学院2026年本科招生章程",
+      "summary": "页面涉及：美术与设计、美术学、绘画、中国画、雕塑、视觉传达、环境设计、产品设计、数字媒体艺术、工艺美术、服装与服饰设计、公共艺术；内容属于全国性信息。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术与设计",
+        "美术学",
+        "绘画",
+        "中国画",
+        "雕塑",
+        "视觉传达",
+        "环境设计",
+        "产品设计",
+        "数字媒体艺术",
+        "工艺美术",
+        "服装与服饰设计",
+        "公共艺术"
+      ],
+      "url": "https://zhshch.xafa.edu.cn/info/1015/4606.htm",
+      "source": "西安美术学院招生信息网",
+      "verified": false,
+      "automated": true,
+      "id": "a8314701e98851c7e91b"
+    },
+    {
+      "date": "2026-06-02",
+      "school": "广州美术学院",
+      "type": "policy",
+      "scope": "national",
+      "important": false,
+      "title": "广州美术学院2026年夏季普通高考招生章程 2026-06-02",
+      "summary": "页面涉及：美术与设计、美术学；内容属于全国性信息。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术与设计",
+        "美术学"
+      ],
+      "url": "https://zs.gzarts.edu.cn/info/1037/4749.htm",
+      "source": "广州美术学院招生考试中心",
+      "verified": false,
+      "automated": true,
+      "id": "2fb4e294c6d8ca4a2730"
+    },
+    {
+      "date": "2026-06-01",
+      "school": "湖北美术学院",
+      "type": "policy",
+      "scope": "national",
+      "important": false,
+      "title": "2026.06.01 湖北美术学院2026年全日制普通本科招生章程",
+      "summary": "页面涉及：美术与设计、美术学、绘画、动画；内容属于全国性信息。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术与设计",
+        "美术学",
+        "绘画",
+        "动画"
+      ],
+      "url": "https://mp.weixin.qq.com/s/Q9_CAdQtpDjj5Q72MdKgxg",
+      "source": "湖北美术学院招生就业处",
+      "verified": false,
+      "automated": true,
+      "id": "dd6b9f0e3d6ca3addd31"
+    },
+    {
+      "date": "2026-05-25",
+      "school": "西安美术学院",
+      "type": "score",
+      "scope": "national",
+      "important": false,
+      "title": "西安美术学院特殊教育艺术学院2026年招生录取规则...",
+      "summary": "页面涉及：美术学、中国画、雕塑、工艺美术、动画；内容属于全国性信息。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学",
+        "中国画",
+        "雕塑",
+        "工艺美术",
+        "动画"
+      ],
+      "url": "https://zhshch.xafa.edu.cn/info/1018/4556.htm",
+      "source": "西安美术学院招生信息网",
+      "verified": false,
+      "automated": true,
+      "id": "2cdabd693890b105bb15"
+    },
+    {
+      "date": "2026-04-22",
+      "school": "西安美术学院",
+      "type": "notice",
+      "scope": "pending",
+      "important": false,
+      "title": "西安美术学院特殊教育艺术学院2026年招生考试成绩...",
+      "summary": "页面涉及：美术学、中国画、雕塑、工艺美术、动画；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学",
+        "中国画",
+        "雕塑",
+        "工艺美术",
+        "动画"
+      ],
+      "url": "https://zhshch.xafa.edu.cn/info/1018/4516.htm",
+      "source": "西安美术学院招生信息网",
+      "verified": false,
+      "automated": true,
+      "id": "0752e8aa9528eef10bfa"
+    },
+    {
+      "date": "2026-04-09",
+      "school": "西安美术学院",
+      "type": "notice",
+      "scope": "pending",
+      "important": false,
+      "title": "西安美术学院特殊教育艺术学院2026年本科招生考试...",
+      "summary": "页面涉及：美术学、绘画、中国画、雕塑、工艺美术、动画；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学",
+        "绘画",
+        "中国画",
+        "雕塑",
+        "工艺美术",
+        "动画"
+      ],
+      "url": "https://zhshch.xafa.edu.cn/info/1018/4506.htm",
+      "source": "西安美术学院招生信息网",
+      "verified": false,
+      "automated": true,
+      "id": "03f41d46fedd92011b47"
+    },
+    {
+      "date": "2026-04-03",
+      "school": "上海大学",
+      "type": "policy",
+      "scope": "pending",
+      "important": false,
+      "title": "上海大学2026年艺术类本科专业校考成绩开通查询",
+      "summary": "页面涉及：美术学；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学"
+      ],
+      "url": "https://bkzsw.shu.edu.cn/info/1798/38560.htm",
+      "source": "上海大学本科招生网",
+      "verified": false,
+      "automated": true,
+      "id": "4a9a56244c61b166f8af"
+    },
+    {
+      "date": "2026-03-25",
+      "school": "广州美术学院",
+      "type": "score",
+      "scope": "pending",
+      "important": false,
+      "title": "关于公布广州美术学院2026年普通本科港澳台侨招生专业考试成绩的通知 2026-03-25",
+      "summary": "页面涉及：美术学；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学"
+      ],
+      "url": "https://zs.gzarts.edu.cn/info/1037/4539.htm",
+      "source": "广州美术学院招生考试中心",
+      "verified": false,
+      "automated": true,
+      "id": "d00eb18b630d7272dfe3"
+    },
+    {
+      "date": "2026-03-24",
+      "school": "广州美术学院",
+      "type": "policy",
+      "scope": "national",
+      "important": false,
+      "title": "广州美术学院关于公布2026年普通本科招生校考专业复试成绩的通知 2026-03-24",
+      "summary": "页面涉及：美术与设计、美术学、绘画、中国画、雕塑、视觉传达、环境设计、产品设计、数字媒体艺术、工艺美术、服装与服饰设计、动画；内容属于全国性信息。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术与设计",
+        "美术学",
+        "绘画",
+        "中国画",
+        "雕塑",
+        "视觉传达",
+        "环境设计",
+        "产品设计",
+        "数字媒体艺术",
+        "工艺美术",
+        "服装与服饰设计",
+        "动画"
+      ],
+      "url": "https://zs.gzarts.edu.cn/info/1037/4519.htm",
+      "source": "广州美术学院招生考试中心",
+      "verified": false,
+      "automated": true,
+      "id": "f3a6c86ff96c08b2720d"
+    },
+    {
+      "date": "2026-03-23",
+      "school": "中央民族大学",
+      "type": "policy",
+      "scope": "national",
+      "important": false,
+      "title": "中央民族大学2026年艺术类校考专业复试结果查询 2026-03-23",
+      "summary": "页面涉及：美术类、美术学；内容属于全国性信息。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术类",
+        "美术学"
+      ],
+      "url": "https://zb.muc.edu.cn/content/zs/ysl/8b9acadf-2658-11f1-98a5-6c92bf4353bb.htm",
+      "source": "中央民族大学本科招生网",
+      "verified": false,
+      "automated": true,
+      "id": "2dd549b916661ac106bd"
+    },
+    {
+      "date": "2026-03-19",
+      "school": "中国美术学院",
+      "type": "policy",
+      "scope": "pending",
+      "important": false,
+      "title": "中国美术学院2026年招收香港中学文凭生简章",
+      "summary": "页面涉及：美术与设计、美术学、绘画、中国画、雕塑、视觉传达、环境设计、产品设计、数字媒体艺术、工艺美术、服装与服饰设计、公共艺术；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术与设计",
+        "美术学",
+        "绘画",
+        "中国画",
+        "雕塑",
+        "视觉传达",
+        "环境设计",
+        "产品设计",
+        "数字媒体艺术",
+        "工艺美术",
+        "服装与服饰设计",
+        "公共艺术"
+      ],
+      "url": "https://zb.caa.edu.cn/info/1013/6841.htm",
+      "source": "中国美术学院招生办公室",
+      "verified": false,
+      "automated": true,
+      "id": "867cbd09272579b2f410"
+    },
+    {
+      "date": "2026-03-13",
+      "school": "西安美术学院",
+      "type": "notice",
+      "scope": "national",
+      "important": false,
+      "title": "西安美术学院特殊教育艺术学院2026年本科招生简章",
+      "summary": "页面涉及：美术学、中国画、雕塑、工艺美术、动画；内容属于全国性信息。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学",
+        "中国画",
+        "雕塑",
+        "工艺美术",
+        "动画"
+      ],
+      "url": "https://zhshch.xafa.edu.cn/info/1019/4416.htm",
+      "source": "西安美术学院招生信息网",
+      "verified": false,
+      "automated": true,
+      "id": "ff311c64361ad3bf0d05"
+    },
+    {
+      "date": "2026-03-12",
+      "school": "湖北美术学院",
+      "type": "score",
+      "scope": "pending",
+      "important": false,
+      "title": "2026.03.12 湖北美术学院2026年普通本科招生现场复试专业合格分数线及成绩查询公告",
+      "summary": "页面涉及：美术与设计、美术学；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术与设计",
+        "美术学"
+      ],
+      "url": "https://zjc.hifa.edu.cn/info/1090/2695.htm",
+      "source": "湖北美术学院招生就业处",
+      "verified": false,
+      "automated": true,
+      "id": "2a6681530b584ec0053c"
+    },
+    {
+      "date": "2026-03-12",
+      "school": "鲁迅美术学院",
+      "type": "score",
+      "scope": "pending",
+      "important": false,
+      "title": "鲁迅美术学院2026年本科招生复试成绩查询及合格分数线公告 2026.03.12",
+      "summary": "页面涉及：美术学；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学"
+      ],
+      "url": "https://www.lumei.edu.cn/info/1207/62205.htm",
+      "source": "鲁迅美术学院招生就业处",
+      "verified": false,
+      "automated": true,
+      "id": "df310f090c6ad21ea4d7"
+    },
+    {
+      "date": "2026-03-09",
+      "school": "天津美术学院",
+      "type": "notice",
+      "scope": "pending",
+      "important": false,
+      "title": "天津美术学院2026年本科招生复试成绩查询公告",
+      "summary": "页面涉及：美术学；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学"
+      ],
+      "url": "https://zsbgs.tjarts.edu.cn/info/1003/2844.htm",
+      "source": "天津美术学院招生办公室",
+      "verified": false,
+      "automated": true,
+      "id": "812720ee62aacce0c373"
+    },
+    {
+      "date": "2026-02-10",
+      "school": "中国传媒大学",
+      "type": "notice",
+      "scope": "pending",
+      "important": false,
+      "title": "中国传媒大学2026年艺术类本科校考专业招生考试复试结果查询通知",
+      "summary": "页面涉及：视觉传达、环境设计、数字媒体艺术、摄影、动画、戏剧影视美术设计、艺术与科技；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "视觉传达",
+        "环境设计",
+        "数字媒体艺术",
+        "摄影",
+        "动画",
+        "戏剧影视美术设计",
+        "艺术与科技"
+      ],
+      "url": "https://zhaosheng.cuc.edu.cn/2026/0209/c5842a266970/page.htm",
+      "source": "中国传媒大学本科招生网",
+      "verified": false,
+      "automated": true,
+      "id": "b2e6ebfc8122439e674b"
+    },
+    {
+      "date": "2026-02-04",
+      "school": "天津美术学院",
+      "type": "notice",
+      "scope": "pending",
+      "important": false,
+      "title": "天津美术学院2026年寒假期间招生咨询方式",
+      "summary": "页面涉及：美术学；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学"
+      ],
+      "url": "https://zsbgs.tjarts.edu.cn/info/1003/2824.htm",
+      "source": "天津美术学院招生办公室",
+      "verified": false,
+      "automated": true,
+      "id": "e349fbfeed69cc2a8f3d"
+    },
+    {
+      "date": "2026-02-03",
+      "school": "中央民族大学",
+      "type": "policy",
+      "scope": "national",
+      "important": false,
+      "title": "中央民族大学2026年艺术类校考专业初试结果查询及复试安排 2026-02-03",
+      "summary": "页面涉及：美术类；内容属于全国性信息。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术类"
+      ],
+      "url": "https://zb.muc.edu.cn/content/zs/ysl/04116297-ff63-11f0-98a5-6c92bf4353bb.htm",
+      "source": "中央民族大学本科招生网",
+      "verified": false,
+      "automated": true,
+      "id": "d33e1360390e12caf85d"
+    },
+    {
+      "date": "2026-02-01",
+      "school": "广州美术学院",
+      "type": "notice",
+      "scope": "liaoning",
+      "important": false,
+      "title": "广州美术学院2026年本科招生现场复试公告 2026-02-01",
+      "summary": "页面涉及：美术与设计、美术学；正文提及辽宁。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术与设计",
+        "美术学"
+      ],
+      "url": "https://zs.gzarts.edu.cn/info/1037/4479.htm",
+      "source": "广州美术学院招生考试中心",
+      "verified": false,
+      "automated": true,
+      "id": "7b1070f0d462dd320ec8"
+    },
+    {
+      "date": "2026-02-01",
+      "school": "广州美术学院",
+      "type": "notice",
+      "scope": "pending",
+      "important": false,
+      "title": "温馨提醒|广州美术学院招生考试中心2026年寒假工作安排 2026-02-01",
+      "summary": "页面涉及：美术学；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学"
+      ],
+      "url": "https://zs.gzarts.edu.cn/info/1037/4459.htm",
+      "source": "广州美术学院招生考试中心",
+      "verified": false,
+      "automated": true,
+      "id": "484da09ad0c519a6ead6"
+    },
+    {
+      "date": "2026-02-01",
+      "school": "广州美术学院",
+      "type": "notice",
+      "scope": "pending",
+      "important": false,
+      "title": "关于广州美术学院2026年本科招生网络初试成绩复核结果的通知 2026-02-01",
+      "summary": "页面涉及：美术学；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学"
+      ],
+      "url": "https://zs.gzarts.edu.cn/info/1037/4449.htm",
+      "source": "广州美术学院招生考试中心",
+      "verified": false,
+      "automated": true,
+      "id": "183cee07784e582a321c"
+    },
+    {
+      "date": "2026-01-30",
+      "school": "清华大学美术学院",
+      "type": "policy",
+      "scope": "national",
+      "important": false,
+      "title": "招生简章 2026.01.30 清华大学2026年艺术类专业（美术学院）本科招生简章",
+      "summary": "页面涉及：美术与设计、美术学、设计学类；内容属于全国性信息。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术与设计",
+        "美术学",
+        "设计学类"
+      ],
+      "url": "https://www.join-tsinghua.edu.cn/info/1009/2146.htm",
+      "source": "清华大学美术学院",
+      "verified": false,
+      "automated": true,
+      "id": "09f0e0e62a1c1388564b"
+    },
+    {
+      "date": "2026-01-28",
+      "school": "广州美术学院",
+      "type": "policy",
+      "scope": "pending",
+      "important": false,
+      "title": "广州美术学院2026年本科招生初试成绩公布及复试报名通知 2026-01-28",
+      "summary": "页面涉及：美术与设计、美术学；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术与设计",
+        "美术学"
+      ],
+      "url": "https://zs.gzarts.edu.cn/info/1037/4439.htm",
+      "source": "广州美术学院招生考试中心",
+      "verified": false,
+      "automated": true,
+      "id": "dd825c41b742141061ae"
+    },
+    {
+      "date": "2026-01-28",
+      "school": "中国传媒大学",
+      "type": "policy",
+      "scope": "pending",
+      "important": false,
+      "title": "中国传媒大学2026年艺术类本科校考专业招生考试复试须知",
+      "summary": "页面涉及：视觉传达、环境设计、数字媒体艺术、摄影、动画、戏剧影视美术设计、艺术与科技；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "视觉传达",
+        "环境设计",
+        "数字媒体艺术",
+        "摄影",
+        "动画",
+        "戏剧影视美术设计",
+        "艺术与科技"
+      ],
+      "url": "https://zhaosheng.cuc.edu.cn/2026/0127/c5842a266824/page.htm",
+      "source": "中国传媒大学本科招生网",
+      "verified": false,
+      "automated": true,
+      "id": "90b9bba76854f4e8004c"
+    },
+    {
+      "date": "2026-01-28",
+      "school": "中国传媒大学",
+      "type": "notice",
+      "scope": "pending",
+      "important": false,
+      "title": "中国传媒大学2026年艺术类本科校考专业招生考试初试成绩查询通知",
+      "summary": "页面涉及：视觉传达、环境设计、数字媒体艺术、摄影、动画、戏剧影视美术设计、艺术与科技；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "视觉传达",
+        "环境设计",
+        "数字媒体艺术",
+        "摄影",
+        "动画",
+        "戏剧影视美术设计",
+        "艺术与科技"
+      ],
+      "url": "https://zhaosheng.cuc.edu.cn/2026/0127/c5842a266823/page.htm",
+      "source": "中国传媒大学本科招生网",
+      "verified": false,
+      "automated": true,
+      "id": "25061f12ea0e6a5f489d"
+    },
+    {
+      "date": "2026-01-28",
+      "school": "中国美术学院",
+      "type": "policy",
+      "scope": "pending",
+      "important": false,
+      "title": "中国美术学院2026年联合招收华侨港澳台学生简章",
+      "summary": "页面涉及：美术学、绘画、中国画、雕塑、视觉传达、环境设计、产品设计、数字媒体艺术、工艺美术、服装与服饰设计、公共艺术、摄影；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学",
+        "绘画",
+        "中国画",
+        "雕塑",
+        "视觉传达",
+        "环境设计",
+        "产品设计",
+        "数字媒体艺术",
+        "工艺美术",
+        "服装与服饰设计",
+        "公共艺术",
+        "摄影"
+      ],
+      "url": "https://zb.caa.edu.cn/info/1013/6811.htm",
+      "source": "中国美术学院招生办公室",
+      "verified": false,
+      "automated": true,
+      "id": "76ee9c99ddddf781fcd8"
+    },
+    {
+      "date": "2026-01-26",
+      "school": "湖北美术学院",
+      "type": "score",
+      "scope": "pending",
+      "important": false,
+      "title": "2026.01.26 湖北美术学院2026年普通本科招生现场复试递补报名公告",
+      "summary": "页面涉及：美术学；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学"
+      ],
+      "url": "https://zjc.hifa.edu.cn/info/1090/2696.htm",
+      "source": "湖北美术学院招生就业处",
+      "verified": false,
+      "automated": true,
+      "id": "ebb3ccba21c8e0b6ff67"
+    },
+    {
+      "date": "2026-01-23",
+      "school": "湖北美术学院",
+      "type": "notice",
+      "scope": "pending",
+      "important": false,
+      "title": "2026.01.23 湖北美术学院2026年普通本科招生网络初试成绩查询及现场复试报名公告",
+      "summary": "页面涉及：美术学；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学"
+      ],
+      "url": "https://zjc.hifa.edu.cn/info/1090/2697.htm",
+      "source": "湖北美术学院招生就业处",
+      "verified": false,
+      "automated": true,
+      "id": "dd56bf63b3ca3ee91ca1"
+    },
+    {
+      "date": "2026-01-23",
+      "school": "鲁迅美术学院",
+      "type": "score",
+      "scope": "pending",
+      "important": false,
+      "title": "鲁迅美术学院2026年本科招生复试递补报名公告 2026.01.23",
+      "summary": "页面涉及：美术类、美术学；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术类",
+        "美术学"
+      ],
+      "url": "https://www.lumei.edu.cn/info/1207/61615.htm",
+      "source": "鲁迅美术学院招生就业处",
+      "verified": false,
+      "automated": true,
+      "id": "101b2faf8bcc3ad92bb9"
+    },
+    {
+      "date": "2026-01-22",
+      "school": "湖北美术学院",
+      "type": "notice",
+      "scope": "pending",
+      "important": false,
+      "title": "2026.01.22 湖北美术学院2026年普通本科招生现场复试考生须知",
+      "summary": "页面涉及：美术与设计、美术学；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术与设计",
+        "美术学"
+      ],
+      "url": "https://zjc.hifa.edu.cn/info/1090/2698.htm",
+      "source": "湖北美术学院招生就业处",
+      "verified": false,
+      "automated": true,
+      "id": "c5b88f60b24e0d86083b"
+    },
+    {
+      "date": "2026-01-17",
+      "school": "鲁迅美术学院",
+      "type": "notice",
+      "scope": "liaoning",
+      "important": false,
+      "title": "鲁迅美术学院2026年本科招生复试报名通知 2026.01.17",
+      "summary": "页面涉及：美术学；正文提及辽宁。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学"
+      ],
+      "url": "https://www.lumei.edu.cn/info/1207/61335.htm",
+      "source": "鲁迅美术学院招生就业处",
+      "verified": false,
+      "automated": true,
+      "id": "fcddda4fc1f2db345874"
+    },
+    {
+      "date": "2026-01-15",
+      "school": "鲁迅美术学院",
+      "type": "policy",
+      "scope": "pending",
+      "important": false,
+      "title": "鲁迅美术学院2026年本科招生网络初试结果查询公告 2026.01.15",
+      "summary": "页面涉及：美术类、美术学；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术类",
+        "美术学"
+      ],
+      "url": "https://www.lumei.edu.cn/info/1207/61325.htm",
+      "source": "鲁迅美术学院招生就业处",
+      "verified": false,
+      "automated": true,
+      "id": "9191bf0885bd16befeed"
+    },
+    {
+      "date": "2026-01-14",
+      "school": "中央民族大学",
+      "type": "policy",
+      "scope": "national",
+      "important": false,
+      "title": "中央民族大学2026年艺术类本科招生简章 2026-01-14",
+      "summary": "页面涉及：美术与设计、美术类、美术学、视觉传达；内容属于全国性信息。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术与设计",
+        "美术类",
+        "美术学",
+        "视觉传达"
+      ],
+      "url": "https://zb.muc.edu.cn/content/zs/ysl/67dd6bbb-f143-11f0-98a5-6c92bf4353bb.htm",
+      "source": "中央民族大学本科招生网",
+      "verified": false,
+      "automated": true,
+      "id": "c5da5441fde847203bf6"
+    },
+    {
+      "date": "2026-01-10",
+      "school": "中国美术学院",
+      "type": "score",
+      "scope": "pending",
+      "important": false,
+      "title": "中国美术学院2026年中国普通高等学校联合招收澳门保送生简章",
+      "summary": "页面涉及：美术与设计、美术学、绘画、中国画、雕塑、视觉传达、环境设计、产品设计、数字媒体艺术、工艺美术、服装与服饰设计、公共艺术；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术与设计",
+        "美术学",
+        "绘画",
+        "中国画",
+        "雕塑",
+        "视觉传达",
+        "环境设计",
+        "产品设计",
+        "数字媒体艺术",
+        "工艺美术",
+        "服装与服饰设计",
+        "公共艺术"
+      ],
+      "url": "https://zb.caa.edu.cn/info/1013/6641.htm",
+      "source": "中国美术学院招生办公室",
+      "verified": false,
+      "automated": true,
+      "id": "12c26698a30d46555fe5"
+    },
+    {
+      "date": "2026-01-05",
+      "school": "湖北美术学院",
+      "type": "notice",
+      "scope": "pending",
+      "important": false,
+      "title": "2026.01.05 湖北美术学院2026年普通本科招生简章 查看详情",
+      "summary": "页面涉及：美术学；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学"
+      ],
+      "url": "https://zjc.hifa.edu.cn/info/1092/2727.htm",
+      "source": "湖北美术学院招生就业处",
+      "verified": false,
+      "automated": true,
+      "id": "2441cfb668731aee3ab7"
+    },
+    {
+      "date": "2025-12-31",
+      "school": "西安美术学院",
+      "type": "policy",
+      "scope": "national",
+      "important": false,
+      "title": "西安美术学院2026年本科招生简章",
+      "summary": "页面涉及：美术与设计、美术学、绘画、中国画、雕塑、工艺美术、动画；内容属于全国性信息。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术与设计",
+        "美术学",
+        "绘画",
+        "中国画",
+        "雕塑",
+        "工艺美术",
+        "动画"
+      ],
+      "url": "https://zhshch.xafa.edu.cn/info/1015/4336.htm",
+      "source": "西安美术学院招生信息网",
+      "verified": false,
+      "automated": true,
+      "id": "e272d3529a2a1492ce11"
+    },
+    {
+      "date": "2025-12-30",
+      "school": "鲁迅美术学院",
+      "type": "notice",
+      "scope": "liaoning",
+      "important": false,
+      "title": "鲁迅美术学院2026年本科招生网络初试考生须知 2025.12.30",
+      "summary": "页面涉及：美术学；正文提及辽宁。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学"
+      ],
+      "url": "https://www.lumei.edu.cn/info/1207/61135.htm",
+      "source": "鲁迅美术学院招生就业处",
+      "verified": false,
+      "automated": true,
+      "id": "a5d0504cda36fec7699a"
+    },
+    {
+      "date": "2025-12-26",
+      "school": "鲁迅美术学院",
+      "type": "policy",
+      "scope": "liaoning",
+      "important": false,
+      "title": "鲁迅美术学院2026年本科招生简章 2025.12.26",
+      "summary": "页面涉及：美术与设计、美术类、美术学、绘画、中国画、雕塑、视觉传达、环境设计、产品设计、数字媒体艺术、工艺美术、服装与服饰设计；正文提及辽宁。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术与设计",
+        "美术类",
+        "美术学",
+        "绘画",
+        "中国画",
+        "雕塑",
+        "视觉传达",
+        "环境设计",
+        "产品设计",
+        "数字媒体艺术",
+        "工艺美术",
+        "服装与服饰设计"
+      ],
+      "url": "https://www.lumei.edu.cn/info/1207/61105.htm",
+      "source": "鲁迅美术学院招生就业处",
+      "verified": false,
+      "automated": true,
+      "id": "e23b606ad651dc506e53"
+    },
+    {
+      "date": "2025-12-26",
+      "school": "中国美术学院",
+      "type": "policy",
+      "scope": "national",
+      "important": false,
+      "title": "中国美术学院2026年本科招生简章",
+      "summary": "页面涉及：美术与设计、美术学、绘画、中国画、雕塑、视觉传达、环境设计、产品设计、数字媒体艺术、工艺美术、服装与服饰设计、公共艺术；内容属于全国性信息。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术与设计",
+        "美术学",
+        "绘画",
+        "中国画",
+        "雕塑",
+        "视觉传达",
+        "环境设计",
+        "产品设计",
+        "数字媒体艺术",
+        "工艺美术",
+        "服装与服饰设计",
+        "公共艺术"
+      ],
+      "url": "https://zb.caa.edu.cn/info/1013/6711.htm",
+      "source": "中国美术学院招生办公室",
+      "verified": false,
+      "automated": true,
+      "id": "397c7260f5b7124c8032"
+    },
+    {
+      "date": "2025-12-14",
+      "school": "中国美术学院",
+      "type": "score",
+      "scope": "pending",
+      "important": false,
+      "title": "中国美术学院2026年依据台湾地区大学入学考试学科能力测验成绩招收台湾...",
+      "summary": "页面涉及：美术与设计、美术学、绘画、中国画、雕塑、视觉传达、环境设计、产品设计、数字媒体艺术、工艺美术、服装与服饰设计、公共艺术；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术与设计",
+        "美术学",
+        "绘画",
+        "中国画",
+        "雕塑",
+        "视觉传达",
+        "环境设计",
+        "产品设计",
+        "数字媒体艺术",
+        "工艺美术",
+        "服装与服饰设计",
+        "公共艺术"
+      ],
+      "url": "https://zb.caa.edu.cn/info/1013/6681.htm",
+      "source": "中国美术学院招生办公室",
+      "verified": false,
+      "automated": true,
+      "id": "25b952959027c7748a50"
+    },
+    {
+      "date": "2025-10-28",
+      "school": "中央民族大学",
+      "type": "policy",
+      "scope": "national",
+      "important": false,
+      "title": "中央民族大学2026年艺术类本科招生统考专业与各省统考子科类对照表 2025-10-28",
+      "summary": "页面涉及：美术类；内容属于全国性信息。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术类"
+      ],
+      "url": "https://zb.muc.edu.cn/content/zs/ysl/c8b0aa59-b3a7-11f0-98a5-6c92bf4353bb.htm",
+      "source": "中央民族大学本科招生网",
+      "verified": false,
+      "automated": true,
+      "id": "d7093107397afd809359"
+    },
+    {
+      "date": "2025-10-27",
+      "school": "中国传媒大学",
+      "type": "policy",
+      "scope": "national",
+      "important": false,
+      "title": "中国传媒大学2026年艺术类本科统考专业与省统考子科类对照关系",
+      "summary": "页面涉及：美术与设计、动画；内容属于全国性信息。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术与设计",
+        "动画"
+      ],
+      "url": "https://zhaosheng.cuc.edu.cn/2025/1021/c5842a261285/page.htm",
+      "source": "中国传媒大学本科招生网",
+      "verified": false,
+      "automated": true,
+      "id": "d95a4b1cda52c26e6b7c"
+    },
+    {
+      "date": "2025-09-30",
+      "school": "鲁迅美术学院",
+      "type": "notice",
+      "scope": "pending",
+      "important": false,
+      "title": "鲁迅美术学院2026年本科招生专业省统考科类对应要求 2025.09.30",
+      "summary": "页面涉及：美术学；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学"
+      ],
+      "url": "https://www.lumei.edu.cn/info/1207/59445.htm",
+      "source": "鲁迅美术学院招生就业处",
+      "verified": false,
+      "automated": true,
+      "id": "aedef34723544c149bb1"
+    },
+    {
+      "date": "2025-09-30",
+      "school": "中央民族大学",
+      "type": "policy",
+      "scope": "national",
+      "important": false,
+      "title": "中央民族大学2026年艺术类本科招生校考专业与各省统考子科类对照表 2025-09-30",
+      "summary": "页面涉及：美术类；内容属于全国性信息。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术类"
+      ],
+      "url": "https://zb.muc.edu.cn/content/zs/ysl/119bbfbb-9c4e-11f0-98a5-6c92bf4353bb.htm",
+      "source": "中央民族大学本科招生网",
+      "verified": false,
+      "automated": true,
+      "id": "20135faf429ec34862d9"
+    },
+    {
+      "date": "2025-08-04",
+      "school": "鲁迅美术学院",
+      "type": "score",
+      "scope": "national",
+      "important": false,
+      "title": "鲁迅美术学院2025年本科招生艺术类统考专业、普通类专业录取情况公告 2025.08.04",
+      "summary": "页面涉及：美术学、环境设计、产品设计；内容属于全国性信息。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学",
+        "环境设计",
+        "产品设计"
+      ],
+      "url": "https://www.lumei.edu.cn/info/1207/58885.htm",
+      "source": "鲁迅美术学院招生就业处",
+      "verified": false,
+      "automated": true,
+      "id": "fcb1de089ed2c025357c"
+    },
+    {
+      "date": "2025-07-30",
+      "school": "西安美术学院",
+      "type": "notice",
+      "scope": "pending",
+      "important": false,
+      "title": "西安美术学院2025年特殊教育艺术学院新生录取通知...",
+      "summary": "页面涉及：美术学、中国画、雕塑、工艺美术、动画；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学",
+        "中国画",
+        "雕塑",
+        "工艺美术",
+        "动画"
+      ],
+      "url": "https://zhshch.xafa.edu.cn/info/1018/4196.htm",
+      "source": "西安美术学院招生信息网",
+      "verified": false,
+      "automated": true,
+      "id": "ee083e44219d64b58814"
+    },
+    {
+      "date": "2025-07-12",
+      "school": "鲁迅美术学院",
+      "type": "score",
+      "scope": "national",
+      "important": false,
+      "title": "鲁迅美术学院2025年本科招生艺术类校考专业录取情况公告 2025.07.12",
+      "summary": "页面涉及：美术学、环境设计、产品设计；内容属于全国性信息。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学",
+        "环境设计",
+        "产品设计"
+      ],
+      "url": "https://www.lumei.edu.cn/info/1207/58835.htm",
+      "source": "鲁迅美术学院招生就业处",
+      "verified": false,
+      "automated": true,
+      "id": "e8b7dd0901d0b411b6db"
+    },
+    {
+      "date": "2025-07-12",
+      "school": "中央民族大学",
+      "type": "score",
+      "scope": "national",
+      "important": false,
+      "title": "中央民族大学2025年艺术类校考专业拟录取原则及分数线 2025-07-12",
+      "summary": "页面涉及：美术类、美术学、绘画、中国画、视觉传达、环境设计、服装与服饰设计；内容属于全国性信息。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术类",
+        "美术学",
+        "绘画",
+        "中国画",
+        "视觉传达",
+        "环境设计",
+        "服装与服饰设计"
+      ],
+      "url": "https://zb.muc.edu.cn/content/zs/ysl/67d5a895-5e27-11f0-98a5-6c92bf4353bb.htm",
+      "source": "中央民族大学本科招生网",
+      "verified": false,
+      "automated": true,
+      "id": "745dd6019cc949cfa55d"
+    },
+    {
+      "date": "2025-06-23",
+      "school": "鲁迅美术学院",
+      "type": "score",
+      "scope": "pending",
+      "important": false,
+      "title": "鲁迅美术学院2025年本科招生计划 2025.06.23",
+      "summary": "页面涉及：美术学；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学"
+      ],
+      "url": "https://www.lumei.edu.cn/info/1207/58025.htm",
+      "source": "鲁迅美术学院招生就业处",
+      "verified": false,
+      "automated": true,
+      "id": "4c8352764156b0cd7c2d"
+    },
+    {
+      "date": "2025-06-08",
+      "school": "西安美术学院",
+      "type": "policy",
+      "scope": "national",
+      "important": false,
+      "title": "西安美术学院2025年本科招生章程",
+      "summary": "页面涉及：美术与设计、美术学、绘画、中国画、雕塑、视觉传达、环境设计、产品设计、数字媒体艺术、工艺美术、服装与服饰设计、公共艺术；内容属于全国性信息。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术与设计",
+        "美术学",
+        "绘画",
+        "中国画",
+        "雕塑",
+        "视觉传达",
+        "环境设计",
+        "产品设计",
+        "数字媒体艺术",
+        "工艺美术",
+        "服装与服饰设计",
+        "公共艺术"
+      ],
+      "url": "https://zhshch.xafa.edu.cn/info/1015/4046.htm",
+      "source": "西安美术学院招生信息网",
+      "verified": false,
+      "automated": true,
+      "id": "e3d867afa62507890899"
+    },
+    {
+      "date": "2025-05-16",
+      "school": "西安美术学院",
+      "type": "score",
+      "scope": "national",
+      "important": false,
+      "title": "西安美术学院特殊教育艺术学院2025年招生录取规则...",
+      "summary": "页面涉及：美术学、中国画、雕塑、工艺美术、动画；内容属于全国性信息。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学",
+        "中国画",
+        "雕塑",
+        "工艺美术",
+        "动画"
+      ],
+      "url": "https://zhshch.xafa.edu.cn/info/1018/3946.htm",
+      "source": "西安美术学院招生信息网",
+      "verified": false,
+      "automated": true,
+      "id": "ea9eb0f2cae639acc0b7"
+    },
+    {
+      "date": "2025-05-15",
+      "school": "中国美术学院",
+      "type": "policy",
+      "scope": "national",
+      "important": false,
+      "title": "中国美术学院2025年普通高校招生章程",
+      "summary": "页面涉及：美术与设计、美术学、绘画、中国画、雕塑、视觉传达、环境设计、产品设计、数字媒体艺术、工艺美术、服装与服饰设计、公共艺术；内容属于全国性信息。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术与设计",
+        "美术学",
+        "绘画",
+        "中国画",
+        "雕塑",
+        "视觉传达",
+        "环境设计",
+        "产品设计",
+        "数字媒体艺术",
+        "工艺美术",
+        "服装与服饰设计",
+        "公共艺术"
+      ],
+      "url": "https://zb.caa.edu.cn/info/1013/1020.htm",
+      "source": "中国美术学院招生办公室",
+      "verified": false,
+      "automated": true,
+      "id": "1b0a6f755e4d74797ccf"
+    },
+    {
+      "date": "2025-05-11",
+      "school": "中国美术学院",
+      "type": "policy",
+      "scope": "pending",
+      "important": false,
+      "title": "中国美术学院2025年招收香港中学文凭考试学生简章",
+      "summary": "页面涉及：美术学、绘画、中国画、雕塑、视觉传达、环境设计、产品设计、数字媒体艺术、工艺美术、服装与服饰设计、公共艺术、摄影；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学",
+        "绘画",
+        "中国画",
+        "雕塑",
+        "视觉传达",
+        "环境设计",
+        "产品设计",
+        "数字媒体艺术",
+        "工艺美术",
+        "服装与服饰设计",
+        "公共艺术",
+        "摄影"
+      ],
+      "url": "https://zb.caa.edu.cn/info/1013/1017.htm",
+      "source": "中国美术学院招生办公室",
+      "verified": false,
+      "automated": true,
+      "id": "737993c49d8745c82022"
+    },
+    {
+      "date": "2025-04-18",
+      "school": "西安美术学院",
+      "type": "notice",
+      "scope": "pending",
+      "important": false,
+      "title": "西安美术学院特殊教育艺术学院2025年招生考试成绩...",
+      "summary": "页面涉及：美术学、中国画、雕塑、工艺美术、动画；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学",
+        "中国画",
+        "雕塑",
+        "工艺美术",
+        "动画"
+      ],
+      "url": "https://zhshch.xafa.edu.cn/info/1018/3906.htm",
+      "source": "西安美术学院招生信息网",
+      "verified": false,
+      "automated": true,
+      "id": "67fbd6d06b0367cd5d63"
+    },
+    {
+      "date": "2025-03-11",
+      "school": "西安美术学院",
+      "type": "policy",
+      "scope": "national",
+      "important": false,
+      "title": "西安美术学院特殊教育艺术学院2025年本科招生简章",
+      "summary": "页面涉及：美术学、中国画、雕塑、工艺美术、动画；内容属于全国性信息。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学",
+        "中国画",
+        "雕塑",
+        "工艺美术",
+        "动画"
+      ],
+      "url": "https://zhshch.xafa.edu.cn/info/1019/3766.htm",
+      "source": "西安美术学院招生信息网",
+      "verified": false,
+      "automated": true,
+      "id": "fd043e33dd0db5c330f5"
+    },
+    {
+      "date": "2025-02-12",
+      "school": "中国传媒大学",
+      "type": "notice",
+      "scope": "pending",
+      "important": false,
+      "title": "中国传媒大学2025年艺术类本科校考专业招生考试复试结果查询及三试手续办...",
+      "summary": "页面涉及：视觉传达、环境设计、数字媒体艺术、摄影、动画、戏剧影视美术设计、艺术与科技；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "视觉传达",
+        "环境设计",
+        "数字媒体艺术",
+        "摄影",
+        "动画",
+        "戏剧影视美术设计",
+        "艺术与科技"
+      ],
+      "url": "https://zhaosheng.cuc.edu.cn/2025/0212/c5842a251072/page.htm",
+      "source": "中国传媒大学本科招生网",
+      "verified": false,
+      "automated": true,
+      "id": "edd65a977a2ce2419d48"
+    },
+    {
+      "date": "2025-02-12",
+      "school": "中国传媒大学",
+      "type": "notice",
+      "scope": "pending",
+      "important": false,
+      "title": "中国传媒大学2025年艺术类本科校考专业招生考试三试须知",
+      "summary": "页面涉及：视觉传达、环境设计、数字媒体艺术、摄影、动画、戏剧影视美术设计、艺术与科技、新媒体艺术；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "视觉传达",
+        "环境设计",
+        "数字媒体艺术",
+        "摄影",
+        "动画",
+        "戏剧影视美术设计",
+        "艺术与科技",
+        "新媒体艺术"
+      ],
+      "url": "https://zhaosheng.cuc.edu.cn/2025/0212/c5842a251071/page.htm",
+      "source": "中国传媒大学本科招生网",
+      "verified": false,
+      "automated": true,
+      "id": "7cd96415952213b53217"
+    },
+    {
+      "date": "2025-01-27",
+      "school": "清华大学美术学院",
+      "type": "policy",
+      "scope": "national",
+      "important": false,
+      "title": "招生简章 2025.01.27 清华大学2025年艺术类专业（美术学院）本科招生简章",
+      "summary": "页面涉及：美术与设计、美术学、绘画、雕塑、设计学类；内容属于全国性信息。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术与设计",
+        "美术学",
+        "绘画",
+        "雕塑",
+        "设计学类"
+      ],
+      "url": "https://www.ad.tsinghua.edu.cn/info/1526/31599.htm",
+      "source": "清华大学美术学院",
+      "verified": false,
+      "automated": true,
+      "id": "4d47608ad0cc1fad238e"
+    },
+    {
+      "date": "2025-01-21",
+      "school": "中国美术学院",
+      "type": "policy",
+      "scope": "pending",
+      "important": false,
+      "title": "中国美术学院2025年联合招收华侨港澳台学生简章",
+      "summary": "页面涉及：美术学、绘画、中国画、雕塑、视觉传达、环境设计、产品设计、数字媒体艺术、工艺美术、服装与服饰设计、公共艺术、摄影；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学",
+        "绘画",
+        "中国画",
+        "雕塑",
+        "视觉传达",
+        "环境设计",
+        "产品设计",
+        "数字媒体艺术",
+        "工艺美术",
+        "服装与服饰设计",
+        "公共艺术",
+        "摄影"
+      ],
+      "url": "https://zb.caa.edu.cn/info/1013/1019.htm",
+      "source": "中国美术学院招生办公室",
+      "verified": false,
+      "automated": true,
+      "id": "71105e0ccc56606f588c"
+    },
+    {
+      "date": "2025-01-19",
+      "school": "中国传媒大学",
+      "type": "notice",
+      "scope": "pending",
+      "important": false,
+      "title": "中国传媒大学2025年艺术类本科校考专业招生考试初试成绩查询通知",
+      "summary": "页面涉及：视觉传达、环境设计、数字媒体艺术、摄影、动画、戏剧影视美术设计、艺术与科技、新媒体艺术；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "视觉传达",
+        "环境设计",
+        "数字媒体艺术",
+        "摄影",
+        "动画",
+        "戏剧影视美术设计",
+        "艺术与科技",
+        "新媒体艺术"
+      ],
+      "url": "https://zhaosheng.cuc.edu.cn/2025/0118/c5842a250945/page.htm",
+      "source": "中国传媒大学本科招生网",
+      "verified": false,
+      "automated": true,
+      "id": "a2377378fd6d46d07f6f"
+    },
+    {
+      "date": "2025-01-19",
+      "school": "中国传媒大学",
+      "type": "policy",
+      "scope": "pending",
+      "important": false,
+      "title": "中国传媒大学2025年艺术类本科校考专业招生考试复试须知",
+      "summary": "页面涉及：视觉传达、环境设计、数字媒体艺术、摄影、动画、戏剧影视美术设计、艺术与科技、新媒体艺术；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "视觉传达",
+        "环境设计",
+        "数字媒体艺术",
+        "摄影",
+        "动画",
+        "戏剧影视美术设计",
+        "艺术与科技",
+        "新媒体艺术"
+      ],
+      "url": "https://zhaosheng.cuc.edu.cn/2025/0118/c5842a250946/page.htm",
+      "source": "中国传媒大学本科招生网",
+      "verified": false,
+      "automated": true,
+      "id": "33c852a18365cf7e6897"
+    },
+    {
+      "date": "2025-01-10",
+      "school": "中国美术学院",
+      "type": "policy",
+      "scope": "national",
+      "important": false,
+      "title": "中国美术学院2025年本科招生简章",
+      "summary": "页面涉及：美术与设计、美术学、绘画、中国画、雕塑、视觉传达、环境设计、产品设计、数字媒体艺术、工艺美术、服装与服饰设计、公共艺术；内容属于全国性信息。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术与设计",
+        "美术学",
+        "绘画",
+        "中国画",
+        "雕塑",
+        "视觉传达",
+        "环境设计",
+        "产品设计",
+        "数字媒体艺术",
+        "工艺美术",
+        "服装与服饰设计",
+        "公共艺术"
+      ],
+      "url": "https://zb.caa.edu.cn/info/1013/1018.htm",
+      "source": "中国美术学院招生办公室",
+      "verified": false,
+      "automated": true,
+      "id": "973821000cfee403c57a"
+    },
+    {
+      "date": "2025-01-03",
+      "school": "西安美术学院",
+      "type": "policy",
+      "scope": "national",
+      "important": false,
+      "title": "西安美术学院2025年本科招生简章",
+      "summary": "页面涉及：美术与设计、美术学、绘画、中国画、雕塑、工艺美术、动画；内容属于全国性信息。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术与设计",
+        "美术学",
+        "绘画",
+        "中国画",
+        "雕塑",
+        "工艺美术",
+        "动画"
+      ],
+      "url": "https://zhshch.xafa.edu.cn/info/1015/3616.htm",
+      "source": "西安美术学院招生信息网",
+      "verified": false,
+      "automated": true,
+      "id": "90527ee676c873951ca1"
+    },
+    {
+      "date": "2024-03-14",
+      "school": "西安美术学院",
+      "type": "policy",
+      "scope": "national",
+      "important": false,
+      "title": "西安美术学院特殊教育艺术学院2024年本科招生简章",
+      "summary": "页面涉及：美术学、中国画、雕塑、工艺美术、动画；内容属于全国性信息。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学",
+        "中国画",
+        "雕塑",
+        "工艺美术",
+        "动画"
+      ],
+      "url": "https://zhshch.xafa.edu.cn/info/1019/2976.htm",
+      "source": "西安美术学院招生信息网",
+      "verified": false,
+      "automated": true,
+      "id": "abbf46954d8457c644d5"
+    },
+    {
+      "date": "2024-02-05",
+      "school": "清华大学美术学院",
+      "type": "policy",
+      "scope": "national",
+      "important": false,
+      "title": "招生简章 2024.02.05 清华大学2024年艺术类专业（美术学院）本科招生简章",
+      "summary": "页面涉及：美术与设计、美术学、绘画、雕塑、视觉传达、环境设计、产品设计、工艺美术、服装与服饰设计、摄影、动画、陶瓷艺术设计；内容属于全国性信息。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术与设计",
+        "美术学",
+        "绘画",
+        "雕塑",
+        "视觉传达",
+        "环境设计",
+        "产品设计",
+        "工艺美术",
+        "服装与服饰设计",
+        "摄影",
+        "动画",
+        "陶瓷艺术设计"
+      ],
+      "url": "https://www.ad.tsinghua.edu.cn/info/1509/30895.htm",
+      "source": "清华大学美术学院",
+      "verified": false,
+      "automated": true,
+      "id": "7756dd1e7a25e683cafb"
+    },
+    {
+      "date": "2024-01-12",
+      "school": "湖北美术学院",
+      "type": "policy",
+      "scope": "national",
+      "important": false,
+      "title": "2024.01.12 湖北美术学院2024年普通本科招生简章 湖北美术学院（英文名称Hubei Institute of Fine Arts，国标代码10523）是教育部批准的具有高等学历教育招生资格的公办普通高等院校。学校位于江城武汉，是我国中部地区唯一一所高等美术学府。自1920年创办以来，历经多次变迁，绵延承续，始终坚持“推行美育”，初心不改，是中国近、现代高等美术教育的重要发源地之一。百年办学之路，铸就了“崇德、笃学、敏行、致美”的校训精神，涵养了“兼收并蓄”的学术思想和“兼容互动”... 查看详情",
+      "summary": "页面涉及：美术与设计、美术学、绘画、动画；内容属于全国性信息。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术与设计",
+        "美术学",
+        "绘画",
+        "动画"
+      ],
+      "url": "https://zjc.hifa.edu.cn/info/1092/2729.htm",
+      "source": "湖北美术学院招生就业处",
+      "verified": false,
+      "automated": true,
+      "id": "902250dce58cfb702bf1"
     }
   ],
   "status": {
-    "updatedAt": "2026-09-18T07:08:28.440Z",
+    "updatedAt": "2026-09-18T07:14:56.131Z",
     "cutoff": "2026-07-01",
-    "configuredSources": 10,
-    "successfulSources": 6,
-    "failedSources": 4,
-    "discoveredRecords": 12,
+    "configuredSources": 15,
+    "successfulSources": 14,
+    "failedSources": 1,
+    "discoveredRecords": 18,
+    "discoveredHistoryRecords": 91,
     "results": [
       {
         "school": "上海戏剧学院",
@@ -267,30 +2278,27 @@
       {
         "school": "中央民族大学",
         "ok": true,
-        "found": 2
+        "found": 8
       },
       {
         "school": "中国传媒大学",
         "ok": true,
-        "found": 1
+        "found": 9
       },
       {
         "school": "鲁迅美术学院",
-        "ok": false,
-        "error": "fetch failed · ETIMEDOUT",
-        "preserved": 2
+        "ok": true,
+        "found": 13
       },
       {
         "school": "湖北美术学院",
-        "ok": false,
-        "error": "fetch failed · ETIMEDOUT",
-        "preserved": 0
+        "ok": true,
+        "found": 9
       },
       {
         "school": "西安美术学院",
-        "ok": false,
-        "error": "fetch failed · ETIMEDOUT",
-        "preserved": 3
+        "ok": true,
+        "found": 16
       },
       {
         "school": "北京服装学院",
@@ -304,15 +2312,41 @@
       },
       {
         "school": "上海大学",
-        "ok": false,
-        "error": "fetch failed · ETIMEDOUT",
-        "preserved": 1
+        "ok": true,
+        "found": 2
       },
       {
         "school": "广西师范大学",
         "ok": true,
         "found": 0
+      },
+      {
+        "school": "中央美术学院",
+        "ok": false,
+        "error": "fetch failed · UNABLE_TO_VERIFY_LEAF_SIGNATURE · unable to verify the first certificate; if the root CA is installed locally, try running Node.js with --use-system-ca",
+        "preserved": 0
+      },
+      {
+        "school": "中国美术学院",
+        "ok": true,
+        "found": 10
+      },
+      {
+        "school": "清华大学美术学院",
+        "ok": true,
+        "found": 3
+      },
+      {
+        "school": "天津美术学院",
+        "ok": true,
+        "found": 9
+      },
+      {
+        "school": "广州美术学院",
+        "ok": true,
+        "found": 9
       }
     ]
   }
 }
+
