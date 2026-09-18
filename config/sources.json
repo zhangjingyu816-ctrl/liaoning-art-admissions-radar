@@ -63,6 +63,41 @@
     "url": "https://bkzs.gxnu.edu.cn/pg/jh/",
     "source": "广西师范大学本科招生网",
     "maxLinks": 20
+  },
+  {
+    "school": "中央美术学院",
+    "url": "https://www.cafa.edu.cn/sp/zs/?ci=802",
+    "source": "中央美术学院招生处",
+    "artFocused": true,
+    "maxLinks": 30
+  },
+  {
+    "school": "中国美术学院",
+    "url": "https://zb.caa.edu.cn/bkzs/zsjz.htm",
+    "source": "中国美术学院招生办公室",
+    "artFocused": true,
+    "maxLinks": 30
+  },
+  {
+    "school": "清华大学美术学院",
+    "url": "https://www.ad.tsinghua.edu.cn/zs/bkszs/bkzs.htm",
+    "source": "清华大学美术学院",
+    "artFocused": true,
+    "maxLinks": 30
+  },
+  {
+    "school": "天津美术学院",
+    "url": "https://zsbgs.tjarts.edu.cn/index/bkzs.htm",
+    "source": "天津美术学院招生办公室",
+    "artFocused": true,
+    "maxLinks": 30
+  },
+  {
+    "school": "广州美术学院",
+    "url": "https://zs.gzarts.edu.cn/zsdl1/bkszs.htm",
+    "source": "广州美术学院招生考试中心",
+    "artFocused": true,
+    "maxLinks": 30
   }
 ]
 
