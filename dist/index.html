@@ -150,7 +150,8 @@
 
     <section class="toolbar" aria-label="筛选工具">
       <div class="tabs" role="tablist">
-        <button class="tab active" data-tab="feed" role="tab" aria-selected="true">招生动态</button>
+        <button class="tab active" data-tab="feed" role="tab" aria-selected="true">2027录取方式</button>
+        <button class="tab" data-tab="other" role="tab" aria-selected="false">其他资讯</button>
         <button class="tab" data-tab="directory" role="tab" aria-selected="false">院校清单</button>
       </div>
       <div class="filters">
@@ -174,7 +175,7 @@
     </section>
 
     <section id="feedPanel">
-      <div class="result-head"><h3>官方信息流</h3><span id="resultCount"></span></div>
+      <div class="result-head"><h3 id="feedHeading">2027艺术类本科招生录取方式公告</h3><span id="resultCount"></span></div>
       <div id="feed" class="feed"></div>
       <div id="empty" class="empty">没有符合当前筛选条件的信息。</div>
     </section>
@@ -575,12 +576,19 @@
       const hay=[record.school,record.title,record.summary,...record.majors].join(' ').toLowerCase();
       return (!term||hay.includes(term))&&(scope==='all'||record.scope===scope)&&(type==='all'||record.type===type);
     }
+    function isPriorityRecord(record){
+      const title=String(record.title||'').replace(/\s+/g,'');
+      return title.includes('2027')&&title.includes('本科')&&/(艺术类|美术与设计类|美术设计类)/.test(title)&&/(招生录取方式|录取方式|录取原则)/.test(title);
+    }
     function renderFeed(){
       const term=q('#search').value.trim().toLowerCase();
       const scope=q('#scopeFilter').value;
       const type=q('#typeFilter').value;
-      const shown=records.filter(r=>matches(r,term,scope,type));
-      q('#resultCount').textContent=`显示 ${shown.length} / ${records.length} 条`;
+      const priorityMode=activeTab==='feed';
+      const pool=records.filter(record=>priorityMode?isPriorityRecord(record):!isPriorityRecord(record));
+      const shown=pool.filter(r=>matches(r,term,scope,type));
+      q('#feedHeading').textContent=priorityMode?'2027艺术类本科招生录取方式公告':'其他美术与设计类招生资讯';
+      q('#resultCount').textContent=`显示 ${shown.length} / ${pool.length} 条`;
       q('#feed').innerHTML=shown.map(r=>{
         const dp=dateParts(r.date);
         return `<article class="card">
@@ -593,6 +601,7 @@
           </div>
         </article>`;
       }).join('');
+      q('#empty').textContent=priorityMode?'暂未发现符合当前筛选条件的2027招生录取方式公告。':'没有符合当前筛选条件的其他招生资讯。';
       q('#empty').style.display=shown.length?'none':'block';
     }
     function renderDirectory(){
@@ -654,11 +663,11 @@
       }
       throw lastError||new Error('没有可用的数据源');
     }
-    function render(){activeTab==='feed'?renderFeed():renderDirectory()}
+    function render(){activeTab==='directory'?renderDirectory():renderFeed()}
     document.querySelectorAll('.tab').forEach(btn=>btn.addEventListener('click',()=>{
       activeTab=btn.dataset.tab;
       document.querySelectorAll('.tab').forEach(b=>{b.classList.toggle('active',b===btn);b.setAttribute('aria-selected',b===btn)});
-      q('#feedPanel').style.display=activeTab==='feed'?'block':'none';
+      q('#feedPanel').style.display=activeTab==='directory'?'none':'block';
       q('#directoryPanel').style.display=activeTab==='directory'?'block':'none';
       q('#scopeFilter').disabled=activeTab==='directory';q('#typeFilter').disabled=activeTab==='directory';render();
     }));
