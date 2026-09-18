@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-18T04:07:57.947Z",
+  "updatedAt": "2026-09-18T04:26:44.082Z",
   "cutoff": "2026-07-01",
   "records": [
     {
@@ -26,48 +26,6 @@
       "id": "6e43a0951d6719b41d0d"
     },
     {
-      "date": "2026-08-03",
-      "school": "中国传媒大学",
-      "type": "policy",
-      "scope": "national",
-      "important": false,
-      "title": "中国传媒大学2027年本科艺术类专业招生录取方式公告",
-      "summary": "页面涉及：视觉传达、环境设计、数字媒体艺术、摄影、动画、戏剧影视美术设计、艺术与科技；内容属于全国性信息。本条由规则自动发现，请以官方原文为准。",
-      "majors": [
-        "视觉传达",
-        "环境设计",
-        "数字媒体艺术",
-        "摄影",
-        "动画",
-        "戏剧影视美术设计",
-        "艺术与科技"
-      ],
-      "url": "https://zhaosheng.cuc.edu.cn/2026/0801/c5842a273087/page.htm",
-      "source": "中国传媒大学本科招生网",
-      "verified": false,
-      "automated": true,
-      "id": "3125f04bbf0efe2f1caf"
-    },
-    {
-      "date": "2026-08-02",
-      "school": "鲁迅美术学院",
-      "type": "score",
-      "scope": "national",
-      "important": false,
-      "title": "鲁迅美术学院2026年本科招生艺术类统考专业、普通类专业录取情况公告 2026.08.02",
-      "summary": "页面涉及：美术学、环境设计、产品设计；内容属于全国性信息。本条由规则自动发现，请以官方原文为准。",
-      "majors": [
-        "美术学",
-        "环境设计",
-        "产品设计"
-      ],
-      "url": "https://www.lumei.edu.cn/info/1207/64865.htm",
-      "source": "鲁迅美术学院招生就业处",
-      "verified": false,
-      "automated": true,
-      "id": "de46d24b7f307a9c6f53"
-    },
-    {
       "date": "2026-07-28",
       "school": "四川美术学院",
       "type": "score",
@@ -85,55 +43,6 @@
       "id": "1c167e4891b1caad702c"
     },
     {
-      "date": "2026-07-25",
-      "school": "西安美术学院",
-      "type": "policy",
-      "scope": "pending",
-      "important": false,
-      "title": "2026级艺术本科提前批校考类、统考类新生录取通知...",
-      "summary": "页面涉及：美术学、中国画、雕塑、工艺美术、动画；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
-      "majors": [
-        "美术学",
-        "中国画",
-        "雕塑",
-        "工艺美术",
-        "动画"
-      ],
-      "url": "https://zhshch.xafa.edu.cn/info/1014/4726.htm",
-      "source": "西安美术学院招生信息网",
-      "verified": false,
-      "automated": true,
-      "id": "72932f6823834b114978"
-    },
-    {
-      "date": "2026-07-24",
-      "school": "西安美术学院",
-      "type": "score",
-      "scope": "liaoning",
-      "important": false,
-      "title": "西安美术学院2026年本科招生艺术提前批统考类专业...",
-      "summary": "页面涉及：美术学、中国画、雕塑、视觉传达、环境设计、产品设计、数字媒体艺术、工艺美术、服装与服饰设计、公共艺术、摄影、动画；正文提及辽宁。本条由规则自动发现，请以官方原文为准。",
-      "majors": [
-        "美术学",
-        "中国画",
-        "雕塑",
-        "视觉传达",
-        "环境设计",
-        "产品设计",
-        "数字媒体艺术",
-        "工艺美术",
-        "服装与服饰设计",
-        "公共艺术",
-        "摄影",
-        "动画"
-      ],
-      "url": "https://zhshch.xafa.edu.cn/info/1014/4716.htm",
-      "source": "西安美术学院招生信息网",
-      "verified": false,
-      "automated": true,
-      "id": "74491247479e3540afbe"
-    },
-    {
       "date": "2026-07-22",
       "school": "四川美术学院",
       "type": "score",
@@ -149,47 +58,6 @@
       "verified": false,
       "automated": true,
       "id": "eaee6961dc11065e4a98"
-    },
-    {
-      "date": "2026-07-16",
-      "school": "鲁迅美术学院",
-      "type": "score",
-      "scope": "national",
-      "important": false,
-      "title": "鲁迅美术学院2026年本科招生艺术类校考专业录取情况公告 2026.07.16",
-      "summary": "页面涉及：美术学、环境设计、产品设计；内容属于全国性信息。本条由规则自动发现，请以官方原文为准。",
-      "majors": [
-        "美术学",
-        "环境设计",
-        "产品设计"
-      ],
-      "url": "https://www.lumei.edu.cn/info/1207/64745.htm",
-      "source": "鲁迅美术学院招生就业处",
-      "verified": false,
-      "automated": true,
-      "id": "7f8e200bdf795eeefe16"
-    },
-    {
-      "date": "2026-07-15",
-      "school": "西安美术学院",
-      "type": "score",
-      "scope": "national",
-      "important": false,
-      "title": "西安美术学院2026年本科招生艺术提前批校考类专业...",
-      "summary": "页面涉及：美术学、绘画、中国画、雕塑、工艺美术、动画；内容属于全国性信息。本条由规则自动发现，请以官方原文为准。",
-      "majors": [
-        "美术学",
-        "绘画",
-        "中国画",
-        "雕塑",
-        "工艺美术",
-        "动画"
-      ],
-      "url": "https://zhshch.xafa.edu.cn/info/1014/4676.htm",
-      "source": "西安美术学院招生信息网",
-      "verified": false,
-      "automated": true,
-      "id": "0c352b619e713acc44fb"
     },
     {
       "date": "2026-07-12",
@@ -233,4 +101,3 @@
     }
   ]
 }
-
