@@ -112,6 +112,12 @@
     .map-layout{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(280px,.65fr);gap:14px}
     .map-stage{position:relative;min-height:610px;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:radial-gradient(circle at 50% 46%,rgba(53,210,199,.12),transparent 42%),#07131e}
     #chinaMap{width:100%;height:610px}
+    .native-map-svg{position:absolute;inset:7% 5% 8%;width:90%;height:85%;overflow:visible;filter:drop-shadow(0 24px 18px rgba(0,0,0,.55));transform:perspective(900px) rotateX(18deg) rotateZ(-2deg);transform-origin:50% 60%}
+    .map-points{position:absolute;inset:7% 5% 8%;pointer-events:none}
+    .map-point{position:absolute;z-index:2;min-width:10px;min-height:10px;padding:0;border:0;background:transparent;color:#eaf7f8;cursor:pointer;pointer-events:auto;transform:translate(-50%,-50%)}
+    .map-point i{display:block;width:8px;height:8px;border:2px solid #bafff8;border-radius:50%;background:var(--cyan);box-shadow:0 0 0 4px rgba(53,210,199,.13),0 5px 14px rgba(0,0,0,.7)}
+    .map-point span{position:absolute;left:11px;top:-6px;display:none;white-space:nowrap;padding:2px 5px;border:1px solid #315166;border-radius:5px;background:rgba(5,15,24,.9);font-size:.61rem;line-height:1.35}
+    .map-point.major span,.map-point:hover span,.map-point:focus-visible span{display:block}.map-point:hover i,.map-point:focus-visible i{background:var(--amber);border-color:#ffe3bd;outline:none}
     .map-loading{position:absolute;inset:0;display:grid;place-items:center;padding:30px;color:var(--muted);text-align:center;pointer-events:none}
     .map-sidebar{border:1px solid var(--line);border-radius:20px;background:#0b1722;padding:16px;max-height:610px;overflow:auto}
     .map-sidebar h4{margin:0 0 3px;font-size:1.05rem}
@@ -269,9 +275,6 @@
       <div id="profileBody" class="profile-body"></div>
     </article>
   </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/echarts@5.6.0/dist/echarts.min.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/echarts-gl@2.0.9/dist/echarts-gl.min.js" defer></script>
 
   <script>
     const rawSchools = `
@@ -842,27 +845,24 @@
     }
     function selectMapCity(city){renderCityList(city);q('#mapCityHeading').scrollIntoView({behavior:'smooth',block:'nearest'})}
     const bundledChinaGeoJson={type:'FeatureCollection',features:[{type:'Feature',properties:{name:'中国'},geometry:{type:'MultiPolygon',coordinates:[[[[73.5,39],[75,36],[77,35],[78,32],[80,30],[81,27],[84,27],[87,29],[90,28],[92,27],[96,27],[98,24],[100,21],[103,22],[106,21.5],[109,20],[110.5,20.5],[111.5,21.5],[113,22.2],[116,22.6],[118.5,24],[120.5,25.5],[121.7,28],[121,31],[122,33],[120,35],[121.5,37.5],[122.5,39],[124,39.5],[124.5,41.5],[128,41.5],[130,43],[133,44.5],[134.5,47],[132,48.5],[129,49],[127,51],[123,53],[119,50],[116,49],[113,48],[110,44],[107,42],[104,42],[101,43],[97,44],[94,43],[91,45],[87,49],[83,49],[79,48],[77,46],[76,43],[73.5,39]]],[[[108.6,19.2],[109.1,18.2],[110.1,18.1],[111,19.1],[110.5,20.1],[109.4,20.2],[108.6,19.2]]],[[[120.0,22.0],[121.0,21.9],[122.1,24.2],[121.5,25.3],[120.4,24.2],[120.0,22.0]]]]}}]};
-    let mapInstance=null,mapAttempt=0;
-    async function initMap(){
+    let mapInstance=null;
+    function initMap(){
       renderCityList(selectedMapCity);
-      if(mapInstance){mapInstance.resize();return}
-      if(!window.echarts){
-        if(mapAttempt++<20)setTimeout(initMap,350);else q('#mapLoading').textContent='三维组件未能载入，请使用右侧完整城市清单。';
-        return;
-      }
-      try{
-        window.echarts.registerMap('china-admissions',bundledChinaGeoJson);
-        const data=cityGroups().map(group=>({name:group.city,city:group.city,count:group.schools.length,value:[...group.coord,Math.max(2,group.schools.length)]}));
-        mapInstance=window.echarts.init(q('#chinaMap'));
-        mapInstance.setOption({
-          tooltip:{formatter:params=>params.data?.city?`${esc(params.data.city)}：${params.data.count} 所院校`:'点击城市标记查看院校'},
-          geo3D:{map:'china-admissions',roam:true,boxHeight:12,regionHeight:2,shading:'lambert',environment:'#07131e',viewControl:{distance:105,alpha:45,beta:0,minDistance:65,maxDistance:180},light:{main:{intensity:1.35,shadow:true},ambient:{intensity:.45}},itemStyle:{color:'#123047',borderColor:'#3d7286',borderWidth:.7,opacity:1},emphasis:{itemStyle:{color:'#19506a'},label:{show:false}},label:{show:false}},
-          series:[{type:'scatter3D',coordinateSystem:'geo3D',data,symbol:'circle',symbolSize:value=>Math.min(18,6+Math.sqrt(value[2])*2.3),itemStyle:{color:'#35d2c7',opacity:.96},label:{show:true,distance:1,formatter:params=>`${params.data.city} ${params.data.count}`,textStyle:{color:'#eef5f7',fontSize:10,backgroundColor:'rgba(5,15,24,.78)',padding:[3,5],borderRadius:4}},emphasis:{itemStyle:{color:'#ffb45c'}}}]
-        });
-        mapInstance.on('click',params=>{if(params.data?.city)selectMapCity(params.data.city)});
-        q('#mapLoading').style.display='none';
-        window.addEventListener('resize',()=>mapInstance?.resize());
-      }catch(error){q('#mapLoading').textContent='三维底图暂时无法连接；右侧城市清单包含全部院校，可正常点击查看。';console.warn('三维地图加载失败',error)}
+      if(mapInstance)return;
+      const project=([lng,lat])=>[40+(lng-73)/(135-73)*820,30+(54-lat)/(54-18)*500];
+      const pathFor=ring=>ring.map((point,index)=>`${index?'L':'M'}${project(point).map(value=>value.toFixed(1)).join(',')}`).join(' ')+' Z';
+      const rings=bundledChinaGeoJson.features[0].geometry.coordinates.map(polygon=>polygon[0]);
+      const paths=rings.map(ring=>pathFor(ring)).join(' ');
+      const points=cityGroups().map(group=>{
+        const left=5+(group.coord[0]-73)/(135-73)*90;
+        const top=4+(54-group.coord[1])/(54-18)*88;
+        const major=group.schools.length>=4||group.schools.some(school=>nineAcademies.has(school));
+        return `<button type="button" class="map-point ${major?'major':''}" data-city="${esc(group.city)}" style="left:${left.toFixed(2)}%;top:${top.toFixed(2)}%" aria-label="${esc(group.city)}，${group.schools.length}所院校"><i></i><span>${esc(group.city)} · ${group.schools.length}</span></button>`;
+      }).join('');
+      q('#chinaMap').innerHTML=`<svg class="native-map-svg" viewBox="0 0 900 570" aria-hidden="true"><defs><linearGradient id="mapTop" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#174861"/><stop offset="1" stop-color="#0d273b"/></linearGradient></defs><path d="${paths}" transform="translate(0 18)" fill="#06101a" stroke="#06101a" stroke-width="8"/><path d="${paths}" transform="translate(0 11)" fill="#0b2334" stroke="#163e53" stroke-width="7"/><path d="${paths}" fill="url(#mapTop)" stroke="#4b8797" stroke-width="2"/></svg><div class="map-points">${points}</div>`;
+      q('#chinaMap').querySelectorAll('[data-city]').forEach(button=>button.addEventListener('click',()=>selectMapCity(button.dataset.city)));
+      q('#mapLoading').style.display='none';
+      mapInstance={ready:true};
     }
     let automaticDataLoading=false;
     function formatBeijingTime(date,{seconds=false}={}){
