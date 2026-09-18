@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-18T07:08:28.440Z",
+  "updatedAt": "2026-09-18T07:14:56.131Z",
   "cutoff": "2026-07-01",
   "records": [
     {
@@ -85,6 +85,23 @@
       "id": "1c167e4891b1caad702c"
     },
     {
+      "date": "2026-07-28",
+      "school": "天津美术学院",
+      "type": "score",
+      "scope": "pending",
+      "important": false,
+      "title": "天津美术学院2026年普通类专业录取分数线",
+      "summary": "页面涉及：美术学；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学"
+      ],
+      "url": "https://zsbgs.tjarts.edu.cn/info/1003/3124.htm",
+      "source": "天津美术学院招生办公室",
+      "verified": false,
+      "automated": true,
+      "id": "d57c4cf85094d591b00f"
+    },
+    {
       "date": "2026-07-25",
       "school": "西安美术学院",
       "type": "policy",
@@ -151,6 +168,23 @@
       "id": "eaee6961dc11065e4a98"
     },
     {
+      "date": "2026-07-22",
+      "school": "天津美术学院",
+      "type": "score",
+      "scope": "pending",
+      "important": false,
+      "title": "天津美术学院2026年艺术类统考专业录取分数线",
+      "summary": "页面涉及：美术学；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学"
+      ],
+      "url": "https://zsbgs.tjarts.edu.cn/info/1003/3094.htm",
+      "source": "天津美术学院招生办公室",
+      "verified": false,
+      "automated": true,
+      "id": "1e97eb7d1f09773c314e"
+    },
+    {
       "date": "2026-07-16",
       "school": "鲁迅美术学院",
       "type": "score",
@@ -168,6 +202,23 @@
       "verified": false,
       "automated": true,
       "id": "7f8e200bdf795eeefe16"
+    },
+    {
+      "date": "2026-07-15",
+      "school": "天津美术学院",
+      "type": "notice",
+      "scope": "pending",
+      "important": false,
+      "title": "天津美术学院2026年本科招生录取工作安排",
+      "summary": "页面涉及：美术学；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学"
+      ],
+      "url": "https://zsbgs.tjarts.edu.cn/info/1003/3084.htm",
+      "source": "天津美术学院招生办公室",
+      "verified": false,
+      "automated": true,
+      "id": "f7b9d5a52ff23b3428bc"
     },
     {
       "date": "2026-07-15",
@@ -193,6 +244,23 @@
     },
     {
       "date": "2026-07-12",
+      "school": "天津美术学院",
+      "type": "score",
+      "scope": "pending",
+      "important": false,
+      "title": "天津美术学院2026年本科艺术类校考批录取最低分数线",
+      "summary": "页面涉及：美术学；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学"
+      ],
+      "url": "https://zsbgs.tjarts.edu.cn/info/1003/3074.htm",
+      "source": "天津美术学院招生办公室",
+      "verified": false,
+      "automated": true,
+      "id": "3cf5dee5534dcbc5171f"
+    },
+    {
+      "date": "2026-07-12",
       "school": "中央民族大学",
       "type": "score",
       "scope": "national",
@@ -213,6 +281,34 @@
       "verified": false,
       "automated": true,
       "id": "7c2fb66fe379cadffd97"
+    },
+    {
+      "date": "2026-07-11",
+      "school": "广州美术学院",
+      "type": "score",
+      "scope": "national",
+      "important": false,
+      "title": "广州美术学院2026年普通本科录取情况公布（持续更新） 2026-07-11",
+      "summary": "页面涉及：美术与设计、美术学、绘画、中国画、雕塑、视觉传达、环境设计、产品设计、数字媒体艺术、工艺美术、服装与服饰设计、公共艺术；内容属于全国性信息。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术与设计",
+        "美术学",
+        "绘画",
+        "中国画",
+        "雕塑",
+        "视觉传达",
+        "环境设计",
+        "产品设计",
+        "数字媒体艺术",
+        "工艺美术",
+        "服装与服饰设计",
+        "公共艺术"
+      ],
+      "url": "https://zs.gzarts.edu.cn/info/1037/4799.htm",
+      "source": "广州美术学院招生考试中心",
+      "verified": false,
+      "automated": true,
+      "id": "41306867543a61f189c2"
     },
     {
       "date": "2026-07-11",
@@ -249,6 +345,24 @@
       "verified": false,
       "automated": true,
       "id": "8390bf7d8df5b58f3a4a"
+    },
+    {
+      "date": "2026-07-05",
+      "school": "广州美术学院",
+      "type": "score",
+      "scope": "national",
+      "important": false,
+      "title": "广州美术学院2026普通本科招生录取工作声明 2026-07-05",
+      "summary": "页面涉及：美术学；内容属于全国性信息。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学"
+      ],
+      "url": "https://zs.gzarts.edu.cn/info/1037/4779.htm",
+      "source": "广州美术学院招生考试中心",
+      "verified": false,
+      "automated": true,
+      "id": "0dd4816a4cefc2bb3d10"
     }
   ]
 }
+
