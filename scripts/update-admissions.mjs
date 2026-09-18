@@ -9,6 +9,7 @@ const root = resolve(import.meta.dirname, '..');
 const sourcesPath = resolve(root, 'config/sources.json');
 const noticesPath = resolve(root, 'dist/data/notices.json');
 const statusPath = resolve(root, 'dist/data/status.json');
+const feedPath = resolve(root, 'dist/data/feed.json');
 const cutoff = '2026-07-01';
 
 const topicWords = [
@@ -241,9 +242,8 @@ async function main() {
     .filter(record => record.date >= cutoff)
     .sort((a, b) => b.date.localeCompare(a.date) || a.school.localeCompare(b.school, 'zh-CN'));
   const updatedAt = new Date().toISOString();
-  await mkdir(dirname(noticesPath), { recursive: true });
-  await writeFile(noticesPath, `${JSON.stringify({ updatedAt, cutoff, records }, null, 2)}\n`, 'utf8');
-  await writeFile(statusPath, `${JSON.stringify({
+  const noticesPayload = { updatedAt, cutoff, records };
+  const statusPayload = {
     updatedAt,
     cutoff,
     configuredSources: sources.length,
@@ -251,7 +251,11 @@ async function main() {
     failedSources: results.filter(result => !result.ok).length,
     discoveredRecords: records.length,
     results
-  }, null, 2)}\n`, 'utf8');
+  };
+  await mkdir(dirname(noticesPath), { recursive: true });
+  await writeFile(noticesPath, `${JSON.stringify(noticesPayload, null, 2)}\n`, 'utf8');
+  await writeFile(statusPath, `${JSON.stringify(statusPayload, null, 2)}\n`, 'utf8');
+  await writeFile(feedPath, `${JSON.stringify({ ...noticesPayload, status: statusPayload }, null, 2)}\n`, 'utf8');
 }
 
 await main();
