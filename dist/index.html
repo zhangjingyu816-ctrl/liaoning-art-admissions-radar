@@ -102,19 +102,57 @@
     .empty{display:none;padding:64px 24px;text-align:center;border:1px dashed #2b4357;border-radius:18px;color:var(--muted)}
     .directory{display:none}
     .directory-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-    .school-row{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:13px 14px;border:1px solid var(--line);border-radius:13px;background:#0c1925}
+    .school-row{width:100%;display:flex;justify-content:space-between;gap:10px;align-items:center;padding:13px 14px;border:1px solid var(--line);border-radius:13px;background:#0c1925;color:var(--text);text-align:left;cursor:pointer;transition:transform .16s ease,border-color .16s ease}
+    .school-row:hover,.school-row:focus-visible{transform:translateY(-1px);border-color:#3a6078;outline:none}
     .school-row b{font-size:.9rem;font-weight:650}
     .school-row span{font-size:.72rem;color:var(--muted);white-space:nowrap}
     .school-row.checked span{color:var(--green)}
+    .school-row.academy{border-color:#6a4c2a;background:linear-gradient(145deg,#151b21,#0c1925)}
+    .map-panel{display:none}
+    .map-layout{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(280px,.65fr);gap:14px}
+    .map-stage{position:relative;min-height:610px;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:radial-gradient(circle at 50% 46%,rgba(53,210,199,.12),transparent 42%),#07131e}
+    #chinaMap{width:100%;height:610px}
+    .map-loading{position:absolute;inset:0;display:grid;place-items:center;padding:30px;color:var(--muted);text-align:center;pointer-events:none}
+    .map-sidebar{border:1px solid var(--line);border-radius:20px;background:#0b1722;padding:16px;max-height:610px;overflow:auto}
+    .map-sidebar h4{margin:0 0 3px;font-size:1.05rem}
+    .map-sidebar>p{margin:0 0 14px;color:var(--muted);font-size:.78rem}
+    .city-list{display:grid;gap:8px}
+    .city-card{border:1px solid #263c50;border-radius:12px;background:#0d1b28;overflow:hidden}
+    .city-card summary{cursor:pointer;padding:10px 12px;list-style:none;display:flex;justify-content:space-between;gap:10px;font-size:.82rem;font-weight:700}
+    .city-card summary::-webkit-details-marker{display:none}
+    .city-card summary span{color:var(--cyan);font-size:.72rem}
+    .city-schools{display:grid;border-top:1px solid #263c50}
+    .city-school{border:0;border-bottom:1px solid rgba(38,60,80,.55);background:transparent;color:#c9d8df;text-align:left;padding:9px 12px;cursor:pointer;font-size:.78rem}
+    .city-school:last-child{border-bottom:0}.city-school:hover{color:var(--cyan);background:#102231}
+    .academy-audit{margin-bottom:14px;padding:15px;border:1px solid #624722;border-radius:15px;background:linear-gradient(135deg,rgba(255,180,92,.11),rgba(53,210,199,.04))}
+    .academy-audit strong{display:block;color:#ffd29a}.academy-audit p{margin:4px 0 0;color:#b8c8d1;font-size:.78rem}
+    .modal{position:fixed;inset:0;z-index:60;display:none;align-items:center;justify-content:center;padding:22px;background:rgba(1,7,12,.76);backdrop-filter:blur(10px)}
+    .modal.open{display:flex}
+    .modal-card{width:min(980px,100%);max-height:min(880px,calc(100vh - 44px));overflow:auto;border:1px solid #335067;border-radius:22px;background:#091623;box-shadow:0 30px 90px rgba(0,0,0,.55)}
+    .modal-head{position:sticky;top:0;z-index:2;display:flex;justify-content:space-between;gap:16px;padding:20px 22px;border-bottom:1px solid var(--line);background:rgba(9,22,35,.95);backdrop-filter:blur(14px)}
+    .modal-head h3{margin:0;font-size:1.35rem}.modal-head p{margin:3px 0 0;color:var(--muted);font-size:.8rem}
+    .modal-close{width:38px;height:38px;flex:none;border:1px solid #365168;border-radius:10px;background:#0e1d2a;color:var(--text);cursor:pointer;font-size:1.25rem}
+    .profile-body{padding:20px 22px 24px}
+    .profile-status{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:16px}
+    .year-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+    .year-card{padding:15px;border:1px solid var(--line);border-radius:15px;background:#0c1a27}
+    .year-top{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:8px}.year-top b{font-size:1.15rem}.year-top span{font-size:.68rem;color:var(--amber)}
+    .year-card p{margin:0 0 10px;color:#aebfca;font-size:.77rem}
+    .year-card ul{margin:0;padding-left:18px;color:#d6e1e6;font-size:.78rem}
+    .year-card li+li{margin-top:4px}
+    .year-source{display:inline-flex;margin-top:12px;color:var(--cyan);font-size:.76rem;text-decoration:none;font-weight:700}.year-source:hover{text-decoration:underline}
+    .changes{margin-top:12px;padding:15px;border:1px solid #2a4459;border-radius:15px;background:#0b1824}
+    .changes h4{margin:0 0 8px}.change-line{display:flex;gap:8px;align-items:flex-start;margin-top:7px;color:#b8c9d2;font-size:.8rem}.change-line b{flex:none}.change-line.add b{color:var(--green)}.change-line.remove b{color:var(--red)}
+    .profile-note{margin-top:12px;color:var(--muted);font-size:.75rem}
     .notice{margin-top:22px;padding:18px 20px;border:1px solid #384c60;border-radius:16px;background:#0c1721;color:#aebfca;font-size:.84rem}
     .notice strong{color:#e9f1f4}
     footer{border-top:1px solid var(--line);padding:22px 0 35px;color:var(--muted);font-size:.78rem}
     .footer-inner{display:flex;justify-content:space-between;gap:20px}
     @media(max-width:900px){
-      .headline{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.directory-grid{grid-template-columns:repeat(2,1fr)}
+      .headline{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.directory-grid{grid-template-columns:repeat(2,1fr)}.map-layout{grid-template-columns:1fr}.map-sidebar{max-height:none}.year-grid{grid-template-columns:1fr}
     }
     @media(max-width:650px){
-      .shell{width:min(100% - 22px,1220px)}.topbar-inner{min-height:72px;gap:10px}.brand p{display:none}.brand h1{font-size:.9rem}.verified{gap:7px;font-size:.68rem}.time-status span:last-child{font-size:.66rem}main{padding-top:24px}.headline h2{font-size:2.45rem}.stats{gap:8px}.stat{padding:15px}.toolbar{top:72px}.filters{grid-template-columns:1fr}.card{grid-template-columns:1fr}.date-rail{display:flex;gap:8px;align-items:baseline;padding:13px 17px;border-right:0;border-bottom:1px solid var(--line)}.card-body{padding:17px}.directory-grid{grid-template-columns:1fr}.footer-inner{display:block}.actions{align-items:flex-start;flex-direction:column}.official{align-self:flex-end}.duplicate-record{flex-direction:column;gap:5px}
+      .shell{width:min(100% - 22px,1220px)}.topbar-inner{min-height:72px;gap:10px}.brand p{display:none}.brand h1{font-size:.9rem}.verified{gap:7px;font-size:.68rem}.time-status span:last-child{font-size:.66rem}main{padding-top:24px}.headline h2{font-size:2.45rem}.stats{gap:8px}.stat{padding:15px}.toolbar{top:72px}.tabs{overflow-x:auto}.tab{white-space:nowrap}.filters{grid-template-columns:1fr}.card{grid-template-columns:1fr}.date-rail{display:flex;gap:8px;align-items:baseline;padding:13px 17px;border-right:0;border-bottom:1px solid var(--line)}.card-body{padding:17px}.directory-grid{grid-template-columns:1fr}.footer-inner{display:block}.actions{align-items:flex-start;flex-direction:column}.official{align-self:flex-end}.duplicate-record{flex-direction:column;gap:5px}.map-stage,#chinaMap{min-height:480px;height:480px}.modal{padding:10px}.modal-card{max-height:calc(100vh - 20px)}.modal-head,.profile-body{padding-left:15px;padding-right:15px}
     }
   </style>
 </head>
@@ -164,6 +202,7 @@
         <button class="tab active" data-tab="feed" role="tab" aria-selected="true">2027录取方式</button>
         <button class="tab" data-tab="other" role="tab" aria-selected="false">其他资讯</button>
         <button class="tab" data-tab="directory" role="tab" aria-selected="false">院校清单</button>
+        <button class="tab" data-tab="map" role="tab" aria-selected="false">全国3D地图</button>
       </div>
       <div class="filters">
         <label class="search-wrap">
@@ -192,8 +231,24 @@
     </section>
 
     <section id="directoryPanel" class="directory">
+      <div class="academy-audit"><strong>九大美院清单：9 / 9 已纳入</strong><p>中央美术学院、中国美术学院、清华大学美术学院、天津美术学院、广州美术学院、鲁迅美术学院、西安美术学院、湖北美术学院、四川美术学院。</p></div>
       <div class="result-head"><h3>院校监测清单</h3><span id="schoolCount"></span></div>
       <div id="directoryGrid" class="directory-grid"></div>
+    </section>
+
+    <section id="mapPanel" class="map-panel">
+      <div class="result-head"><h3>全国在辽招生院校地图</h3><span>按院校所在城市中心定位 · 点击城市或院校查看</span></div>
+      <div class="map-layout">
+        <div class="map-stage">
+          <div id="chinaMap" role="img" aria-label="全国在辽宁招收美术与设计类考生的院校三维地图"></div>
+          <div id="mapLoading" class="map-loading">正在加载三维地图；右侧城市清单始终可用。</div>
+        </div>
+        <aside class="map-sidebar">
+          <h4 id="mapCityHeading">全部城市</h4>
+          <p id="mapCitySummary">选择地图标记，查看该城市院校。</p>
+          <div id="cityList" class="city-list"></div>
+        </aside>
+      </div>
     </section>
 
     <div class="notice" id="dataStatus">
@@ -204,6 +259,19 @@
   <footer>
     <div class="shell footer-inner"><span>辽宁美术设计招生雷达</span><span>信息以院校原文及辽宁省招生考试机构最终公布为准</span></div>
   </footer>
+
+  <div id="schoolModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="profileTitle">
+    <article class="modal-card">
+      <header class="modal-head">
+        <div><h3 id="profileTitle"></h3><p id="profileLocation"></p></div>
+        <button id="modalClose" class="modal-close" type="button" aria-label="关闭院校档案">×</button>
+      </header>
+      <div id="profileBody" class="profile-body"></div>
+    </article>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.6.0/dist/echarts.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/echarts-gl@2.0.9/dist/echarts-gl.min.js" defer></script>
 
   <script>
     const rawSchools = `
@@ -449,11 +517,81 @@
 天津天狮学院
 新疆政法学院
 中央民族大学
-中国传媒大学`;
+中国传媒大学
+中央美术学院
+中国美术学院
+清华大学美术学院
+天津美术学院
+广州美术学院`;
 
     const schools = [...new Set(rawSchools.split('\n').map(s => s.trim()).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'zh-CN'));
     const schoolAliases = {
       '新疆政法学院':'原石河子大学科技学院'
+    };
+    const nineAcademies=new Set(['中央美术学院','中国美术学院','清华大学美术学院','天津美术学院','广州美术学院','鲁迅美术学院','西安美术学院','湖北美术学院','四川美术学院']);
+    const cityPresets={
+      '北京':{province:'北京',coord:[116.41,39.90]},'上海':{province:'上海',coord:[121.47,31.23]},'天津':{province:'天津',coord:[117.20,39.13]},'重庆':{province:'重庆',coord:[106.55,29.56]},
+      '沈阳':{province:'辽宁',coord:[123.43,41.80]},'大连':{province:'辽宁',coord:[121.61,38.91]},'鞍山':{province:'辽宁',coord:[122.99,41.11]},'本溪':{province:'辽宁',coord:[123.77,41.30]},'抚顺':{province:'辽宁',coord:[123.96,41.88]},'锦州':{province:'辽宁',coord:[121.13,41.10]},'丹东':{province:'辽宁',coord:[124.38,40.13]},'朝阳':{province:'辽宁',coord:[120.45,41.57]},'阜新':{province:'辽宁',coord:[121.67,42.02]},
+      '长春':{province:'吉林',coord:[125.32,43.82]},'吉林':{province:'吉林',coord:[126.55,43.84]},'四平':{province:'吉林',coord:[124.35,43.17]},'白城':{province:'吉林',coord:[122.84,45.62]},'哈尔滨':{province:'黑龙江',coord:[126.64,45.76]},'大庆':{province:'黑龙江',coord:[125.10,46.59]},
+      '石家庄':{province:'河北',coord:[114.51,38.04]},'保定':{province:'河北',coord:[115.47,38.87]},'秦皇岛':{province:'河北',coord:[119.60,39.94]},'唐山':{province:'河北',coord:[118.18,39.63]},'邯郸':{province:'河北',coord:[114.54,36.63]},'廊坊':{province:'河北',coord:[116.68,39.54]},
+      '太原':{province:'山西',coord:[112.55,37.87]},'晋中':{province:'山西',coord:[112.75,37.69]},'济南':{province:'山东',coord:[117.12,36.65]},'青岛':{province:'山东',coord:[120.38,36.07]},'威海':{province:'山东',coord:[122.12,37.51]},'曲阜':{province:'山东',coord:[116.99,35.58]},'烟台':{province:'山东',coord:[121.45,37.46]},
+      '杭州':{province:'浙江',coord:[120.16,30.27]},'南京':{province:'江苏',coord:[118.80,32.06]},'苏州':{province:'江苏',coord:[120.58,31.30]},'无锡':{province:'江苏',coord:[120.31,31.49]},'南通':{province:'江苏',coord:[120.89,31.98]},
+      '福州':{province:'福建',coord:[119.30,26.08]},'厦门':{province:'福建',coord:[118.09,24.48]},'广州':{province:'广东',coord:[113.26,23.13]},'深圳':{province:'广东',coord:[114.06,22.54]},'肇庆':{province:'广东',coord:[112.47,23.05]},'珠海':{province:'广东',coord:[113.58,22.27]},
+      '南宁':{province:'广西',coord:[108.37,22.82]},'桂林':{province:'广西',coord:[110.29,25.27]},'北海':{province:'广西',coord:[109.12,21.48]},'柳州':{province:'广西',coord:[109.43,24.33]},
+      '长沙':{province:'湖南',coord:[112.94,28.23]},'衡阳':{province:'湖南',coord:[112.57,26.89]},'郴州':{province:'湖南',coord:[113.01,25.77]},'邵阳':{province:'湖南',coord:[111.47,27.24]},'武汉':{province:'湖北',coord:[114.31,30.59]},
+      '郑州':{province:'河南',coord:[113.63,34.75]},'安阳':{province:'河南',coord:[114.39,36.10]},'许昌':{province:'河南',coord:[113.85,34.04]},'南阳':{province:'河南',coord:[112.53,32.99]},
+      '成都':{province:'四川',coord:[104.07,30.57]},'绵阳':{province:'四川',coord:[104.68,31.47]},'内江':{province:'四川',coord:[105.06,29.58]},'西安':{province:'陕西',coord:[108.94,34.34]},'咸阳':{province:'陕西',coord:[108.71,34.33]},'渭南':{province:'陕西',coord:[109.51,34.50]},
+      '兰州':{province:'甘肃',coord:[103.83,36.06]},'银川':{province:'宁夏',coord:[106.23,38.49]},'乌鲁木齐':{province:'新疆',coord:[87.62,43.83]},'喀什':{province:'新疆',coord:[75.99,39.47]},'和田':{province:'新疆',coord:[79.93,37.11]},
+      '昆明':{province:'云南',coord:[102.71,25.04]},'丽江':{province:'云南',coord:[100.23,26.86]},'曲靖':{province:'云南',coord:[103.80,25.49]},'海口':{province:'海南',coord:[110.20,20.04]},'三亚':{province:'海南',coord:[109.51,18.25]},
+      '南昌':{province:'江西',coord:[115.86,28.68]},'景德镇':{province:'江西',coord:[117.18,29.27]},'九江':{province:'江西',coord:[116.00,29.71]}
+    };
+    const schoolCityOverrides={
+      '北方工业大学':'北京','北方民族大学':'银川','北华大学':'吉林','渤海大学':'锦州','成都美术学院':'成都','东北大学':'沈阳','东北电力大学':'吉林','东北林业大学':'哈尔滨','东北农业大学':'哈尔滨','东北师范大学':'长春','东北石油大学':'大庆','东华大学':'上海','广东理工学院':'肇庆','广东轻工职业技术大学':'广州','广西师范大学':'桂林','广西外国语学院':'南宁','广西艺术学院':'南宁','海南大学':'海口','海南师范大学':'海口',
+      '河北传媒学院':'石家庄','河北地质大学':'石家庄','河北工程大学':'邯郸','河北工业大学':'天津','河北环境工程学院':'秦皇岛','河北科技大学':'石家庄','河北美术学院':'石家庄','河北师范大学':'石家庄','河南工程学院':'郑州','河南工业大学':'郑州','黑龙江财经学院':'哈尔滨','黑龙江大学':'哈尔滨','黑龙江工商学院':'哈尔滨','湖北美术学院':'武汉','湖南工商大学':'长沙','湖南女子学院':'长沙','华北理工大学':'唐山','华北理工大学轻工学院':'唐山','华北水利水电大学':'郑州','华东师范大学':'上海','吉利学院':'成都','吉林大学':'长春','吉林工商学院':'长春','吉林建筑大学':'长春','吉林建筑科技学院':'长春','吉林农业大学':'长春','吉林艺术学院':'长春','江南大学':'无锡',
+      '江西服装学院':'南昌','江西科技师范大学':'南昌','江西师范大学科学技术学院':'南昌','金陵科技学院':'南京','辽宁传媒学院':'沈阳','辽宁大学':'沈阳','辽宁对外经贸学院':'大连','辽宁工程技术大学':'阜新','辽宁工业大学':'锦州','辽宁何氏医学院':'沈阳','辽宁科技大学':'鞍山','辽宁科技学院':'本溪','辽宁师范大学':'大连','辽宁师范大学海华学院':'大连','辽宁石油化工大学':'抚顺','辽东学院':'丹东','鲁迅美术学院':'沈阳','宁夏理工学院':'银川','齐鲁工业大学':'济南','曲阜师范大学':'曲阜','山东财经大学':'济南','山东工艺美术学院':'济南','山东艺术学院':'济南','山西传媒学院':'晋中','山西农业大学':'晋中','陕西师范大学':'西安',
+      '四川美术学院':'重庆','四川传媒学院':'成都','四川电影电视学院':'成都','四川文化艺术学院':'绵阳','太原理工大学':'太原','太原师范学院':'晋中','西北民族大学':'兰州','西北农林科技大学':'咸阳','西北师范大学':'兰州','西南大学':'重庆','西南交通大学':'成都','湘南学院':'郴州','新疆政法学院':'乌鲁木齐','燕山大学':'秦皇岛','燕京理工学院':'廊坊','云南艺术学院':'昆明','浙江传媒学院':'杭州','浙江大学':'杭州','浙江理工大学':'杭州','郑州航空工业管理学院':'郑州','郑州美术学院':'郑州','郑州轻工业大学':'郑州','中国传媒大学':'北京','中国地质大学（北京）':'北京','中国美术学院':'杭州','中国人民大学':'北京','中国戏曲学院':'北京','中华女子学院':'北京','中南财经政法大学':'武汉','中央美术学院':'北京','中央民族大学':'北京','清华大学美术学院':'北京','天津美术学院':'天津','广州美术学院':'广州','南开大学':'天津','首都师范大学':'北京','陕西服装工程学院':'西安','北京师范大学（珠海校区）':'珠海'
+    };
+    function schoolLocation(school){
+      const city=schoolCityOverrides[school]||Object.keys(cityPresets).sort((a,b)=>b.length-a.length).find(name=>school.includes(name))||'北京';
+      return {city,...cityPresets[city]};
+    }
+    const academyProfiles={
+      '中央美术学院':{scope:'校考专业面向全国招生，辽宁考生可按简章报考',years:{
+        2024:{verified:true,mode:'校考为主',majors:['美术学类（造型艺术）','中国画','美术学类（实验与科技）','设计学类（艺术设计）','设计学类（城市艺术设计）','文物保护与修复'],source:'https://www.cafa.edu.cn/st/2024/80632561.htm'},
+        2025:{verified:true,mode:'校考为主',majors:['美术学类（造型艺术）','中国画','美术学类（实验与科技）','设计学类（艺术设计）','设计学类（城市艺术设计）','文物保护与修复'],source:'https://www.cafa.edu.cn/st/2025/80232939.htm'},
+        2026:{verified:true,mode:'校考为主',majors:['美术学类（造型艺术）','中国画','美术学类（实验与科技）','设计学类（艺术设计）','设计学类（城市艺术设计）','文物保护与修复'],source:'https://www.cafa.edu.cn/st/2026/80233399.htm'}},changes:{added:[],removed:[],note:'三年简章中的上述美术与设计校考专业大类未发现增减；方向、计划数与考试科目仍应逐年查看原文。'}},
+      '中国美术学院':{scope:'校考专业全国统一录取；统考专业是否在辽投放以辽宁招生目录为准',years:{
+        2024:{verified:true,mode:'校考＋省统考',majors:['中国画','美术学类','设计学类','戏剧与影视学类','建筑学','产品设计（中外合作）','环境设计（中外合作）','艺术与科技（中外合作）'],source:'https://zb.caa.edu.cn/info/1013/1012.htm'},
+        2025:{verified:false,mode:'校考＋省统考',majors:['专业计划表待逐项核验'],source:'https://zb.caa.edu.cn/bkzs/zsjz.htm'},
+        2026:{verified:true,mode:'校考＋省统考',majors:['中国画','美术学类','设计学类','戏剧与影视学类','产品设计（中外合作）','环境设计（中外合作）','艺术与科技（中外合作）'],source:'https://zb.caa.edu.cn/info/1013/6711.htm'}},changes:{note:'2025专业计划表尚未完成逐项校准，因此暂不判断建筑学等专业的新增或取消。'}},
+      '清华大学美术学院':{scope:'设计学类、美术学类面向全国招生，不编制分省计划',years:{
+        2024:{verified:true,mode:'省统考初选＋校考',majors:['设计学类','美术学类'],source:'https://www.ad.tsinghua.edu.cn/info/1509/30895.htm'},
+        2025:{verified:true,mode:'省统考初选＋校考',majors:['设计学类','美术学类'],source:'https://www.ad.tsinghua.edu.cn/info/1061/31600.htm'},
+        2026:{verified:true,mode:'省统考初选＋校考',majors:['设计学类（不超过180人）','美术学类（不超过45人）'],source:'https://www.join-tsinghua.edu.cn/info/1009/2146.htm'}},changes:{added:[],removed:[],note:'三年招生专业大类仍为设计学类、美术学类；2026年由原来的分专业报名调整为艺术类不分专业报名，录取时再填设计学类/美术学类志愿。'}},
+      '天津美术学院':{scope:'校考类面向全国；统考类是否在辽投放以辽宁招生目录为准',years:{
+        2024:{verified:true,mode:'校考＋统考',majors:['美术学类（绘画类）','设计学类（设计类）','数字媒体艺术（中外合作办学）'],source:'https://zsbgs.tjarts.edu.cn/info/1003/1703.htm'},
+        2025:{verified:true,mode:'校考＋统考',majors:['美术学类（绘画类）','设计学类（设计类）','数字媒体艺术（中外合作办学）'],source:'https://www.tjarts.edu.cn/info/1156/12793.htm'},
+        2026:{verified:true,mode:'校考＋统考',majors:['美术学类（绘画类）','设计学类（设计类）','数字媒体艺术（中外合作办学）'],source:'https://www.tjarts.edu.cn/__local/3/26/E4/AC4E68A3D9B5FB8F893ED5637CA_D69BD0DC_2BF8B.pdf'}},changes:{added:[],removed:[],note:'三年招生大类未发现增减；类内专业和分省统考计划仍需按年度招生计划表核验。'}},
+      '广州美术学院':{scope:'校考专业为全国计划；省统考专业是否在辽投放以辽宁招生目录为准',years:{
+        2024:{verified:true,mode:'校考＋省统考',majors:['美术与设计类校考专业','美术与设计类省统考专业'],source:'https://zs.gzarts.edu.cn/info/1037/3409.htm'},
+        2025:{verified:true,mode:'校考＋省统考',majors:['中国画','绘画','雕塑','环境设计','工艺美术','陶瓷艺术设计','服装与服饰设计','产品设计','动画','视觉传达设计','数字媒体艺术','艺术与科技'],source:'https://zs.gzarts.edu.cn/info/1037/4159.htm'},
+        2026:{verified:true,mode:'校考＋省统考',majors:['美术与设计类校考专业','美术与设计类省统考专业'],source:'https://zs.gzarts.edu.cn/info/1037/4399.htm'}},changes:{note:'2024、2026完整专业表仍需与2025逐项对齐，当前不据此判断新增或取消。'}},
+      '鲁迅美术学院':{scope:'辽宁本省院校；校考专业面向全国，统考专业按分省计划',years:{
+        2024:{verified:true,mode:'校考＋统考',majors:['中国画','文物保护与修复','绘画','雕塑','公共艺术','摄影','环境设计','产品设计','服装与服饰设计','实验艺术','视觉传达设计','数字媒体艺术','工艺美术','动画','戏剧影视美术设计','艺术与科技'],source:'https://www.lumei.edu.cn/info/1207/6396.htm'},
+        2025:{verified:false,mode:'校考＋统考',majors:['专业计划表待逐项核验'],source:'https://www.lumei.edu.cn/zsjy/bkszs.htm'},
+        2026:{verified:true,mode:'校考＋统考',majors:['产品设计','环境设计','美术学','中国画','绘画','雕塑'],source:'https://www.lumei.edu.cn/zsjy/bkszs.htm'}},changes:{note:'2026卡片仅汇总本站已核验公告涉及专业，并非完整招生专业表；暂不据此判断取消。'}},
+      '西安美术学院':{scope:'校考专业全国招生；统考专业含辽宁分省录取数据',years:{
+        2024:{verified:false,mode:'校考＋统考',majors:['专业计划表待逐项核验'],source:'https://zhshch.xafa.edu.cn/'},
+        2025:{verified:false,mode:'校考＋统考',majors:['专业计划表待逐项核验'],source:'https://zhshch.xafa.edu.cn/'},
+        2026:{verified:true,mode:'校考＋统考',majors:['中国画','绘画','雕塑','陶瓷艺术设计','视觉传达设计','产品设计','环境设计','服装与服饰设计'],source:'https://zhshch.xafa.edu.cn/info/1014/4716.htm'}},changes:{note:'2024、2025专业计划尚待录入，当前不作三年增减判断。'}},
+      '湖北美术学院':{scope:'全国校考与分省统考并行；辽宁项目需以分省计划核对',years:{
+        2024:{verified:true,mode:'校考＋统考',majors:['普通本科美术与设计类专业'],source:'https://zjc.hifa.edu.cn/'},
+        2025:{verified:true,mode:'校考＋统考',majors:['普通本科美术与设计类专业'],source:'https://zjc.hifa.edu.cn/'},
+        2026:{verified:true,mode:'校考＋统考',majors:['普通本科美术与设计类专业'],source:'https://zjc.hifa.edu.cn/'}},changes:{note:'三年官方简章均已定位；专业级增减仍需从简章附表逐项结构化。'}},
+      '四川美术学院':{scope:'校考类全国录取、省统考类按分省计划；辽宁适用需结合招生目录',years:{
+        2024:{verified:false,mode:'校考＋统考',majors:['专业计划表待逐项核验'],source:'https://www.scfai.edu.cn/zsb/'},
+        2025:{verified:false,mode:'校考＋统考',majors:['专业计划表待逐项核验'],source:'https://www.scfai.edu.cn/zsb/'},
+        2026:{verified:true,mode:'校考＋统考',majors:['造型类','设计类','省统考类美术与设计专业'],source:'https://www.scfai.edu.cn/zsb/info/1002/4686.htm'}},changes:{note:'2024、2025完整专业计划尚待录入，当前不作三年增减判断。'}}
     };
     const automaticFeedUrl='https://api.github.com/repos/zhangjingyu816-ctrl/liaoning-art-admissions-radar/contents/dist/data/feed.json?ref=main';
     const seedRecords = [
@@ -558,6 +696,7 @@
     ].sort((a,b)=>b.date.localeCompare(a.date));
 
     let records = [...seedRecords];
+    let historicalRecords = [...seedRecords];
 
     const typeNames={policy:'录取方式调整',score:'录取分数与结果',notice:'招生通知'};
     const scopeNames={liaoning:'辽宁明确',national:'全国适用',pending:'辽宁待确认'};
@@ -583,7 +722,7 @@
         .split(school).join('')
         .replace(/20\d{2}[年./-]\d{1,2}[月./-]\d{1,2}日?/g,'')
         .replace(/[^\u3400-\u9fffA-Za-z0-9]/g,'');
-      return `${record.school||''}|${title}`;
+      return `${record.school||''}|${String(record.date||'').slice(0,4)}|${title}`;
     }
     function isAutomaticRecord(record){return record?.automated===true||record?.verified===false}
     function plainRecord(record){const {duplicates,...plain}=record;return plain}
@@ -648,7 +787,84 @@
       const filtered=schools.filter(s=>`${s} ${schoolAliases[s]||''}`.toLowerCase().includes(term));
       const verified=new Map(); records.forEach(r=>{if(!verified.has(r.school)||verified.get(r.school)<r.date)verified.set(r.school,r.date)});
       q('#schoolCount').textContent=`显示 ${filtered.length} / ${schools.length} 所`;
-      q('#directoryGrid').innerHTML=filtered.map(s=>`<div class="school-row ${verified.has(s)?'checked':''}"><b>${esc(s)}</b><span>${verified.has(s)?`已收录 · ${verified.get(s).slice(5).replace('-','.')}`:'待首轮核验'}</span></div>`).join('');
+      q('#directoryGrid').innerHTML=filtered.map(s=>`<button type="button" class="school-row ${verified.has(s)?'checked':''} ${nineAcademies.has(s)?'academy':''}" data-school="${esc(s)}"><b>${esc(s)}${nineAcademies.has(s)?' · 九大美院':''}</b><span>${academyProfiles[s]?'三年档案 →':verified.has(s)?`已收录 · ${verified.get(s).slice(5).replace('-','.')}`:'查看档案 →'}</span></button>`).join('');
+    }
+    function profileForSchool(school){
+      const location=schoolLocation(school);
+      if(academyProfiles[school])return {...academyProfiles[school],location};
+      const schoolRecords=mergeRecords([...historicalRecords,...records]).filter(record=>record.school===school);
+      const years={};
+      [2024,2025,2026].forEach(year=>{
+        const yearRecords=schoolRecords.filter(record=>String(record.date||'').startsWith(String(year)));
+        const majors=[...new Set(yearRecords.flatMap(record=>record.majors||[]))];
+        years[year]={
+          verified:yearRecords.length>0&&yearRecords.some(record=>record.verified!==false),
+          mode:yearRecords.length?'已有官方招生记录':'待补充官方资料',
+          majors:majors.length?majors:['尚未录入可核验的美术与设计专业清单'],
+          source:yearRecords[0]?.url||''
+        };
+      });
+      return {location,scope:'该校已纳入在辽美术与设计类院校总表；分省招生专业以辽宁当年招生计划为准',years,changes:{note:'专业增减只有在相邻两年官方专业表均完成核验后才会显示，避免把资料缺失误判为“取消招生”。'}};
+    }
+    function openSchoolProfile(school){
+      const profile=profileForSchool(school);
+      q('#profileTitle').textContent=school;
+      q('#profileLocation').textContent=`${profile.location.province} · ${profile.location.city}（地图使用城市中心点）`;
+      const years=[2024,2025,2026];
+      const verifiedYears=years.filter(year=>profile.years[year]?.verified).length;
+      const changes=profile.changes||{};
+      q('#profileBody').innerHTML=`
+        <div class="profile-status"><span class="chip ${nineAcademies.has(school)?'important':''}">${nineAcademies.has(school)?'九大美院':'院校档案'}</span><span class="chip national">${esc(profile.scope)}</span><span class="chip ${verifiedYears===3?'liaoning':'pending'}">${verifiedYears} / 3 年已核验</span></div>
+        <div class="year-grid">${years.map(year=>{
+          const item=profile.years[year]||{};
+          return `<section class="year-card"><div class="year-top"><b>${year}</b><span>${item.verified?'已核验':'待补充'}</span></div><p>${esc(item.mode||'待补充官方资料')}</p><ul>${(item.majors||['尚无数据']).map(major=>`<li>${esc(major)}</li>`).join('')}</ul>${item.source?`<a class="year-source" href="${safeUrl(item.source)}" target="_blank" rel="noopener">查看该年官方依据 ↗</a>`:'<span class="year-source">等待录入官方依据</span>'}</section>`
+        }).join('')}</div>
+        <section class="changes"><h4>近三年专业增减</h4>${changes.added?.length?`<div class="change-line add"><b>新增</b><span>${changes.added.map(esc).join('、')}</span></div>`:''}${changes.removed?.length?`<div class="change-line remove"><b>取消</b><span>${changes.removed.map(esc).join('、')}</span></div>`:''}${!changes.added?.length&&!changes.removed?.length?'<div class="change-line"><b>结论</b><span>暂无经两年官方专业表交叉核验后确认的新增或取消项目。</span></div>':''}<div class="profile-note">${esc(changes.note||'专业增减仍在核验。')}</div></section>
+        <p class="profile-note">“待补充”表示本站尚未完成结构化录入，不等于该校当年未在辽宁招生，也不等于专业被取消。</p>`;
+      q('#schoolModal').classList.add('open');
+      document.body.style.overflow='hidden';
+      q('#modalClose').focus();
+    }
+    function closeSchoolProfile(){q('#schoolModal').classList.remove('open');document.body.style.overflow=''}
+    function cityGroups(){
+      const grouped=new Map();
+      schools.forEach(school=>{const location=schoolLocation(school);if(!grouped.has(location.city))grouped.set(location.city,{...location,schools:[]});grouped.get(location.city).schools.push(school)});
+      return [...grouped.values()].sort((a,b)=>b.schools.length-a.schools.length||a.city.localeCompare(b.city,'zh-CN'));
+    }
+    let selectedMapCity='';
+    function renderCityList(city=''){
+      selectedMapCity=city;
+      const term=q('#search').value.trim().toLowerCase();
+      const groups=cityGroups().map(group=>({...group,schools:group.schools.filter(s=>!term||`${s} ${group.city} ${group.province}`.toLowerCase().includes(term))})).filter(group=>group.schools.length&&(city?group.city===city:true));
+      q('#mapCityHeading').textContent=city?`${city}院校`:'全部城市';
+      q('#mapCitySummary').textContent=city?`共 ${groups[0]?.schools.length||0} 所；点击院校查看三年档案。`:`${groups.length} 个城市，${groups.reduce((sum,group)=>sum+group.schools.length,0)} 所院校。`;
+      q('#cityList').innerHTML=groups.map((group,index)=>`<details class="city-card" ${city||index<3?'open':''}><summary>${esc(group.city)} · ${esc(group.province)}<span>${group.schools.length} 所</span></summary><div class="city-schools">${group.schools.map(school=>`<button class="city-school" type="button" data-school="${esc(school)}">${esc(school)}${nineAcademies.has(school)?' · 九大美院':''}</button>`).join('')}</div></details>`).join('')||'<div class="empty" style="display:block;padding:28px 14px">没有符合搜索条件的院校。</div>';
+    }
+    function selectMapCity(city){renderCityList(city);q('#mapCityHeading').scrollIntoView({behavior:'smooth',block:'nearest'})}
+    let mapInstance=null,mapAttempt=0;
+    async function initMap(){
+      renderCityList(selectedMapCity);
+      if(mapInstance){mapInstance.resize();return}
+      if(!window.echarts){
+        if(mapAttempt++<20)setTimeout(initMap,350);else q('#mapLoading').textContent='三维组件未能载入，请使用右侧完整城市清单。';
+        return;
+      }
+      try{
+        const response=await fetch('https://geo.datav.aliyun.com/areas_v3/bound/100000_full.json',{cache:'force-cache'});
+        if(!response.ok)throw new Error(`HTTP ${response.status}`);
+        const geoJson=await response.json();
+        window.echarts.registerMap('china-admissions',geoJson);
+        const data=cityGroups().map(group=>({name:group.city,city:group.city,count:group.schools.length,value:[...group.coord,Math.max(2,group.schools.length)]}));
+        mapInstance=window.echarts.init(q('#chinaMap'));
+        mapInstance.setOption({
+          tooltip:{formatter:params=>params.data?.city?`${esc(params.data.city)}：${params.data.count} 所院校`:'点击城市标记查看院校'},
+          geo3D:{map:'china-admissions',roam:true,boxHeight:12,regionHeight:2,shading:'lambert',environment:'#07131e',viewControl:{distance:105,alpha:45,beta:0,minDistance:65,maxDistance:180},light:{main:{intensity:1.35,shadow:true},ambient:{intensity:.45}},itemStyle:{color:'#123047',borderColor:'#3d7286',borderWidth:.7,opacity:1},emphasis:{itemStyle:{color:'#19506a'},label:{show:false}},label:{show:false}},
+          series:[{type:'scatter3D',coordinateSystem:'geo3D',data,symbol:'circle',symbolSize:value=>Math.min(18,6+Math.sqrt(value[2])*2.3),itemStyle:{color:'#35d2c7',opacity:.96},label:{show:true,distance:1,formatter:params=>`${params.data.city} ${params.data.count}`,textStyle:{color:'#eef5f7',fontSize:10,backgroundColor:'rgba(5,15,24,.78)',padding:[3,5],borderRadius:4}},emphasis:{itemStyle:{color:'#ffb45c'}}}]
+        });
+        mapInstance.on('click',params=>{if(params.data?.city)selectMapCity(params.data.city)});
+        q('#mapLoading').style.display='none';
+        window.addEventListener('resize',()=>mapInstance?.resize());
+      }catch(error){q('#mapLoading').textContent='三维底图暂时无法连接；右侧城市清单包含全部院校，可正常点击查看。';console.warn('三维地图加载失败',error)}
     }
     let automaticDataLoading=false;
     function formatBeijingTime(date,{seconds=false}={}){
@@ -669,6 +885,7 @@
           payload={...notices,status};
         }
         records=mergeRecords([...seedRecords,...(payload.records||[])]);
+        historicalRecords=mergeRecords([...seedRecords,...(payload.historyRecords||[])]);
         const stamp=payload.updatedAt?new Date(payload.updatedAt):null;
         q('#lastUpdated').textContent=stamp&&!Number.isNaN(stamp.valueOf())?`上次数据更新时间：${formatBeijingTime(stamp)}`:'上次数据更新时间：等待首次更新';
         q('#syncPulse').classList.remove('loading');
@@ -700,15 +917,22 @@
       }
       throw lastError||new Error('没有可用的数据源');
     }
-    function render(){activeTab==='directory'?renderDirectory():renderFeed()}
+    function render(){if(activeTab==='directory')renderDirectory();else if(activeTab==='map')renderCityList(selectedMapCity);else renderFeed()}
     document.querySelectorAll('.tab').forEach(btn=>btn.addEventListener('click',()=>{
       activeTab=btn.dataset.tab;
       document.querySelectorAll('.tab').forEach(b=>{b.classList.toggle('active',b===btn);b.setAttribute('aria-selected',b===btn)});
-      q('#feedPanel').style.display=activeTab==='directory'?'none':'block';
+      q('#feedPanel').style.display=['directory','map'].includes(activeTab)?'none':'block';
       q('#directoryPanel').style.display=activeTab==='directory'?'block':'none';
-      q('#scopeFilter').disabled=activeTab==='directory';q('#typeFilter').disabled=activeTab==='directory';render();
+      q('#mapPanel').style.display=activeTab==='map'?'block':'none';
+      q('#scopeFilter').disabled=['directory','map'].includes(activeTab);q('#typeFilter').disabled=['directory','map'].includes(activeTab);render();
+      if(activeTab==='map')initMap();
     }));
     ['#search','#scopeFilter','#typeFilter'].forEach(id=>q(id).addEventListener(id==='#search'?'input':'change',render));
+    q('#directoryGrid').addEventListener('click',event=>{const button=event.target.closest('[data-school]');if(button)openSchoolProfile(button.dataset.school)});
+    q('#cityList').addEventListener('click',event=>{const button=event.target.closest('[data-school]');if(button)openSchoolProfile(button.dataset.school)});
+    q('#modalClose').addEventListener('click',closeSchoolProfile);
+    q('#schoolModal').addEventListener('click',event=>{if(event.target===q('#schoolModal'))closeSchoolProfile()});
+    document.addEventListener('keydown',event=>{if(event.key==='Escape')closeSchoolProfile()});
     refreshStats();renderFeed();renderDirectory();
     updateBeijingClock();
     loadAutomaticData();
