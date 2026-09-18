@@ -110,53 +110,68 @@
     .school-row.academy{border-color:#6a4c2a;background:linear-gradient(145deg,#151b21,#0c1925)}
     .map-panel{display:none;scroll-margin-top:205px}
     .map-layout{display:grid;grid-template-columns:minmax(0,1.72fr) minmax(280px,.58fr);gap:14px}
-    .map-stage{position:relative;isolation:isolate;min-height:650px;border:1px solid #cbd8e2;border-radius:20px;overflow:hidden;background:
-      radial-gradient(ellipse at 56% 48%,rgba(255,255,255,.98) 0 23%,rgba(231,239,245,.88) 55%,rgba(207,220,230,.92) 100%),
-      #e1eaf0;box-shadow:0 22px 55px rgba(0,0,0,.2),inset 0 1px 0 rgba(255,255,255,.9)}
-    .map-stage::before{content:'';position:absolute;z-index:-1;inset:0;background-image:linear-gradient(rgba(102,130,151,.11) 1px,transparent 1px),linear-gradient(90deg,rgba(102,130,151,.11) 1px,transparent 1px);background-size:54px 54px;transform:perspective(680px) rotateX(4deg) scale(1.08);transform-origin:50% 50%;mask-image:radial-gradient(ellipse at center,#000 32%,transparent 83%)}
-    .map-stage::after{content:'';position:absolute;z-index:8;inset:0;pointer-events:none;background:linear-gradient(120deg,rgba(255,255,255,.34),transparent 31%,transparent 72%,rgba(115,146,166,.1));box-shadow:inset 0 0 54px rgba(73,99,118,.13)}
+    .map-stage{position:relative;isolation:isolate;min-height:650px;border:1px solid #173349;border-radius:20px;overflow:hidden;background:
+      radial-gradient(ellipse at 50% 40%,rgba(38,128,170,.30) 0%,rgba(14,48,72,.20) 36%,transparent 66%),
+      radial-gradient(circle at 50% 118%,rgba(24,104,148,.40),transparent 62%),
+      linear-gradient(180deg,#07111c 0%,#050d16 58%,#04090f 100%);box-shadow:0 26px 64px rgba(0,0,0,.58),inset 0 0 90px rgba(0,0,0,.55),inset 0 1px 0 rgba(95,225,255,.12)}
+    .map-stage::before{content:'';position:absolute;z-index:0;left:-8%;right:-8%;top:30%;bottom:-30%;background-image:linear-gradient(rgba(64,200,240,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(64,200,240,.12) 1px,transparent 1px);background-size:60px 60px;transform:perspective(760px) rotateX(56deg);transform-origin:50% 100%;mask-image:linear-gradient(to top,#000 0%,transparent 66%);-webkit-mask-image:linear-gradient(to top,#000 0%,transparent 66%)}
+    .map-stage::after{content:'';position:absolute;z-index:8;inset:0;pointer-events:none;background:radial-gradient(ellipse at center,transparent 48%,rgba(2,8,14,.66) 100%);box-shadow:inset 0 0 96px rgba(0,0,0,.5)}
+    .map-terrain{position:absolute;z-index:0;inset:0;pointer-events:none;overflow:hidden}
+    .map-terrain svg{width:100%;height:100%;display:block}
+    .map-atmos{position:absolute;z-index:7;inset:0;pointer-events:none;overflow:hidden}
+    .map-atmos i{position:absolute;width:3px;height:3px;border-radius:50%;background:#9ff5ff;box-shadow:0 0 8px #37e4ff;opacity:.45;animation:mapDrift linear infinite}
+    @keyframes mapDrift{0%{transform:translateY(22px);opacity:0}16%{opacity:.6}100%{transform:translateY(-64px);opacity:0}}
+    @keyframes mapPing{0%{transform:scale(.55);opacity:.85}100%{transform:scale(2.7);opacity:0}}
     #chinaMap{position:relative;width:100%;height:650px;overflow:hidden;cursor:grab;touch-action:none;user-select:none;outline:none}
     #chinaMap.is-dragging{cursor:grabbing}
     #chinaMap:focus-visible{box-shadow:inset 0 0 0 3px rgba(16,122,181,.42)}
     .map-camera{position:absolute;z-index:1;left:0;top:0;width:100%;height:100%;--map-marker-scale:1}
-    .map-title-card{position:absolute;z-index:10;top:20px;left:22px;padding:10px 13px;border:1px solid rgba(115,143,162,.34);border-radius:10px;background:rgba(245,250,253,.82);box-shadow:0 8px 24px rgba(75,100,118,.12);backdrop-filter:blur(7px);color:#234259;pointer-events:none}
-    .map-title-card b{display:block;font-size:.84rem}.map-title-card span{display:block;margin-top:2px;color:#6f8798;font-size:.66rem}
-    .map-caption{position:absolute;z-index:10;left:22px;bottom:18px;padding:8px 11px;border:1px solid rgba(121,148,166,.3);border-radius:9px;background:rgba(247,251,253,.84);color:#587286;font-size:.68rem;box-shadow:0 7px 22px rgba(77,105,123,.1);backdrop-filter:blur(6px);pointer-events:none}
-    .map-controls{position:absolute;z-index:12;top:18px;right:18px;display:grid;grid-template-columns:36px 36px;gap:6px;padding:6px;border:1px solid rgba(106,137,158,.35);border-radius:12px;background:rgba(247,251,253,.88);box-shadow:0 8px 24px rgba(55,86,106,.16);backdrop-filter:blur(8px)}
-    .map-controls button{width:36px;height:34px;border:1px solid #c5d7e2;border-radius:8px;background:#f9fcfe;color:#1e5779;cursor:pointer;font-size:1.1rem;font-weight:800;line-height:1}
-    .map-controls button:hover,.map-controls button:focus-visible{border-color:#3988b6;background:#e9f7ff;outline:none}
+    .map-title-card{position:absolute;z-index:10;top:20px;left:22px;padding:10px 13px;border:1px solid rgba(72,205,245,.30);border-radius:10px;background:linear-gradient(135deg,rgba(9,26,40,.86),rgba(6,18,30,.72));box-shadow:0 0 26px rgba(31,162,214,.14),inset 0 0 20px rgba(45,176,226,.07);backdrop-filter:blur(8px);color:#bfefff;pointer-events:none}
+    .map-title-card b{display:block;font-size:.84rem;color:#ecfdff;letter-spacing:.04em}.map-title-card span{display:block;margin-top:2px;color:#5fa8c6;font-size:.66rem}
+    .map-caption{position:absolute;z-index:10;left:22px;bottom:18px;padding:8px 11px;border:1px solid rgba(72,205,245,.24);border-radius:9px;background:rgba(6,18,30,.78);color:#74b7d3;font-size:.68rem;box-shadow:0 0 22px rgba(31,162,214,.10);backdrop-filter:blur(6px);pointer-events:none}
+    .map-controls{position:absolute;z-index:12;top:18px;right:18px;display:grid;grid-template-columns:36px 36px;gap:6px;padding:6px;border:1px solid rgba(72,205,245,.28);border-radius:12px;background:rgba(7,20,32,.82);box-shadow:0 0 26px rgba(31,162,214,.12);backdrop-filter:blur(8px)}
+    .map-controls button{width:36px;height:34px;border:1px solid #1d4d68;border-radius:8px;background:#0c2233;color:#7fe7ff;cursor:pointer;font-size:1.1rem;font-weight:800;line-height:1}
+    .map-controls button:hover,.map-controls button:focus-visible{border-color:#37bfe6;background:#10324a;color:#c8f8ff;outline:none;box-shadow:0 0 14px rgba(55,191,230,.35)}
     .map-controls .map-reset{grid-column:1/-1;width:78px;font-size:.68rem;font-weight:750}
-    .map-level-badge{position:absolute;z-index:10;right:18px;bottom:18px;min-width:118px;padding:8px 11px;border:1px solid rgba(73,123,151,.32);border-radius:10px;background:rgba(15,91,133,.88);box-shadow:0 7px 22px rgba(57,91,112,.15);color:#f4fcff;text-align:center;font-size:.68rem;font-weight:750;pointer-events:none}
+    .map-level-badge{position:absolute;z-index:10;right:18px;bottom:18px;min-width:118px;padding:8px 11px;border:1px solid rgba(72,205,245,.32);border-radius:10px;background:linear-gradient(135deg,rgba(10,52,74,.92),rgba(6,26,40,.92));box-shadow:0 0 22px rgba(31,162,214,.16);color:#bff4ff;text-align:center;font-size:.68rem;font-weight:750;pointer-events:none}
     .native-map-svg{position:absolute;z-index:2;overflow:visible;shape-rendering:geometricPrecision}
     .map-points{position:absolute;z-index:5;pointer-events:none}
-    .province-label-layer text{fill:#214f69;paint-order:stroke;stroke:#eef9ff;stroke-linejoin:round;font-size:var(--province-font,15px);font-weight:650;pointer-events:none}
-    .city-boundary-layer{opacity:0;transition:opacity .24s ease}.city-boundary-layer path{fill:none;stroke:#f8fdff;stroke-opacity:.92;stroke-width:.7;vector-effect:non-scaling-stroke}
+    .province-label-layer text{fill:#8fe9ff;fill-opacity:.82;paint-order:stroke;stroke:#04111c;stroke-linejoin:round;font-size:var(--province-font,15px);font-weight:650;pointer-events:none}
+    .city-boundary-layer{opacity:0;transition:opacity .24s ease}.city-boundary-layer path{fill:none;stroke:#86e9ff;stroke-opacity:.30;stroke-width:.7;vector-effect:non-scaling-stroke}
     .map-stage[data-map-level="cities"] .city-boundary-layer,.map-stage[data-map-level="schools"] .city-boundary-layer{opacity:.86}
     .map-stage[data-map-level="cities"] .province-label-layer text{opacity:.6}.map-stage[data-map-level="schools"] .province-label-layer text{opacity:0}
-    .map-point{position:absolute;z-index:2;width:34px;height:34px;padding:0;border:0;background:transparent;color:#15384f;cursor:pointer;pointer-events:auto;opacity:1;transform:translate(-50%,-50%) scale(var(--map-marker-scale));transform-origin:50% 50%;transition:opacity .18s ease}
-    .map-point::before{content:'';position:absolute;left:8px;top:8px;width:18px;height:18px;border:1px solid rgba(255,255,255,.8);border-radius:50%;background:rgba(45,144,201,.13)}
-    .map-point i{position:absolute;left:12px;top:12px;display:block;width:10px;height:10px;border:2px solid #f7fdff;border-radius:50%;background:#2f93c9;box-shadow:0 2px 7px rgba(30,88,123,.38);transition:transform .18s ease,background .18s ease}
-    .map-point span{position:absolute;left:33px;top:10px;display:none;white-space:nowrap;padding:3px 7px;border:1px solid rgba(78,121,148,.28);border-radius:5px;background:rgba(251,254,255,.94);box-shadow:0 5px 14px rgba(54,85,105,.14);color:#23475f;font-size:.64rem;line-height:1.35}
+    .map-point{position:absolute;z-index:2;width:30px;height:30px;padding:0;border:0;background:transparent;color:#8fe9ff;cursor:pointer;pointer-events:auto;opacity:1;transform:translate(-50%,-50%) scale(var(--map-marker-scale));transform-origin:50% 50%;transition:opacity .18s ease}
+    .map-point i{position:absolute;left:50%;top:50%;display:block;width:9px;height:9px;margin:-4.5px 0 0 -4.5px;border:1.5px solid #e8feff;border-radius:50%;background:#76f2ff;box-shadow:0 0 6px #3fe7ff,0 0 16px rgba(63,231,255,.75);transition:transform .18s ease,background .18s ease}
+    .map-point::before{content:'';position:absolute;left:50%;top:50%;width:14px;height:14px;margin:-7px 0 0 -7px;border:1px solid rgba(90,240,255,.65);border-radius:50%;animation:mapPing 2.8s ease-out infinite;animation-delay:var(--ping-delay,0s)}
+    .map-point span{position:absolute;left:17px;top:6px;display:none;white-space:nowrap;padding:2px 7px;border:1px solid rgba(72,205,245,.36);border-radius:6px;background:rgba(6,20,32,.92);box-shadow:0 0 16px rgba(31,162,214,.25);color:#aeefff;font-size:.64rem;line-height:1.35}
     .map-stage[data-map-level="national"] .map-point:not(.major):not(.hub){opacity:0;pointer-events:none}
     .map-stage[data-map-level="cities"] .map-point.major span,.map-stage[data-map-level="schools"] .map-point span,.map-point.selected span,.map-point.hub span,.map-point:hover span,.map-point:focus-visible span{display:block}
-    .map-point:hover i,.map-point:focus-visible i,.map-point.selected i{background:#0b68a0;transform:scale(1.45);outline:none}.map-point.liaoning i{background:#0878b9;box-shadow:0 0 0 3px rgba(255,255,255,.72),0 0 16px rgba(16,130,193,.72)}.map-point.hub span{background:#0c76b3;color:white;border-color:#8fd8ff;font-weight:700}
-    .city-school-bubble{position:absolute;z-index:14;display:none;width:min(310px,calc(100% - 24px));max-height:260px;overflow:hidden;border:1px solid rgba(46,113,150,.44);border-radius:14px;background:rgba(247,252,255,.97);box-shadow:0 18px 45px rgba(43,78,99,.24);color:#1b3c51;backdrop-filter:blur(10px)}
+    .map-point.major::before{width:19px;height:19px;margin:-9.5px 0 0 -9.5px;border-color:rgba(130,250,255,.85)}
+    .map-point.major i{width:12px;height:12px;margin:-6px 0 0 -6px;background:#aef8ff}
+    .map-point:hover i,.map-point:focus-visible i,.map-point.selected i{background:#e8feff;transform:scale(1.4);outline:none}
+    .map-point.liaoning i{background:#8ff6ff;box-shadow:0 0 0 3px rgba(120,240,255,.22),0 0 8px #5ff0ff,0 0 22px rgba(63,231,255,.8)}
+    .map-point.hub i{width:13px;height:13px;margin:-6.5px 0 0 -6.5px;background:#ffffff;border-color:#bff7ff;box-shadow:0 0 10px #6ff4ff,0 0 26px #27ddff,0 0 50px rgba(39,221,255,.55)}
+    .map-point.hub::before{width:22px;height:22px;margin:-11px 0 0 -11px;border-color:rgba(160,252,255,.9)}
+    .map-point.hub::after{content:'';position:absolute;left:50%;bottom:50%;width:2px;height:52px;transform:translateX(-50%);background:linear-gradient(to top,rgba(130,246,255,.95),transparent);filter:drop-shadow(0 0 6px #35e6ff)}
+    .map-point.hub span{background:linear-gradient(135deg,rgba(16,84,116,.96),rgba(8,38,58,.96));color:#eaffff;border-color:#5ad8ff;font-weight:700}
+    .city-school-bubble{position:absolute;z-index:14;display:none;width:min(310px,calc(100% - 24px));max-height:260px;overflow:hidden;border:1px solid rgba(72,205,245,.36);border-radius:14px;background:rgba(7,20,31,.95);box-shadow:0 18px 50px rgba(0,0,0,.55),0 0 30px rgba(31,162,214,.12);color:#c6ecf7;backdrop-filter:blur(10px)}
     .map-stage[data-map-level="schools"] .city-school-bubble.open{display:block}
-    .city-school-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;padding:11px 12px;border-bottom:1px solid #d5e3eb}.city-school-head b{display:block;font-size:.86rem}.city-school-head span{display:block;margin-top:2px;color:#688091;font-size:.66rem}.city-school-close{flex:none;width:26px;height:26px;border:1px solid #bfd3df;border-radius:7px;background:#fff;color:#355b71;cursor:pointer}
-    .city-school-items{max-height:150px;overflow:auto;padding:5px 0}.city-school-items button{display:block;width:100%;padding:7px 12px;border:0;background:transparent;color:#31566d;text-align:left;cursor:pointer;font-size:.71rem}.city-school-items button:hover,.city-school-items button:focus-visible{background:#e7f5fc;color:#075f91;outline:none}
-    .city-school-note{margin:0;padding:8px 12px;border-top:1px solid #d5e3eb;color:#6a8190;font-size:.62rem;line-height:1.45}
-    .map-loading{position:absolute;inset:0;display:grid;place-items:center;padding:30px;color:#617b8d;text-align:center;pointer-events:none}
-    .map-sidebar{border:1px solid #cbd8e2;border-radius:20px;background:#eef5f9;color:#1f3b4e;padding:16px;max-height:650px;overflow:auto;box-shadow:0 18px 45px rgba(0,0,0,.14)}
-    .map-sidebar h4{margin:0 0 3px;font-size:1.05rem;color:#17384f}
-    .map-sidebar>p{margin:0 0 14px;color:#6c8494;font-size:.78rem}
+    .city-school-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;padding:11px 12px;border-bottom:1px solid rgba(72,205,245,.22)}.city-school-head b{display:block;font-size:.86rem;color:#eafdff}.city-school-head span{display:block;margin-top:2px;color:#6fafca;font-size:.66rem}.city-school-close{flex:none;width:26px;height:26px;border:1px solid #1d4d68;border-radius:7px;background:#0c2233;color:#7fe7ff;cursor:pointer}
+    .city-school-close:hover{border-color:#37bfe6;color:#c8f8ff}
+    .city-school-items{max-height:150px;overflow:auto;padding:5px 0}.city-school-items button{display:block;width:100%;padding:7px 12px;border:0;background:transparent;color:#9fc7d8;text-align:left;cursor:pointer;font-size:.71rem}.city-school-items button:hover,.city-school-items button:focus-visible{background:rgba(24,80,108,.4);color:#8ff0ff;outline:none}
+    .city-school-note{margin:0;padding:8px 12px;border-top:1px solid rgba(72,205,245,.18);color:#6fafca;font-size:.62rem;line-height:1.45}
+    .map-loading{position:absolute;z-index:9;inset:0;display:grid;place-items:center;padding:30px;color:#74b7d3;text-align:center;pointer-events:none}
+    .map-sidebar{border:1px solid #173349;border-radius:20px;background:linear-gradient(180deg,rgba(10,24,36,.96),rgba(7,18,28,.96));color:#c6e6f2;padding:16px;max-height:650px;overflow:auto;box-shadow:0 18px 45px rgba(0,0,0,.45)}
+    .map-sidebar h4{margin:0 0 3px;font-size:1.05rem;color:#eafdff}
+    .map-sidebar>p{margin:0 0 14px;color:#6fafca;font-size:.78rem}
     .city-list{display:grid;gap:8px}
-    .city-card{border:1px solid #cfdae2;border-radius:12px;background:rgba(255,255,255,.78);overflow:hidden}
-    .city-card summary{cursor:pointer;padding:10px 12px;list-style:none;display:flex;justify-content:space-between;gap:10px;font-size:.82rem;font-weight:700}
+    .city-card{border:1px solid rgba(42,86,112,.6);border-radius:12px;background:rgba(12,32,47,.6);overflow:hidden}
+    .city-card summary{cursor:pointer;padding:10px 12px;list-style:none;display:flex;justify-content:space-between;gap:10px;font-size:.82rem;font-weight:700;color:#dff6fd}
     .city-card summary::-webkit-details-marker{display:none}
-    .city-card summary span{color:#1677a9;font-size:.72rem}
-    .city-schools{display:grid;border-top:1px solid #d4e0e7}
-    .city-school{border:0;border-bottom:1px solid rgba(192,208,218,.62);background:transparent;color:#36566a;text-align:left;padding:9px 12px;cursor:pointer;font-size:.78rem}
-    .city-school:last-child{border-bottom:0}.city-school:hover{color:#075f91;background:#e2f2fb}
+    .city-card summary span{color:#58d8ff;font-size:.72rem}
+    .city-schools{display:grid;border-top:1px solid rgba(72,205,245,.16)}
+    .city-school{border:0;border-bottom:1px solid rgba(72,205,245,.12);background:transparent;color:#9fc7d8;text-align:left;padding:9px 12px;cursor:pointer;font-size:.78rem}
+    .city-school:last-child{border-bottom:0}.city-school:hover{color:#8ff0ff;background:rgba(24,80,108,.35)}
     .academy-audit{margin-bottom:14px;padding:15px;border:1px solid #624722;border-radius:15px;background:linear-gradient(135deg,rgba(255,180,92,.11),rgba(53,210,199,.04))}
     .academy-audit strong{display:block;color:#ffd29a}.academy-audit p{margin:4px 0 0;color:#b8c8d1;font-size:.78rem}
     .modal{position:fixed;inset:0;z-index:60;display:none;align-items:center;justify-content:center;padding:22px;background:rgba(1,7,12,.76);backdrop-filter:blur(10px)}
@@ -194,9 +209,9 @@
       .shell{width:min(100% - 22px,1220px)}.topbar-inner{min-height:72px;gap:10px}.brand p{display:none}.brand h1{font-size:.9rem}.verified{gap:7px;font-size:.68rem}.time-status span:last-child{font-size:.66rem}main{padding-top:24px}.headline h2{font-size:2.45rem}.stats{gap:8px}.stat{padding:15px}.toolbar{top:72px}.tabs{overflow-x:auto}.tab{white-space:nowrap}.filters{grid-template-columns:1fr}.card{grid-template-columns:1fr}.date-rail{display:flex;gap:8px;align-items:baseline;padding:13px 17px;border-right:0;border-bottom:1px solid var(--line)}.card-body{padding:17px}.directory-grid{grid-template-columns:1fr}.footer-inner{display:block}.actions{align-items:flex-start;flex-direction:column}.official{align-self:flex-end}.duplicate-record{flex-direction:column;gap:5px}.map-stage,#chinaMap{min-height:480px;height:480px}.native-map-svg,.map-points{inset:11% 1% 7%;width:98%;height:82%;transform:perspective(1200px) rotateX(7deg) rotateZ(-.7deg)}.map-title-card{top:12px;left:12px;padding:7px 9px;max-width:215px}.map-controls{top:10px;right:10px;transform:scale(.9);transform-origin:100% 0}.map-level-badge{right:12px;bottom:48px}.map-caption{left:12px;bottom:9px;right:12px;text-align:center}.map-stage[data-map-level="cities"] .map-point.major span{display:none}.map-stage[data-map-level="schools"] .map-point span{display:block}.city-school-bubble{max-height:230px}.map-point.hub span,.map-point:hover span,.map-point:focus-visible span{display:block}.modal{padding:10px}.modal-card{max-height:calc(100vh - 20px)}.modal-head,.profile-body{padding-left:15px;padding-right:15px}
     }
     .native-map-svg,.map-points{inset:auto;transform:none}
-    .map-stage::after{background:none;box-shadow:inset 0 0 30px rgba(73,99,118,.08)}
-    .map-point span{font-size:12px;box-shadow:none;line-height:1.45}
-    .map-controls .map-fullscreen{grid-column:1/-1;width:78px;font-size:12px;background:#176b99;color:#fff;border-color:#176b99}
+    .map-stage::after{background:radial-gradient(ellipse at center,transparent 50%,rgba(2,8,14,.58) 100%);box-shadow:inset 0 0 80px rgba(0,0,0,.45)}
+    .map-point span{font-size:12px;line-height:1.45}
+    .map-controls .map-fullscreen{grid-column:1/-1;width:78px;font-size:12px;background:linear-gradient(135deg,#0e5a80,#0a3f5c);color:#dff8ff;border-color:#1f7aa6}
     .map-caption{max-width:calc(100% - 170px);font-size:11px}
     #mapPanel.map-expanded{position:fixed;inset:0;z-index:1000;display:flex!important;flex-direction:column;width:100%;height:100dvh;box-sizing:border-box;padding:16px;background:#091623;overflow:hidden}
     #mapPanel.map-expanded>.result-head{flex:none;margin:0 0 12px}
@@ -292,7 +307,7 @@
       <div class="result-head"><h3>全国在辽招生院校地图</h3><span>按院校所在城市中心定位 · 点击城市或院校查看</span></div>
       <div class="map-layout">
         <div class="map-stage" data-map-level="national">
-          <div id="chinaMap" role="region" tabindex="0" aria-label="全国在辽宁招收美术与设计类考生的可缩放冰蓝立体地图。滚轮缩放，按住拖动平移。"></div>
+          <div id="chinaMap" role="region" tabindex="0" aria-label="全国在辽宁招收美术与设计类考生的可缩放暗色霓虹立体地图。滚轮缩放，按住拖动平移。"></div>
           <div id="mapLoading" class="map-loading">正在加载全国招生数据地图；右侧城市清单始终可用。</div>
         </div>
         <aside class="map-sidebar">
@@ -1000,7 +1015,7 @@
         mapDrawn={...view};
         const map=q('#chinaMap'),w=map.clientWidth,h=map.clientHeight;
         // Resize the vector viewport instead of magnifying a composited bitmap.
-        const baseWidth=Math.min(w*.94,h*.83*900/570),baseHeight=baseWidth*570/900;
+        const baseWidth=Math.min(w*.98,h*.88*900/570),baseHeight=baseWidth*570/900;
         camera.style.left=`${view.x}px`;camera.style.top=`${view.y}px`;
         camera.style.width=`${w*view.scale}px`;camera.style.height=`${h*view.scale}px`;
         camera.querySelectorAll('.native-map-svg,.map-points').forEach(layer=>{
@@ -1073,6 +1088,50 @@
     }
     const bundledChinaGeoJson={type:'FeatureCollection',features:[{type:'Feature',properties:{name:'中国'},geometry:{type:'MultiPolygon',coordinates:[[[[73.5,39],[75,36],[77,35],[78,32],[80,30],[81,27],[84,27],[87,29],[90,28],[92,27],[96,27],[98,24],[100,21],[103,22],[106,21.5],[109,20],[110.5,20.5],[111.5,21.5],[113,22.2],[116,22.6],[118.5,24],[120.5,25.5],[121.7,28],[121,31],[122,33],[120,35],[121.5,37.5],[122.5,39],[124,39.5],[124.5,41.5],[128,41.5],[130,43],[133,44.5],[134.5,47],[132,48.5],[129,49],[127,51],[123,53],[119,50],[116,49],[113,48],[110,44],[107,42],[104,42],[101,43],[97,44],[94,43],[91,45],[87,49],[83,49],[79,48],[77,46],[76,43],[73.5,39]]],[[[108.6,19.2],[109.1,18.2],[110.1,18.1],[111,19.1],[110.5,20.1],[109.4,20.2],[108.6,19.2]]],[[[120.0,22.0],[121.0,21.9],[122.1,24.2],[121.5,25.3],[120.4,24.2],[120.0,22.0]]]]}}]};
     let mapInstance=null;
+    function buildMapTerrain(){
+      let seed=20260918;
+      const rnd=()=>{seed=(seed*16807)%2147483647;return seed/2147483647};
+      const ridgePts=(x0,x1,baseY,maxH,step,bias)=>{
+        const pts=[];
+        for(let x=x0;x<=x1+0.1;x+=step){
+          const t=Math.max(0,Math.min(1,(x-x0)/Math.max(1,x1-x0)));
+          const fade=bias==='left'?Math.pow(1-t,.75):bias==='right'?Math.pow(t,.75):1;
+          let h=maxH*fade*(.2+rnd()*.8);
+          if(rnd()>.8)h*=1.55;
+          pts.push([x,baseY-h]);
+          if(x+step<=x1+0.1)pts.push([x+step*.45,baseY-h*(.5+rnd()*.42)]);
+        }
+        return pts;
+      };
+      const range=(x0,x1,baseY,maxH,step,bias,fill,stroke,opacity)=>{
+        const chain=ridgePts(x0,x1,baseY,maxH,step,bias).map(p=>`${p[0].toFixed(0)},${p[1].toFixed(0)}`).join(' L');
+        return `<path d="M${x0},${baseY} L${chain} L${x1},${baseY} Z" fill="${fill}"/>
+          <path d="M${chain}" fill="none" stroke="${stroke}" stroke-width="1.3" vector-effect="non-scaling-stroke" stroke-linejoin="round" stroke-linecap="round" opacity="${opacity}"/>`;
+      };
+      const shards=[];
+      for(let i=0;i<16;i++){
+        const cx=rnd()*1000,cy=130+rnd()*440,size=8+rnd()*26;
+        const pts=[];
+        const n=3+Math.floor(rnd()*3);
+        for(let k=0;k<n;k++){const a=Math.PI*2*k/n+rnd()*.5;pts.push([cx+Math.cos(a)*size*(.6+rnd()*.8),cy+Math.sin(a)*size*(.6+rnd()*.8)])}
+        const d='M'+pts.map(p=>`${p[0].toFixed(0)},${p[1].toFixed(0)}`).join(' L')+' Z';
+        shards.push(`<path d="${d}" fill="${rnd()>.5?'#0b1d2c':'#091826'}" stroke="#2b93c2" stroke-opacity=".18" stroke-width="1" vector-effect="non-scaling-stroke"/>`);
+      }
+      const terrain=`<svg viewBox="0 0 1000 650" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs><filter id="terrainGlow" x="-20%" y="-60%" width="140%" height="180%"><feGaussianBlur stdDeviation="7"/></filter></defs>
+        <ellipse cx="500" cy="646" rx="560" ry="52" fill="#23c9f2" opacity=".12" filter="url(#terrainGlow)"/>
+        ${range(-30,1030,626,104,62,'none','#0a1c2b','#3cb4dc',.18)}
+        ${range(-30,1030,652,158,48,'none','#081625','#46c8f0',.22)}
+        ${range(-70,400,652,360,40,'left','#07141f','#63dcff',.38)}
+        ${range(600,1070,652,360,40,'right','#07141f','#63dcff',.38)}
+        ${shards.join('')}
+      </svg>`;
+      const atmos=Array.from({length:12},()=>{
+        const size=(2+rnd()*2.2).toFixed(1);
+        return `<i style="left:${(8+rnd()*84).toFixed(1)}%;top:${(38+rnd()*56).toFixed(1)}%;width:${size}px;height:${size}px;animation-duration:${(7+rnd()*7).toFixed(1)}s;animation-delay:${(-rnd()*12).toFixed(1)}s"></i>`;
+      }).join('');
+      return {terrain,atmos};
+    }
     async function initMap(){
       renderCityList(selectedMapCity);
       if(mapInstance)return;
@@ -1096,39 +1155,66 @@
         console.warn('省级地图读取失败，使用内置轮廓',error);
         mapData=bundledChinaGeoJson;
       }
-      const featurePaths=mapData.features.map(feature=>({
-        name:feature.properties?.name||'',
-        center:feature.properties?.centroid||feature.properties?.center||null,
-        path:ringsFor(feature.geometry).map(pathFor).join(' ')
-      })).filter(feature=>feature.path);
-      const baseShapes=featurePaths.map(feature=>`<path d="${feature.path}" fill-rule="evenodd"/>`).join('');
-      const topShapes=featurePaths.map(feature=>`<path d="${feature.path}" fill="${feature.name.includes('辽宁')?'url(#liaoningIce)':'url(#iceTop)'}" stroke="#f9fdff" stroke-opacity=".95" stroke-width="1.1" vector-effect="non-scaling-stroke" fill-rule="evenodd"/>`).join('');
+      const EXTRUDE=21;
+      const ringXY=ring=>ring.map(point=>{const [x,y]=project(point);return [+x.toFixed(1),+y.toFixed(1)]});
+      const topPathFor=ring=>{const pts=ringXY(ring);return 'M'+pts.map(p=>p.join(',')).join('L')+' Z'};
+      const sidePathFor=ring=>{
+        const pts=ringXY(ring);
+        let d='M'+pts[0][0]+','+(pts[0][1]+EXTRUDE);
+        for(let i=1;i<pts.length;i++)d+='L'+pts[i][0]+','+(pts[i][1]+EXTRUDE);
+        for(let i=pts.length-1;i>=0;i--)d+='L'+pts[i][0]+','+pts[i][1];
+        return d+' Z';
+      };
+      const featureBlocks=mapData.features.map(feature=>{
+        const rings=ringsFor(feature.geometry);
+        return {name:feature.properties?.name||'',center:feature.properties?.centroid||feature.properties?.center||null,tops:rings.map(topPathFor),sides:rings.map(sidePathFor)};
+      }).filter(block=>block.tops.length);
+      const isLiaoningBlock=block=>block.name.includes('辽宁');
+      const joinPaths=paths=>paths.map(d=>`<path d="${d}" fill-rule="evenodd"/>`).join('');
+      const allTops=joinPaths(featureBlocks.flatMap(block=>block.tops));
+      const allSides=featureBlocks.flatMap(block=>block.sides).map(d=>`<path d="${d}"/>`).join('');
+      const liaoningBlocks=featureBlocks.filter(isLiaoningBlock);
+      const normalBlocks=featureBlocks.filter(block=>!isLiaoningBlock(block));
+      const normalRims=joinPaths(normalBlocks.flatMap(block=>block.tops));
+      const liaoningRims=joinPaths(liaoningBlocks.flatMap(block=>block.tops));
+      const topFills=featureBlocks.map(block=>block.tops.map(d=>`<path d="${d}" fill="${isLiaoningBlock(block)?'url(#lnTop)':'url(#provTop)'}" fill-rule="evenodd"/>`).join('')).join('');
       const cityShapes=cityData.features.map(feature=>ringsFor(feature.geometry).map(pathFor).join(' ')).filter(Boolean).map(path=>`<path d="${path}"/>`).join('');
-      const provinceLabels=featurePaths.filter(feature=>Array.isArray(feature.center)&&!feature.name.includes('南海')).map(feature=>{const [x,y]=project(feature.center);return `<text x="${x.toFixed(1)}" y="${y.toFixed(1)}" text-anchor="middle">${esc(cleanRegionName(feature.name))}</text>`}).join('');
-      const points=groups.map(group=>{
+      const provinceLabels=featureBlocks.filter(feature=>Array.isArray(feature.center)&&!feature.name.includes('南海')).map(feature=>{const [x,y]=project(feature.center);return `<text x="${x.toFixed(1)}" y="${y.toFixed(1)}" text-anchor="middle">${esc(cleanRegionName(feature.name))}</text>`}).join('');
+      const points=groups.map((group,index)=>{
         const [x,y]=project(group.coord),left=x/9,top=y/5.7;
         const major=group.schools.length>=4||group.schools.some(school=>nineAcademies.has(school));
         const inLiaoning=group.province==='辽宁',hub=group.city==='沈阳';
-        return `<button type="button" class="map-point ${major?'major':''} ${inLiaoning?'liaoning':''} ${hub?'hub':''}" data-city="${esc(group.city)}" style="left:${left.toFixed(2)}%;top:${top.toFixed(2)}%" aria-label="${esc(group.city)}，${group.schools.length}所院校"><i></i><span>${esc(group.city)} · ${group.schools.length}</span></button>`;
+        return `<button type="button" class="map-point ${major?'major':''} ${inLiaoning?'liaoning':''} ${hub?'hub':''}" data-city="${esc(group.city)}" style="left:${left.toFixed(2)}%;top:${top.toFixed(2)}%;--ping-delay:${((index%7)*.4).toFixed(2)}s" aria-label="${esc(group.city)}，${group.schools.length}所院校"><i></i><span>${esc(group.city)} · ${group.schools.length}</span></button>`;
       }).join('');
+      const {terrain:terrainHtml,atmos:atmosHtml}=buildMapTerrain();
       q('#chinaMap').innerHTML=`
+        <div class="map-terrain">${terrainHtml}</div>
+        <div class="map-atmos">${atmosHtml}</div>
         <div class="map-title-card"><b>全国在辽美术设计招生分布</b><span>滚轮缩放 · 按住拖动 · 点击城市</span></div>
         <div class="map-camera" id="mapCamera">
           <svg class="native-map-svg" viewBox="0 0 900 570" preserveAspectRatio="none" aria-hidden="true">
             <defs>
-              <linearGradient id="iceTop" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d9f2ff"/><stop offset=".43" stop-color="#9fd0ec"/><stop offset="1" stop-color="#6ea8cc"/></linearGradient>
-              <linearGradient id="liaoningIce" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f5fdff"/><stop offset=".5" stop-color="#9ee7ff"/><stop offset="1" stop-color="#55acd8"/></linearGradient>
-              <linearGradient id="iceSide" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#8dbdd9"/><stop offset="1" stop-color="#4e7f9e"/></linearGradient>
-              <pattern id="iceGrid" width="42" height="42" patternUnits="userSpaceOnUse"><path d="M42 0H0V42" fill="none" stroke="#ffffff" stroke-opacity=".22" stroke-width="1"/></pattern>
-              <clipPath id="chinaClip">${baseShapes}</clipPath>
+              <linearGradient id="provTop" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#15374f"/><stop offset=".55" stop-color="#0e2639"/><stop offset="1" stop-color="#091a29"/></linearGradient>
+              <linearGradient id="lnTop" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1a5b78"/><stop offset=".55" stop-color="#103e57"/><stop offset="1" stop-color="#0a293b"/></linearGradient>
+              <linearGradient id="blockSide" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1a6086"/><stop offset=".28" stop-color="#0d3a58"/><stop offset=".7" stop-color="#08243a"/><stop offset="1" stop-color="#040e18"/></linearGradient>
+              <radialGradient id="surfaceGlow" cx=".5" cy=".40" r=".8"><stop offset="0" stop-color="#2fbde8" stop-opacity=".17"/><stop offset="1" stop-color="#2fbde8" stop-opacity="0"/></radialGradient>
+              <pattern id="techGrid" width="38" height="38" patternUnits="userSpaceOnUse"><path d="M38 0H0V38" fill="none" stroke="#59d8ff" stroke-opacity=".13" stroke-width="1"/></pattern>
+              <clipPath id="chinaClip">${allTops}</clipPath>
+              <filter id="softShadow" x="-12%" y="-12%" width="124%" height="136%"><feGaussianBlur stdDeviation="9"/></filter>
+              <filter id="neonSoft" x="-24%" y="-24%" width="148%" height="148%"><feGaussianBlur stdDeviation="5.6"/></filter>
+              <filter id="neonMid" x="-24%" y="-24%" width="148%" height="148%"><feGaussianBlur stdDeviation="2.4"/></filter>
+              <filter id="neonTight" x="-24%" y="-24%" width="148%" height="148%"><feGaussianBlur stdDeviation="1.25" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
             </defs>
-            <g transform="translate(0 16)" fill="#4b7792" opacity=".78">${baseShapes}</g>
-            <g transform="translate(0 12)" fill="#5989a6" opacity=".86">${baseShapes}</g>
-            <g transform="translate(0 8)" fill="#6799b7" opacity=".92">${baseShapes}</g>
-            <g transform="translate(0 4)" fill="url(#iceSide)">${baseShapes}</g>
-            <g>${topShapes}</g>
-            <rect x="0" y="0" width="900" height="570" fill="url(#iceGrid)" clip-path="url(#chinaClip)" opacity=".46"/>
-            <ellipse cx="330" cy="150" rx="235" ry="95" fill="#ffffff" opacity=".13" clip-path="url(#chinaClip)"/>
+            <g transform="translate(4 26)" filter="url(#softShadow)" opacity=".62" fill="#00010a">${allTops}</g>
+            <g fill="url(#blockSide)" stroke="#061826" stroke-opacity=".75" stroke-width=".7" vector-effect="non-scaling-stroke">${allSides}</g>
+            <g>${topFills}</g>
+            <rect x="0" y="0" width="900" height="570" fill="url(#techGrid)" clip-path="url(#chinaClip)" opacity=".5"/>
+            <rect x="0" y="0" width="900" height="570" fill="url(#surfaceGlow)" clip-path="url(#chinaClip)"/>
+            <g filter="url(#neonSoft)" opacity=".5" fill="none" stroke="#18c8ef" stroke-width="5.6" stroke-linejoin="round" vector-effect="non-scaling-stroke">${normalRims}${liaoningRims}</g>
+            <g filter="url(#neonMid)" opacity=".88" fill="none" stroke="#3fe4ff" stroke-width="2" stroke-linejoin="round" vector-effect="non-scaling-stroke">${normalRims}</g>
+            <g filter="url(#neonMid)" opacity=".95" fill="none" stroke="#74f4ff" stroke-width="2.7" stroke-linejoin="round" vector-effect="non-scaling-stroke">${liaoningRims}</g>
+            <g filter="url(#neonTight)" opacity=".95" fill="none" stroke="#eaffff" stroke-width="1.5" stroke-linejoin="round" vector-effect="non-scaling-stroke">${liaoningRims}</g>
+            <g fill="none" stroke="#c2f7ff" stroke-opacity=".88" stroke-width=".9" stroke-linejoin="round" vector-effect="non-scaling-stroke">${normalRims}${liaoningRims}</g>
             <g class="city-boundary-layer">${cityShapes}</g>
             <g class="province-label-layer">${provinceLabels}</g>
           </svg>
