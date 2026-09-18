@@ -35,7 +35,9 @@
     .mark svg{width:24px;height:24px}
     .brand h1{font-size:1.05rem;line-height:1.25;margin:0;font-weight:760;letter-spacing:.02em}
     .brand p{margin:1px 0 0;color:var(--muted);font-size:.78rem}
-    .verified{display:flex;align-items:center;gap:8px;color:#b7cad5;font-size:.84rem;white-space:nowrap}
+    .verified{display:flex;align-items:center;gap:10px;color:#b7cad5;font-size:.82rem;white-space:nowrap}
+    .time-status{display:grid;gap:1px;text-align:right;line-height:1.35}
+    .time-status span:last-child{color:var(--muted);font-size:.76rem}
     .pulse{width:8px;height:8px;border-radius:50%;background:var(--cyan);box-shadow:0 0 0 5px rgba(53,210,199,.1)}
     .pulse.loading{background:var(--amber);box-shadow:0 0 0 5px rgba(255,180,92,.1)}
     main{padding:34px 0 72px}
@@ -101,7 +103,7 @@
       .headline{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.directory-grid{grid-template-columns:repeat(2,1fr)}
     }
     @media(max-width:650px){
-      .shell{width:min(100% - 22px,1220px)}.topbar-inner{min-height:66px}.brand p,.verified span{display:none}main{padding-top:24px}.headline h2{font-size:2.45rem}.stats{gap:8px}.stat{padding:15px}.toolbar{top:66px}.filters{grid-template-columns:1fr}.card{grid-template-columns:1fr}.date-rail{display:flex;gap:8px;align-items:baseline;padding:13px 17px;border-right:0;border-bottom:1px solid var(--line)}.card-body{padding:17px}.directory-grid{grid-template-columns:1fr}.footer-inner{display:block}.actions{align-items:flex-start;flex-direction:column}.official{align-self:flex-end}
+      .shell{width:min(100% - 22px,1220px)}.topbar-inner{min-height:72px;gap:10px}.brand p{display:none}.brand h1{font-size:.9rem}.verified{gap:7px;font-size:.68rem}.time-status span:last-child{font-size:.66rem}main{padding-top:24px}.headline h2{font-size:2.45rem}.stats{gap:8px}.stat{padding:15px}.toolbar{top:72px}.filters{grid-template-columns:1fr}.card{grid-template-columns:1fr}.date-rail{display:flex;gap:8px;align-items:baseline;padding:13px 17px;border-right:0;border-bottom:1px solid var(--line)}.card-body{padding:17px}.directory-grid{grid-template-columns:1fr}.footer-inner{display:block}.actions{align-items:flex-start;flex-direction:column}.official{align-self:flex-end}
     }
   </style>
 </head>
@@ -114,7 +116,13 @@
         </div>
         <div><h1>辽宁美术设计招生雷达</h1><p>只收录院校官方来源 · 2026.07.01 起</p></div>
       </div>
-      <div class="verified"><i id="syncPulse" class="pulse loading"></i><span id="lastUpdated">正在读取最新数据</span></div>
+      <div class="verified" aria-live="polite">
+        <i id="syncPulse" class="pulse loading"></i>
+        <div class="time-status">
+          <span id="lastUpdated">上次数据更新时间：正在读取</span>
+          <span id="currentTime">当前北京时间：--/-- --:--:--</span>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -594,26 +602,39 @@
       q('#schoolCount').textContent=`显示 ${filtered.length} / ${schools.length} 所`;
       q('#directoryGrid').innerHTML=filtered.map(s=>`<div class="school-row ${verified.has(s)?'checked':''}"><b>${esc(s)}</b><span>${verified.has(s)?`已收录 · ${verified.get(s).slice(5).replace('-','.')}`:'待首轮核验'}</span></div>`).join('');
     }
+    let automaticDataLoading=false;
+    function formatBeijingTime(date,{seconds=false}={}){
+      return date.toLocaleString('zh-CN',{timeZone:'Asia/Shanghai',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',...(seconds?{second:'2-digit'}:{})});
+    }
+    function updateBeijingClock(){
+      q('#currentTime').textContent=`当前北京时间：${formatBeijingTime(new Date(),{seconds:true})}`;
+    }
     async function loadAutomaticData(){
+      if(automaticDataLoading)return;
+      automaticDataLoading=true;
+      q('#syncPulse').classList.add('loading');
       let payload;
       try{
-        try{payload=await fetchFirstJson([automaticFeedUrl,'./data/feed.json'])}catch{
-          const [notices,status]=await Promise.all([fetchFirstJson(['./data/notices.json']),fetchFirstJson(['./data/status.json'])]);
+        const cacheBust=Date.now();
+        try{payload=await fetchFirstJson([`${automaticFeedUrl}&t=${cacheBust}`,`./data/feed.json?t=${cacheBust}`])}catch{
+          const [notices,status]=await Promise.all([fetchFirstJson([`./data/notices.json?t=${cacheBust}`]),fetchFirstJson([`./data/status.json?t=${cacheBust}`])]);
           payload={...notices,status};
         }
         const merged=new Map(seedRecords.map(record=>[recordKey(record),record]));
         (payload.records||[]).forEach(record=>{const key=recordKey(record);if(!merged.has(key))merged.set(key,record)});
         records=[...merged.values()].sort((a,b)=>b.date.localeCompare(a.date));
         const stamp=payload.updatedAt?new Date(payload.updatedAt):null;
-        q('#lastUpdated').textContent=stamp&&!Number.isNaN(stamp.valueOf())?`自动更新：${stamp.toLocaleString('zh-CN',{timeZone:'Asia/Shanghai',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'})}`:'自动更新已启用';
+        q('#lastUpdated').textContent=stamp&&!Number.isNaN(stamp.valueOf())?`上次数据更新时间：${formatBeijingTime(stamp)}`:'上次数据更新时间：等待首次更新';
         q('#syncPulse').classList.remove('loading');
         refreshStats();render();
         const status=payload.status;
         if(status?.updatedAt)q('#dataStatus').innerHTML=`<strong>自动监测状态：</strong>北京时间每日 09:00—21:30 每半小时更新。本轮已检查 ${Number(status.successfulSources)||0} 个官方栏目，${Number(status.failedSources)||0} 个暂时访问失败；自动发现信息均标注“待人工复核”。`;
       }catch(error){
-        q('#lastUpdated').textContent=location.protocol==='file:'?'本地预览 · 自动数据需通过网页访问':'使用内置核验数据';
+        q('#lastUpdated').textContent=location.protocol==='file:'?'上次数据更新时间：本地预览':'上次数据更新时间：读取失败';
         q('#syncPulse').classList.remove('loading');
         console.warn('自动数据读取失败',error);
+      }finally{
+        automaticDataLoading=false;
       }
     }
     async function fetchFirstJson(urls){
@@ -642,7 +663,11 @@
       q('#scopeFilter').disabled=activeTab==='directory';q('#typeFilter').disabled=activeTab==='directory';render();
     }));
     ['#search','#scopeFilter','#typeFilter'].forEach(id=>q(id).addEventListener(id==='#search'?'input':'change',render));
-    refreshStats();renderFeed();renderDirectory();loadAutomaticData();
+    refreshStats();renderFeed();renderDirectory();
+    updateBeijingClock();
+    loadAutomaticData();
+    setInterval(updateBeijingClock,1000);
+    setInterval(loadAutomaticData,5*60*1000);
   </script>
 </body>
 </html>
