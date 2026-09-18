@@ -1,0 +1,68 @@
+[
+  {
+    "school": "上海戏剧学院",
+    "url": "https://zs.sta.edu.cn/1816/list.htm",
+    "source": "上海戏剧学院招生办公室",
+    "artFocused": true,
+    "maxLinks": 30
+  },
+  {
+    "school": "中央民族大学",
+    "url": "https://zb.muc.edu.cn/content/zs/ysl/index.htm",
+    "source": "中央民族大学本科招生网",
+    "maxLinks": 25
+  },
+  {
+    "school": "中国传媒大学",
+    "url": "https://zhaosheng.cuc.edu.cn/",
+    "source": "中国传媒大学本科招生网",
+    "maxLinks": 25
+  },
+  {
+    "school": "鲁迅美术学院",
+    "url": "https://www.lumei.edu.cn/zsjy/bkszs.htm",
+    "source": "鲁迅美术学院招生就业处",
+    "artFocused": true,
+    "maxLinks": 30
+  },
+  {
+    "school": "湖北美术学院",
+    "url": "https://zjc.hifa.edu.cn/",
+    "source": "湖北美术学院招生就业处",
+    "artFocused": true,
+    "maxLinks": 30
+  },
+  {
+    "school": "西安美术学院",
+    "url": "https://zhshch.xafa.edu.cn/",
+    "source": "西安美术学院招生信息网",
+    "artFocused": true,
+    "maxLinks": 30
+  },
+  {
+    "school": "北京服装学院",
+    "url": "https://bkzs.bift.edu.cn/",
+    "source": "北京服装学院本科招生网",
+    "maxLinks": 30
+  },
+  {
+    "school": "四川美术学院",
+    "url": "https://www.scfai.edu.cn/zsb/",
+    "source": "四川美术学院招生处",
+    "artFocused": true,
+    "maxLinks": 30
+  },
+  {
+    "school": "上海大学",
+    "url": "https://bkzsw.shu.edu.cn/",
+    "source": "上海大学本科招生网",
+    "maxLinks": 30
+  },
+  {
+    "school": "广西师范大学",
+    "url": "https://bkzs.gxnu.edu.cn/pg/jh/",
+    "source": "广西师范大学本科招生网",
+    "maxLinks": 20
+  }
+]
+
