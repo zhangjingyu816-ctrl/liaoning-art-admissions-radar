@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-19T04:38:29.540Z",
+  "updatedAt": "2026-09-19T05:08:33.723Z",
   "cutoff": "2026-07-01",
   "records": [
     {
@@ -2262,11 +2262,11 @@
     }
   ],
   "status": {
-    "updatedAt": "2026-09-19T04:38:29.540Z",
+    "updatedAt": "2026-09-19T05:08:33.723Z",
     "cutoff": "2026-07-01",
     "configuredSources": 15,
-    "successfulSources": 5,
-    "failedSources": 10,
+    "successfulSources": 13,
+    "failedSources": 2,
     "discoveredRecords": 18,
     "discoveredHistoryRecords": 91,
     "results": [
@@ -2282,33 +2282,28 @@
       },
       {
         "school": "中国传媒大学",
-        "ok": false,
-        "error": "fetch failed · ETIMEDOUT",
-        "preserved": 1
+        "ok": true,
+        "found": 9
       },
       {
         "school": "鲁迅美术学院",
-        "ok": false,
-        "error": "fetch failed · ETIMEDOUT",
-        "preserved": 2
+        "ok": true,
+        "found": 13
       },
       {
         "school": "湖北美术学院",
-        "ok": false,
-        "error": "fetch failed · ETIMEDOUT",
-        "preserved": 0
+        "ok": true,
+        "found": 9
       },
       {
         "school": "西安美术学院",
-        "ok": false,
-        "error": "fetch failed · ETIMEDOUT",
-        "preserved": 3
+        "ok": true,
+        "found": 16
       },
       {
         "school": "北京服装学院",
-        "ok": false,
-        "error": "fetch failed · ETIMEDOUT",
-        "preserved": 0
+        "ok": true,
+        "found": 0
       },
       {
         "school": "四川美术学院",
@@ -2317,9 +2312,8 @@
       },
       {
         "school": "上海大学",
-        "ok": false,
-        "error": "fetch failed · ETIMEDOUT",
-        "preserved": 1
+        "ok": true,
+        "found": 2
       },
       {
         "school": "广西师范大学",
@@ -2340,15 +2334,13 @@
       },
       {
         "school": "清华大学美术学院",
-        "ok": false,
-        "error": "fetch failed · ETIMEDOUT",
-        "preserved": 0
+        "ok": true,
+        "found": 3
       },
       {
         "school": "天津美术学院",
-        "ok": false,
-        "error": "fetch failed · ETIMEDOUT",
-        "preserved": 4
+        "ok": true,
+        "found": 9
       },
       {
         "school": "广州美术学院",
