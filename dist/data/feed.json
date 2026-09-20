@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-20T10:08:28.006Z",
+  "updatedAt": "2026-09-20T10:38:25.384Z",
   "cutoff": "2026-07-01",
   "records": [
     {
@@ -2262,7 +2262,7 @@
     }
   ],
   "status": {
-    "updatedAt": "2026-09-20T10:08:28.006Z",
+    "updatedAt": "2026-09-20T10:38:25.384Z",
     "cutoff": "2026-07-01",
     "configuredSources": 15,
     "successfulSources": 7,
@@ -2283,7 +2283,7 @@
       {
         "school": "中国传媒大学",
         "ok": true,
-        "found": 8
+        "found": 9
       },
       {
         "school": "鲁迅美术学院",
