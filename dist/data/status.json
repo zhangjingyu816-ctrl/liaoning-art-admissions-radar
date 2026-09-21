@@ -1,9 +1,9 @@
 {
-  "updatedAt": "2026-09-21T02:08:24.408Z",
+  "updatedAt": "2026-09-21T02:41:23.968Z",
   "cutoff": "2026-07-01",
   "configuredSources": 15,
-  "successfulSources": 6,
-  "failedSources": 9,
+  "successfulSources": 13,
+  "failedSources": 2,
   "discoveredRecords": 18,
   "discoveredHistoryRecords": 91,
   "results": [
@@ -24,27 +24,23 @@
     },
     {
       "school": "鲁迅美术学院",
-      "ok": false,
-      "error": "fetch failed · ETIMEDOUT",
-      "preserved": 2
+      "ok": true,
+      "found": 13
     },
     {
       "school": "湖北美术学院",
-      "ok": false,
-      "error": "fetch failed · ETIMEDOUT",
-      "preserved": 0
+      "ok": true,
+      "found": 9
     },
     {
       "school": "西安美术学院",
-      "ok": false,
-      "error": "fetch failed · ETIMEDOUT",
-      "preserved": 3
+      "ok": true,
+      "found": 16
     },
     {
       "school": "北京服装学院",
-      "ok": false,
-      "error": "fetch failed · ETIMEDOUT",
-      "preserved": 0
+      "ok": true,
+      "found": 0
     },
     {
       "school": "四川美术学院",
@@ -53,9 +49,8 @@
     },
     {
       "school": "上海大学",
-      "ok": false,
-      "error": "fetch failed · ETIMEDOUT",
-      "preserved": 1
+      "ok": true,
+      "found": 2
     },
     {
       "school": "广西师范大学",
@@ -65,7 +60,7 @@
     {
       "school": "中央美术学院",
       "ok": false,
-      "error": "fetch failed · UNABLE_TO_VERIFY_LEAF_SIGNATURE · unable to verify the first certificate",
+      "error": "fetch failed · UND_ERR_CONNECT_TIMEOUT · Connect Timeout Error (attempted address: www.cafa.edu.cn:80, timeout: 10000ms)",
       "preserved": 0
     },
     {
@@ -76,15 +71,13 @@
     },
     {
       "school": "清华大学美术学院",
-      "ok": false,
-      "error": "fetch failed · ETIMEDOUT",
-      "preserved": 0
+      "ok": true,
+      "found": 3
     },
     {
       "school": "天津美术学院",
-      "ok": false,
-      "error": "fetch failed · ETIMEDOUT",
-      "preserved": 4
+      "ok": true,
+      "found": 9
     },
     {
       "school": "广州美术学院",
