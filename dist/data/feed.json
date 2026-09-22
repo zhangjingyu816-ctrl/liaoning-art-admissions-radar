@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-22T11:39:32.764Z",
+  "updatedAt": "2026-09-22T12:10:35.534Z",
   "cutoff": "2026-07-01",
   "records": [
     {
@@ -1122,8 +1122,9 @@
       "scope": "pending",
       "important": false,
       "title": "2026.03.12 湖北美术学院2026年普通本科招生现场复试专业合格分数线及成绩查询公告",
-      "summary": "页面涉及：美术学；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "summary": "页面涉及：美术与设计、美术学；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
       "majors": [
+        "美术与设计",
         "美术学"
       ],
       "url": "https://zjc.hifa.edu.cn/info/1090/2695.htm",
@@ -2261,11 +2262,11 @@
     }
   ],
   "status": {
-    "updatedAt": "2026-09-22T11:39:32.764Z",
+    "updatedAt": "2026-09-22T12:10:35.534Z",
     "cutoff": "2026-07-01",
     "configuredSources": 15,
-    "successfulSources": 5,
-    "failedSources": 10,
+    "successfulSources": 9,
+    "failedSources": 6,
     "discoveredRecords": 18,
     "discoveredHistoryRecords": 91,
     "results": [
@@ -2293,9 +2294,8 @@
       },
       {
         "school": "湖北美术学院",
-        "ok": false,
-        "error": "fetch failed · ETIMEDOUT",
-        "preserved": 0
+        "ok": true,
+        "found": 9
       },
       {
         "school": "西安美术学院",
@@ -2305,9 +2305,8 @@
       },
       {
         "school": "北京服装学院",
-        "ok": false,
-        "error": "fetch failed · ETIMEDOUT",
-        "preserved": 0
+        "ok": true,
+        "found": 0
       },
       {
         "school": "四川美术学院",
@@ -2316,9 +2315,8 @@
       },
       {
         "school": "上海大学",
-        "ok": false,
-        "error": "fetch failed · ETIMEDOUT",
-        "preserved": 1
+        "ok": true,
+        "found": 2
       },
       {
         "school": "广西师范大学",
@@ -2345,9 +2343,8 @@
       },
       {
         "school": "天津美术学院",
-        "ok": false,
-        "error": "fetch failed · ETIMEDOUT",
-        "preserved": 4
+        "ok": true,
+        "found": 9
       },
       {
         "school": "广州美术学院",
