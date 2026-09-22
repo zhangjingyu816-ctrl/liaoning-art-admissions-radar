@@ -1,9 +1,9 @@
 {
-  "updatedAt": "2026-09-21T13:39:44.640Z",
+  "updatedAt": "2026-09-22T01:07:59.678Z",
   "cutoff": "2026-07-01",
   "configuredSources": 15,
-  "successfulSources": 4,
-  "failedSources": 11,
+  "successfulSources": 5,
+  "failedSources": 10,
   "discoveredRecords": 18,
   "discoveredHistoryRecords": 91,
   "results": [
@@ -20,9 +20,8 @@
     },
     {
       "school": "中国传媒大学",
-      "ok": false,
-      "error": "fetch failed · ETIMEDOUT",
-      "preserved": 1
+      "ok": true,
+      "found": 9
     },
     {
       "school": "鲁迅美术学院",
