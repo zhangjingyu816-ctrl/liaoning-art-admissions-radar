@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-22T01:07:59.678Z",
+  "updatedAt": "2026-09-22T01:38:36.718Z",
   "cutoff": "2026-07-01",
   "records": [
     {
@@ -2262,11 +2262,11 @@
     }
   ],
   "status": {
-    "updatedAt": "2026-09-22T01:07:59.678Z",
+    "updatedAt": "2026-09-22T01:38:36.718Z",
     "cutoff": "2026-07-01",
     "configuredSources": 15,
-    "successfulSources": 5,
-    "failedSources": 10,
+    "successfulSources": 4,
+    "failedSources": 11,
     "discoveredRecords": 18,
     "discoveredHistoryRecords": 91,
     "results": [
@@ -2283,8 +2283,9 @@
       },
       {
         "school": "中国传媒大学",
-        "ok": true,
-        "found": 9
+        "ok": false,
+        "error": "fetch failed · ETIMEDOUT",
+        "preserved": 1
       },
       {
         "school": "鲁迅美术学院",
