@@ -1,9 +1,9 @@
 {
-  "updatedAt": "2026-09-22T03:09:11.437Z",
+  "updatedAt": "2026-09-22T03:40:17.717Z",
   "cutoff": "2026-07-01",
   "configuredSources": 15,
-  "successfulSources": 9,
-  "failedSources": 6,
+  "successfulSources": 7,
+  "failedSources": 8,
   "discoveredRecords": 18,
   "discoveredHistoryRecords": 91,
   "results": [
@@ -30,9 +30,8 @@
     },
     {
       "school": "湖北美术学院",
-      "ok": false,
-      "error": "fetch failed · ETIMEDOUT",
-      "preserved": 0
+      "ok": true,
+      "found": 9
     },
     {
       "school": "西安美术学院",
@@ -42,8 +41,9 @@
     },
     {
       "school": "北京服装学院",
-      "ok": true,
-      "found": 0
+      "ok": false,
+      "error": "fetch failed · ETIMEDOUT",
+      "preserved": 0
     },
     {
       "school": "四川美术学院",
@@ -75,13 +75,15 @@
     },
     {
       "school": "清华大学美术学院",
-      "ok": true,
-      "found": 3
+      "ok": false,
+      "error": "fetch failed · ETIMEDOUT",
+      "preserved": 0
     },
     {
       "school": "天津美术学院",
-      "ok": true,
-      "found": 9
+      "ok": false,
+      "error": "fetch failed · ETIMEDOUT",
+      "preserved": 4
     },
     {
       "school": "广州美术学院",
