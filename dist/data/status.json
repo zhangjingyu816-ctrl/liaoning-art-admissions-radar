@@ -1,17 +1,16 @@
 {
-  "updatedAt": "2026-09-23T11:08:16.107Z",
+  "updatedAt": "2026-09-23T11:40:20.670Z",
   "cutoff": "2026-07-01",
   "configuredSources": 15,
-  "successfulSources": 4,
-  "failedSources": 11,
+  "successfulSources": 13,
+  "failedSources": 2,
   "discoveredRecords": 18,
   "discoveredHistoryRecords": 91,
   "results": [
     {
       "school": "上海戏剧学院",
-      "ok": false,
-      "error": "fetch failed · ETIMEDOUT",
-      "preserved": 0
+      "ok": true,
+      "found": 0
     },
     {
       "school": "中央民族大学",
@@ -20,33 +19,28 @@
     },
     {
       "school": "中国传媒大学",
-      "ok": false,
-      "error": "fetch failed · ETIMEDOUT",
-      "preserved": 1
+      "ok": true,
+      "found": 9
     },
     {
       "school": "鲁迅美术学院",
-      "ok": false,
-      "error": "fetch failed · ETIMEDOUT",
-      "preserved": 2
+      "ok": true,
+      "found": 13
     },
     {
       "school": "湖北美术学院",
-      "ok": false,
-      "error": "fetch failed · ETIMEDOUT",
-      "preserved": 0
+      "ok": true,
+      "found": 9
     },
     {
       "school": "西安美术学院",
-      "ok": false,
-      "error": "fetch failed · ETIMEDOUT",
-      "preserved": 3
+      "ok": true,
+      "found": 16
     },
     {
       "school": "北京服装学院",
-      "ok": false,
-      "error": "fetch failed · ETIMEDOUT",
-      "preserved": 0
+      "ok": true,
+      "found": 0
     },
     {
       "school": "四川美术学院",
@@ -55,9 +49,8 @@
     },
     {
       "school": "上海大学",
-      "ok": false,
-      "error": "fetch failed · ETIMEDOUT",
-      "preserved": 1
+      "ok": true,
+      "found": 2
     },
     {
       "school": "广西师范大学",
@@ -78,15 +71,13 @@
     },
     {
       "school": "清华大学美术学院",
-      "ok": false,
-      "error": "fetch failed · ETIMEDOUT",
-      "preserved": 0
+      "ok": true,
+      "found": 3
     },
     {
       "school": "天津美术学院",
-      "ok": false,
-      "error": "fetch failed · ETIMEDOUT",
-      "preserved": 4
+      "ok": true,
+      "found": 9
     },
     {
       "school": "广州美术学院",
