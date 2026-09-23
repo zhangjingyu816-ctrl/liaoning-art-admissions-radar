@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-23T09:41:12.717Z",
+  "updatedAt": "2026-09-23T10:08:50.564Z",
   "cutoff": "2026-07-01",
   "records": [
     {
@@ -2262,11 +2262,11 @@
     }
   ],
   "status": {
-    "updatedAt": "2026-09-23T09:41:12.717Z",
+    "updatedAt": "2026-09-23T10:08:50.564Z",
     "cutoff": "2026-07-01",
     "configuredSources": 15,
-    "successfulSources": 12,
-    "failedSources": 3,
+    "successfulSources": 13,
+    "failedSources": 2,
     "discoveredRecords": 18,
     "discoveredHistoryRecords": 91,
     "results": [
@@ -2312,9 +2312,8 @@
       },
       {
         "school": "上海大学",
-        "ok": false,
-        "error": "fetch failed · ETIMEDOUT",
-        "preserved": 1
+        "ok": true,
+        "found": 2
       },
       {
         "school": "广西师范大学",
