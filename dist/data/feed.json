@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-24T04:08:12.862Z",
+  "updatedAt": "2026-09-24T04:40:59.043Z",
   "cutoff": "2026-07-01",
   "records": [
     {
@@ -1279,15 +1279,13 @@
     {
       "date": "2026-01-30",
       "school": "清华大学美术学院",
-      "type": "policy",
-      "scope": "national",
+      "type": "notice",
+      "scope": "pending",
       "important": false,
       "title": "招生简章 2026.01.30 清华大学2026年艺术类专业（美术学院）本科招生简章",
-      "summary": "页面涉及：美术与设计、美术学、设计学类；内容属于全国性信息。本条由规则自动发现，请以官方原文为准。",
+      "summary": "页面涉及：美术学；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
       "majors": [
-        "美术与设计",
-        "美术学",
-        "设计学类"
+        "美术学"
       ],
       "url": "https://www.join-tsinghua.edu.cn/info/1009/2146.htm",
       "source": "清华大学美术学院",
@@ -2262,19 +2260,18 @@
     }
   ],
   "status": {
-    "updatedAt": "2026-09-24T04:08:12.862Z",
+    "updatedAt": "2026-09-24T04:40:59.043Z",
     "cutoff": "2026-07-01",
     "configuredSources": 15,
-    "successfulSources": 5,
-    "failedSources": 10,
+    "successfulSources": 10,
+    "failedSources": 5,
     "discoveredRecords": 18,
     "discoveredHistoryRecords": 91,
     "results": [
       {
         "school": "上海戏剧学院",
-        "ok": false,
-        "error": "fetch failed · ETIMEDOUT",
-        "preserved": 0
+        "ok": true,
+        "found": 0
       },
       {
         "school": "中央民族大学",
@@ -2295,9 +2292,8 @@
       },
       {
         "school": "湖北美术学院",
-        "ok": false,
-        "error": "fetch failed · ETIMEDOUT",
-        "preserved": 0
+        "ok": true,
+        "found": 9
       },
       {
         "school": "西安美术学院",
@@ -2317,9 +2313,8 @@
       },
       {
         "school": "上海大学",
-        "ok": false,
-        "error": "fetch failed · ETIMEDOUT",
-        "preserved": 1
+        "ok": true,
+        "found": 2
       },
       {
         "school": "广西师范大学",
@@ -2340,15 +2335,13 @@
       },
       {
         "school": "清华大学美术学院",
-        "ok": false,
-        "error": "fetch failed · ETIMEDOUT",
-        "preserved": 0
+        "ok": true,
+        "found": 3
       },
       {
         "school": "天津美术学院",
-        "ok": false,
-        "error": "fetch failed · ETIMEDOUT",
-        "preserved": 4
+        "ok": true,
+        "found": 9
       },
       {
         "school": "广州美术学院",
