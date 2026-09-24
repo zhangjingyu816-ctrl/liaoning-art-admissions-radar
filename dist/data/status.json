@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-24T11:08:37.553Z",
+  "updatedAt": "2026-09-24T11:40:14.262Z",
   "cutoff": "2026-07-01",
   "configuredSources": 15,
   "successfulSources": 5,
@@ -9,9 +9,8 @@
   "results": [
     {
       "school": "上海戏剧学院",
-      "ok": false,
-      "error": "fetch failed · ETIMEDOUT",
-      "preserved": 0
+      "ok": true,
+      "found": 0
     },
     {
       "school": "中央民族大学",
@@ -44,8 +43,9 @@
     },
     {
       "school": "北京服装学院",
-      "ok": true,
-      "found": 0
+      "ok": false,
+      "error": "fetch failed · ETIMEDOUT",
+      "preserved": 0
     },
     {
       "school": "四川美术学院",
