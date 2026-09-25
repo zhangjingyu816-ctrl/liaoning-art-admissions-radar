@@ -1,17 +1,16 @@
 {
-  "updatedAt": "2026-09-25T05:40:41.278Z",
+  "updatedAt": "2026-09-25T06:10:55.290Z",
   "cutoff": "2026-07-01",
   "configuredSources": 15,
-  "successfulSources": 12,
-  "failedSources": 3,
+  "successfulSources": 13,
+  "failedSources": 2,
   "discoveredRecords": 18,
   "discoveredHistoryRecords": 91,
   "results": [
     {
       "school": "上海戏剧学院",
-      "ok": false,
-      "error": "fetch failed · ETIMEDOUT",
-      "preserved": 0
+      "ok": true,
+      "found": 0
     },
     {
       "school": "中央民族大学",
