@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-26T09:08:38.248Z",
+  "updatedAt": "2026-09-26T09:39:01.628Z",
   "cutoff": "2026-07-01",
   "records": [
     {
@@ -1122,8 +1122,9 @@
       "scope": "pending",
       "important": false,
       "title": "2026.03.12 湖北美术学院2026年普通本科招生现场复试专业合格分数线及成绩查询公告",
-      "summary": "页面涉及：美术学；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "summary": "页面涉及：美术与设计、美术学；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
       "majors": [
+        "美术与设计",
         "美术学"
       ],
       "url": "https://zjc.hifa.edu.cn/info/1090/2695.htm",
@@ -1278,15 +1279,13 @@
     {
       "date": "2026-01-30",
       "school": "清华大学美术学院",
-      "type": "policy",
-      "scope": "national",
+      "type": "notice",
+      "scope": "pending",
       "important": false,
       "title": "招生简章 2026.01.30 清华大学2026年艺术类专业（美术学院）本科招生简章",
-      "summary": "页面涉及：美术与设计、美术学、设计学类；内容属于全国性信息。本条由规则自动发现，请以官方原文为准。",
+      "summary": "页面涉及：美术学；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
       "majors": [
-        "美术与设计",
-        "美术学",
-        "设计学类"
+        "美术学"
       ],
       "url": "https://www.join-tsinghua.edu.cn/info/1009/2146.htm",
       "source": "清华大学美术学院",
@@ -1389,7 +1388,7 @@
     {
       "date": "2026-01-26",
       "school": "湖北美术学院",
-      "type": "notice",
+      "type": "score",
       "scope": "pending",
       "important": false,
       "title": "2026.01.26 湖北美术学院2026年普通本科招生现场复试递补报名公告",
@@ -1445,8 +1444,9 @@
       "scope": "pending",
       "important": false,
       "title": "2026.01.22 湖北美术学院2026年普通本科招生现场复试考生须知",
-      "summary": "页面涉及：美术学；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "summary": "页面涉及：美术与设计、美术学；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
       "majors": [
+        "美术与设计",
         "美术学"
       ],
       "url": "https://zjc.hifa.edu.cn/info/1090/2698.htm",
@@ -2241,13 +2241,16 @@
     {
       "date": "2024-01-12",
       "school": "湖北美术学院",
-      "type": "notice",
-      "scope": "pending",
+      "type": "policy",
+      "scope": "national",
       "important": false,
       "title": "2024.01.12 湖北美术学院2024年普通本科招生简章 湖北美术学院（英文名称Hubei Institute of Fine Arts，国标代码10523）是教育部批准的具有高等学历教育招生资格的公办普通高等院校。学校位于江城武汉，是我国中部地区唯一一所高等美术学府。自1920年创办以来，历经多次变迁，绵延承续，始终坚持“推行美育”，初心不改，是中国近、现代高等美术教育的重要发源地之一。百年办学之路，铸就了“崇德、笃学、敏行、致美”的校训精神，涵养了“兼收并蓄”的学术思想和“兼容互动”... 查看详情",
-      "summary": "页面涉及：美术学；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "summary": "页面涉及：美术与设计、美术学、绘画、动画；内容属于全国性信息。本条由规则自动发现，请以官方原文为准。",
       "majors": [
-        "美术学"
+        "美术与设计",
+        "美术学",
+        "绘画",
+        "动画"
       ],
       "url": "https://zjc.hifa.edu.cn/info/1092/2729.htm",
       "source": "湖北美术学院招生就业处",
@@ -2257,11 +2260,11 @@
     }
   ],
   "status": {
-    "updatedAt": "2026-09-26T09:08:38.248Z",
+    "updatedAt": "2026-09-26T09:39:01.628Z",
     "cutoff": "2026-07-01",
     "configuredSources": 15,
-    "successfulSources": 8,
-    "failedSources": 7,
+    "successfulSources": 11,
+    "failedSources": 4,
     "discoveredRecords": 18,
     "discoveredHistoryRecords": 91,
     "results": [
@@ -2289,7 +2292,7 @@
       {
         "school": "湖北美术学院",
         "ok": true,
-        "found": 8
+        "found": 9
       },
       {
         "school": "西安美术学院",
@@ -2309,9 +2312,8 @@
       },
       {
         "school": "上海大学",
-        "ok": false,
-        "error": "fetch failed · ETIMEDOUT",
-        "preserved": 1
+        "ok": true,
+        "found": 2
       },
       {
         "school": "广西师范大学",
@@ -2332,15 +2334,13 @@
       },
       {
         "school": "清华大学美术学院",
-        "ok": false,
-        "error": "fetch failed · ETIMEDOUT",
-        "preserved": 0
+        "ok": true,
+        "found": 3
       },
       {
         "school": "天津美术学院",
-        "ok": false,
-        "error": "fetch failed · ETIMEDOUT",
-        "preserved": 4
+        "ok": true,
+        "found": 9
       },
       {
         "school": "广州美术学院",
