@@ -1,9 +1,9 @@
 {
-  "updatedAt": "2026-09-26T09:39:01.628Z",
+  "updatedAt": "2026-09-26T10:09:10.500Z",
   "cutoff": "2026-07-01",
   "configuredSources": 15,
-  "successfulSources": 11,
-  "failedSources": 4,
+  "successfulSources": 10,
+  "failedSources": 5,
   "discoveredRecords": 18,
   "discoveredHistoryRecords": 91,
   "results": [
@@ -51,8 +51,9 @@
     },
     {
       "school": "上海大学",
-      "ok": true,
-      "found": 2
+      "ok": false,
+      "error": "fetch failed · ETIMEDOUT",
+      "preserved": 1
     },
     {
       "school": "广西师范大学",
