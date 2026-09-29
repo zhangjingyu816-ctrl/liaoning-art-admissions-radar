@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-29T06:46:22.907Z",
+  "updatedAt": "2026-09-29T07:11:31.778Z",
   "cutoff": "2026-07-01",
   "records": [
     {
@@ -100,27 +100,6 @@
       "verified": false,
       "automated": true,
       "id": "d57c4cf85094d591b00f"
-    },
-    {
-      "date": "2026-07-25",
-      "school": "西安美术学院",
-      "type": "policy",
-      "scope": "pending",
-      "important": false,
-      "title": "2026级艺术本科提前批校考类、统考类新生录取通知...",
-      "summary": "页面涉及：美术学、中国画、雕塑、工艺美术、动画；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
-      "majors": [
-        "美术学",
-        "中国画",
-        "雕塑",
-        "工艺美术",
-        "动画"
-      ],
-      "url": "https://zhshch.xafa.edu.cn/info/1014/4726.htm",
-      "source": "西安美术学院招生信息网",
-      "verified": false,
-      "automated": true,
-      "id": "72932f6823834b114978"
     },
     {
       "date": "2026-07-24",
