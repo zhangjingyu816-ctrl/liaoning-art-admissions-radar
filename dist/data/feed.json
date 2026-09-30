@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-30T10:10:35.498Z",
+  "updatedAt": "2026-09-30T10:42:37.286Z",
   "cutoff": "2026-07-01",
   "records": [
     {
@@ -39,6 +39,23 @@
       "verified": false,
       "automated": true,
       "id": "6290c66350086edcea85"
+    },
+    {
+      "date": "2026-09-30",
+      "school": "中央民族大学",
+      "type": "policy",
+      "scope": "national",
+      "important": false,
+      "title": "中央民族大学2027年艺术类本科招生校考专业与各省统考子科类对照表 2026-09-30",
+      "summary": "页面涉及：美术类；内容属于全国性信息。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术类"
+      ],
+      "url": "https://zb.muc.edu.cn/content/zs/ysl/2cbc0b7b-bcb1-11f1-98a5-6c92bf4353bb.htm",
+      "source": "中央民族大学本科招生网",
+      "verified": false,
+      "automated": true,
+      "id": "a9f435f49831b395dd72"
     },
     {
       "date": "2026-09-14",
@@ -401,6 +418,23 @@
       "verified": false,
       "automated": true,
       "id": "6290c66350086edcea85"
+    },
+    {
+      "date": "2026-09-30",
+      "school": "中央民族大学",
+      "type": "policy",
+      "scope": "national",
+      "important": false,
+      "title": "中央民族大学2027年艺术类本科招生校考专业与各省统考子科类对照表 2026-09-30",
+      "summary": "页面涉及：美术类；内容属于全国性信息。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术类"
+      ],
+      "url": "https://zb.muc.edu.cn/content/zs/ysl/2cbc0b7b-bcb1-11f1-98a5-6c92bf4353bb.htm",
+      "source": "中央民族大学本科招生网",
+      "verified": false,
+      "automated": true,
+      "id": "a9f435f49831b395dd72"
     },
     {
       "date": "2026-09-14",
@@ -2299,13 +2333,13 @@
     }
   ],
   "status": {
-    "updatedAt": "2026-09-30T10:10:35.498Z",
+    "updatedAt": "2026-09-30T10:42:37.286Z",
     "cutoff": "2026-07-01",
     "configuredSources": 15,
-    "successfulSources": 7,
-    "failedSources": 8,
-    "discoveredRecords": 18,
-    "discoveredHistoryRecords": 93,
+    "successfulSources": 8,
+    "failedSources": 7,
+    "discoveredRecords": 19,
+    "discoveredHistoryRecords": 94,
     "results": [
       {
         "school": "上海戏剧学院",
@@ -2381,9 +2415,8 @@
       },
       {
         "school": "天津美术学院",
-        "ok": false,
-        "error": "fetch failed · ETIMEDOUT",
-        "preserved": 4
+        "ok": true,
+        "found": 9
       },
       {
         "school": "广州美术学院",
