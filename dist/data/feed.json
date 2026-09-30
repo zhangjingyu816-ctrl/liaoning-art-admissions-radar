@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-30T12:50:05.910Z",
+  "updatedAt": "2026-09-30T13:12:41.010Z",
   "cutoff": "2026-07-01",
   "records": [
     {
@@ -2371,11 +2371,11 @@
     }
   ],
   "status": {
-    "updatedAt": "2026-09-30T12:50:05.910Z",
+    "updatedAt": "2026-09-30T13:12:41.010Z",
     "cutoff": "2026-07-01",
     "configuredSources": 15,
-    "successfulSources": 7,
-    "failedSources": 8,
+    "successfulSources": 5,
+    "failedSources": 10,
     "discoveredRecords": 20,
     "discoveredHistoryRecords": 95,
     "results": [
@@ -2391,8 +2391,9 @@
       },
       {
         "school": "中国传媒大学",
-        "ok": true,
-        "found": 9
+        "ok": false,
+        "error": "fetch failed · ETIMEDOUT",
+        "preserved": 1
       },
       {
         "school": "鲁迅美术学院",
@@ -2414,8 +2415,9 @@
       },
       {
         "school": "北京服装学院",
-        "ok": true,
-        "found": 0
+        "ok": false,
+        "error": "fetch failed · ETIMEDOUT",
+        "preserved": 0
       },
       {
         "school": "四川美术学院",
