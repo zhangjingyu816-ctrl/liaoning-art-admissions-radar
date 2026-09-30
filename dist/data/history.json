@@ -1,7 +1,24 @@
 {
-  "updatedAt": "2026-09-30T03:10:08.181Z",
+  "updatedAt": "2026-09-30T03:43:10.607Z",
   "cutoff": "2024-01-01",
   "records": [
+    {
+      "date": "2026-09-30",
+      "school": "四川美术学院",
+      "type": "policy",
+      "scope": "pending",
+      "important": false,
+      "title": "四川美术学院关于2027年本科校考类...",
+      "summary": "页面涉及：美术学；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学"
+      ],
+      "url": "https://www.scfai.edu.cn/zsb/info/1002/4786.htm",
+      "source": "四川美术学院招生处",
+      "verified": false,
+      "automated": true,
+      "id": "def7240edd78c87661a5"
+    },
     {
       "date": "2026-09-30",
       "school": "西安美术学院",
