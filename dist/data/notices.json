@@ -1,7 +1,26 @@
 {
-  "updatedAt": "2026-09-30T11:09:39.557Z",
+  "updatedAt": "2026-09-30T11:41:57.160Z",
   "cutoff": "2026-07-01",
   "records": [
+    {
+      "date": "2026-09-30",
+      "school": "鲁迅美术学院",
+      "type": "policy",
+      "scope": "pending",
+      "important": false,
+      "title": "鲁迅美术学院2027年本科招生校考专业省统考科类对应要求 2026.09.30",
+      "summary": "页面涉及：美术学、视觉传达、产品设计；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学",
+        "视觉传达",
+        "产品设计"
+      ],
+      "url": "https://www.lumei.edu.cn/info/1207/65455.htm",
+      "source": "鲁迅美术学院招生就业处",
+      "verified": false,
+      "automated": true,
+      "id": "ef6de1ee39bbb3aa0a54"
+    },
     {
       "date": "2026-09-30",
       "school": "四川美术学院",
