@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-30T13:12:41.010Z",
+  "updatedAt": "2026-09-30T13:42:53.121Z",
   "cutoff": "2026-07-01",
   "records": [
     {
@@ -37,6 +37,23 @@
       "verified": false,
       "automated": true,
       "id": "def7240edd78c87661a5"
+    },
+    {
+      "date": "2026-09-30",
+      "school": "天津美术学院",
+      "type": "policy",
+      "scope": "pending",
+      "important": false,
+      "title": "天津美术学院2027年本科招生校考专业省统考科类对应要求",
+      "summary": "页面涉及：美术学；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学"
+      ],
+      "url": "https://zsbgs.tjarts.edu.cn/info/1003/3204.htm",
+      "source": "天津美术学院招生办公室",
+      "verified": false,
+      "automated": true,
+      "id": "0058688b4c0ec330783b"
     },
     {
       "date": "2026-09-30",
