@@ -1,7 +1,28 @@
 {
-  "updatedAt": "2026-09-30T02:42:13.915Z",
+  "updatedAt": "2026-09-30T03:10:08.181Z",
   "cutoff": "2026-07-01",
   "records": [
+    {
+      "date": "2026-09-30",
+      "school": "西安美术学院",
+      "type": "policy",
+      "scope": "pending",
+      "important": false,
+      "title": "西安美术学院2027年本科招生校考专业省统考科类对...",
+      "summary": "页面涉及：美术学、中国画、雕塑、工艺美术、动画；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学",
+        "中国画",
+        "雕塑",
+        "工艺美术",
+        "动画"
+      ],
+      "url": "https://zhshch.xafa.edu.cn/info/1014/4826.htm",
+      "source": "西安美术学院招生信息网",
+      "verified": false,
+      "automated": true,
+      "id": "6290c66350086edcea85"
+    },
     {
       "date": "2026-09-14",
       "school": "中央民族大学",
@@ -219,28 +240,6 @@
       "verified": false,
       "automated": true,
       "id": "f7b9d5a52ff23b3428bc"
-    },
-    {
-      "date": "2026-07-15",
-      "school": "西安美术学院",
-      "type": "score",
-      "scope": "national",
-      "important": false,
-      "title": "西安美术学院2026年本科招生艺术提前批校考类专业...",
-      "summary": "页面涉及：美术学、绘画、中国画、雕塑、工艺美术、动画；内容属于全国性信息。本条由规则自动发现，请以官方原文为准。",
-      "majors": [
-        "美术学",
-        "绘画",
-        "中国画",
-        "雕塑",
-        "工艺美术",
-        "动画"
-      ],
-      "url": "https://zhshch.xafa.edu.cn/info/1014/4676.htm",
-      "source": "西安美术学院招生信息网",
-      "verified": false,
-      "automated": true,
-      "id": "0c352b619e713acc44fb"
     },
     {
       "date": "2026-07-12",
