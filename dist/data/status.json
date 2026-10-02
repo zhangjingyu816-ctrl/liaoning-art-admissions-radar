@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-10-02T12:47:58.271Z",
+  "updatedAt": "2026-10-02T13:11:54.090Z",
   "cutoff": "2026-07-01",
   "configuredSources": 15,
   "successfulSources": 13,
   "failedSources": 2,
-  "discoveredRecords": 21,
+  "discoveredRecords": 20,
   "discoveredHistoryRecords": 96,
   "results": [
     {
@@ -30,12 +30,12 @@
     {
       "school": "湖北美术学院",
       "ok": true,
-      "found": 9
+      "found": 8
     },
     {
       "school": "西安美术学院",
       "ok": true,
-      "found": 16
+      "found": 15
     },
     {
       "school": "北京服装学院",
