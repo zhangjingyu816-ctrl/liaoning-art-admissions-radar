@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-02T03:10:41.920Z",
+  "updatedAt": "2026-10-02T03:43:16.237Z",
   "cutoff": "2026-07-01",
   "records": [
     {
@@ -2405,18 +2405,19 @@
     }
   ],
   "status": {
-    "updatedAt": "2026-10-02T03:10:41.920Z",
+    "updatedAt": "2026-10-02T03:43:16.237Z",
     "cutoff": "2026-07-01",
     "configuredSources": 15,
-    "successfulSources": 13,
-    "failedSources": 2,
+    "successfulSources": 9,
+    "failedSources": 6,
     "discoveredRecords": 21,
     "discoveredHistoryRecords": 96,
     "results": [
       {
         "school": "上海戏剧学院",
-        "ok": true,
-        "found": 0
+        "ok": false,
+        "error": "fetch failed · ETIMEDOUT",
+        "preserved": 0
       },
       {
         "school": "中央民族大学",
@@ -2430,18 +2431,21 @@
       },
       {
         "school": "鲁迅美术学院",
-        "ok": true,
-        "found": 13
+        "ok": false,
+        "error": "fetch failed · ETIMEDOUT",
+        "preserved": 3
       },
       {
         "school": "湖北美术学院",
-        "ok": true,
-        "found": 9
+        "ok": false,
+        "error": "fetch failed · ETIMEDOUT",
+        "preserved": 0
       },
       {
         "school": "西安美术学院",
-        "ok": true,
-        "found": 16
+        "ok": false,
+        "error": "fetch failed · ETIMEDOUT",
+        "preserved": 3
       },
       {
         "school": "北京服装学院",
