@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-03T02:08:25.266Z",
+  "updatedAt": "2026-10-03T02:51:20.425Z",
   "cutoff": "2026-07-01",
   "records": [
     {
@@ -378,25 +378,6 @@
       "verified": false,
       "automated": true,
       "id": "41306867543a61f189c2"
-    },
-    {
-      "date": "2026-07-10",
-      "school": "上海大学",
-      "type": "score",
-      "scope": "pending",
-      "important": false,
-      "title": "上海大学2026年艺术类本科专业录取分数线(校考)",
-      "summary": "页面涉及：绘画、中国画、雕塑；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
-      "majors": [
-        "绘画",
-        "中国画",
-        "雕塑"
-      ],
-      "url": "https://mp.weixin.qq.com/s/wDJNQpLBZ4YqNP2Ds7WleA",
-      "source": "上海大学本科招生网",
-      "verified": false,
-      "automated": true,
-      "id": "8390bf7d8df5b58f3a4a"
     },
     {
       "date": "2026-07-05",
