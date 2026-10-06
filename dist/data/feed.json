@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-06T02:43:42.536Z",
+  "updatedAt": "2026-10-06T03:09:34.992Z",
   "cutoff": "2026-07-01",
   "records": [
     {
@@ -2405,7 +2405,7 @@
     }
   ],
   "status": {
-    "updatedAt": "2026-10-06T02:43:42.536Z",
+    "updatedAt": "2026-10-06T03:09:34.992Z",
     "cutoff": "2026-07-01",
     "configuredSources": 15,
     "successfulSources": 13,
