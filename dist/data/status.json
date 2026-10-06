@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-06T06:49:32.333Z",
+  "updatedAt": "2026-10-06T07:11:39.402Z",
   "cutoff": "2026-07-01",
   "configuredSources": 15,
   "successfulSources": 13,
@@ -30,7 +30,7 @@
     {
       "school": "湖北美术学院",
       "ok": true,
-      "found": 8
+      "found": 9
     },
     {
       "school": "西安美术学院",
