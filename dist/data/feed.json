@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-07T10:43:04.135Z",
+  "updatedAt": "2026-10-07T11:10:42.547Z",
   "cutoff": "2026-07-01",
   "records": [
     {
@@ -2189,17 +2189,13 @@
     {
       "date": "2025-01-27",
       "school": "清华大学美术学院",
-      "type": "policy",
-      "scope": "national",
+      "type": "notice",
+      "scope": "pending",
       "important": false,
       "title": "招生简章 2025.01.27 清华大学2025年艺术类专业（美术学院）本科招生简章",
-      "summary": "页面涉及：美术与设计、美术学、绘画、雕塑、设计学类；内容属于全国性信息。本条由规则自动发现，请以官方原文为准。",
+      "summary": "页面涉及：美术学；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
       "majors": [
-        "美术与设计",
-        "美术学",
-        "绘画",
-        "雕塑",
-        "设计学类"
+        "美术学"
       ],
       "url": "https://www.ad.tsinghua.edu.cn/info/1526/31599.htm",
       "source": "清华大学美术学院",
@@ -2358,24 +2354,13 @@
     {
       "date": "2024-02-05",
       "school": "清华大学美术学院",
-      "type": "policy",
-      "scope": "national",
+      "type": "notice",
+      "scope": "pending",
       "important": false,
       "title": "招生简章 2024.02.05 清华大学2024年艺术类专业（美术学院）本科招生简章",
-      "summary": "页面涉及：美术与设计、美术学、绘画、雕塑、视觉传达、环境设计、产品设计、工艺美术、服装与服饰设计、摄影、动画、陶瓷艺术设计；内容属于全国性信息。本条由规则自动发现，请以官方原文为准。",
+      "summary": "页面涉及：美术学；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
       "majors": [
-        "美术与设计",
-        "美术学",
-        "绘画",
-        "雕塑",
-        "视觉传达",
-        "环境设计",
-        "产品设计",
-        "工艺美术",
-        "服装与服饰设计",
-        "摄影",
-        "动画",
-        "陶瓷艺术设计"
+        "美术学"
       ],
       "url": "https://www.ad.tsinghua.edu.cn/info/1509/30895.htm",
       "source": "清华大学美术学院",
@@ -2405,11 +2390,11 @@
     }
   ],
   "status": {
-    "updatedAt": "2026-10-07T10:43:04.135Z",
+    "updatedAt": "2026-10-07T11:10:42.547Z",
     "cutoff": "2026-07-01",
     "configuredSources": 15,
-    "successfulSources": 7,
-    "failedSources": 8,
+    "successfulSources": 8,
+    "failedSources": 7,
     "discoveredRecords": 21,
     "discoveredHistoryRecords": 96,
     "results": [
@@ -2425,8 +2410,9 @@
       },
       {
         "school": "中国传媒大学",
-        "ok": true,
-        "found": 9
+        "ok": false,
+        "error": "fetch failed · ETIMEDOUT",
+        "preserved": 1
       },
       {
         "school": "鲁迅美术学院",
@@ -2458,9 +2444,8 @@
       },
       {
         "school": "上海大学",
-        "ok": false,
-        "error": "fetch failed · ETIMEDOUT",
-        "preserved": 1
+        "ok": true,
+        "found": 2
       },
       {
         "school": "广西师范大学",
@@ -2481,9 +2466,8 @@
       },
       {
         "school": "清华大学美术学院",
-        "ok": false,
-        "error": "fetch failed · ETIMEDOUT",
-        "preserved": 0
+        "ok": true,
+        "found": 3
       },
       {
         "school": "天津美术学院",

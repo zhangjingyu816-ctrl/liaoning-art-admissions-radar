@@ -1,9 +1,9 @@
 {
-  "updatedAt": "2026-10-07T10:43:04.135Z",
+  "updatedAt": "2026-10-07T11:10:42.547Z",
   "cutoff": "2026-07-01",
   "configuredSources": 15,
-  "successfulSources": 7,
-  "failedSources": 8,
+  "successfulSources": 8,
+  "failedSources": 7,
   "discoveredRecords": 21,
   "discoveredHistoryRecords": 96,
   "results": [
@@ -19,8 +19,9 @@
     },
     {
       "school": "中国传媒大学",
-      "ok": true,
-      "found": 9
+      "ok": false,
+      "error": "fetch failed · ETIMEDOUT",
+      "preserved": 1
     },
     {
       "school": "鲁迅美术学院",
@@ -52,9 +53,8 @@
     },
     {
       "school": "上海大学",
-      "ok": false,
-      "error": "fetch failed · ETIMEDOUT",
-      "preserved": 1
+      "ok": true,
+      "found": 2
     },
     {
       "school": "广西师范大学",
@@ -75,9 +75,8 @@
     },
     {
       "school": "清华大学美术学院",
-      "ok": false,
-      "error": "fetch failed · ETIMEDOUT",
-      "preserved": 0
+      "ok": true,
+      "found": 3
     },
     {
       "school": "天津美术学院",
