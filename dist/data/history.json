@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-07T13:13:57.265Z",
+  "updatedAt": "2026-10-07T13:44:21.210Z",
   "cutoff": "2024-01-01",
   "records": [
     {
@@ -633,13 +633,16 @@
     {
       "date": "2026-06-01",
       "school": "湖北美术学院",
-      "type": "notice",
-      "scope": "pending",
+      "type": "policy",
+      "scope": "national",
       "important": false,
       "title": "2026.06.01 湖北美术学院2026年全日制普通本科招生章程",
-      "summary": "页面涉及：美术学；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "summary": "页面涉及：美术与设计、美术学、绘画、动画；内容属于全国性信息。本条由规则自动发现，请以官方原文为准。",
       "majors": [
-        "美术学"
+        "美术与设计",
+        "美术学",
+        "绘画",
+        "动画"
       ],
       "url": "https://mp.weixin.qq.com/s/Q9_CAdQtpDjj5Q72MdKgxg",
       "source": "湖北美术学院招生就业处",
