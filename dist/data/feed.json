@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-09T09:11:54.644Z",
+  "updatedAt": "2026-10-09T09:45:22.439Z",
   "cutoff": "2026-07-01",
   "records": [
     {
@@ -2384,7 +2384,7 @@
     }
   ],
   "status": {
-    "updatedAt": "2026-10-09T09:11:54.644Z",
+    "updatedAt": "2026-10-09T09:45:22.439Z",
     "cutoff": "2026-07-01",
     "configuredSources": 15,
     "successfulSources": 12,
@@ -2414,14 +2414,14 @@
       },
       {
         "school": "湖北美术学院",
-        "ok": false,
-        "error": "fetch failed · ETIMEDOUT",
-        "preserved": 0
+        "ok": true,
+        "found": 9
       },
       {
         "school": "西安美术学院",
-        "ok": true,
-        "found": 15
+        "ok": false,
+        "error": "fetch failed · ETIMEDOUT",
+        "preserved": 2
       },
       {
         "school": "北京服装学院",
