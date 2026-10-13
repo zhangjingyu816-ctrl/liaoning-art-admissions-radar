@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-13T02:46:41.401Z",
+  "updatedAt": "2026-10-13T03:11:37.242Z",
   "cutoff": "2026-07-01",
   "configuredSources": 15,
   "successfulSources": 9,
@@ -19,8 +19,9 @@
     },
     {
       "school": "中国传媒大学",
-      "ok": true,
-      "found": 9
+      "ok": false,
+      "error": "fetch failed · ETIMEDOUT",
+      "preserved": 1
     },
     {
       "school": "鲁迅美术学院",
@@ -52,9 +53,8 @@
     },
     {
       "school": "上海大学",
-      "ok": false,
-      "error": "fetch failed · ETIMEDOUT",
-      "preserved": 1
+      "ok": true,
+      "found": 2
     },
     {
       "school": "广西师范大学",
