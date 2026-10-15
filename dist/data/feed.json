@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-15T11:58:40.518Z",
+  "updatedAt": "2026-10-15T12:31:23.262Z",
   "cutoff": "2026-07-01",
   "records": [
     {
@@ -82,6 +82,27 @@
       "verified": false,
       "automated": true,
       "id": "0058688b4c0ec330783b"
+    },
+    {
+      "date": "2026-09-30",
+      "school": "西安美术学院",
+      "type": "policy",
+      "scope": "pending",
+      "important": false,
+      "title": "西安美术学院2027年本科招生校考专业省统考科类对...",
+      "summary": "页面涉及：美术学、中国画、雕塑、工艺美术、动画；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学",
+        "中国画",
+        "雕塑",
+        "工艺美术",
+        "动画"
+      ],
+      "url": "https://zhshch.xafa.edu.cn/info/1014/4826.htm",
+      "source": "西安美术学院招生信息网",
+      "verified": false,
+      "automated": true,
+      "id": "6290c66350086edcea85"
     },
     {
       "date": "2026-09-30",
@@ -198,6 +219,55 @@
       "verified": false,
       "automated": true,
       "id": "d57c4cf85094d591b00f"
+    },
+    {
+      "date": "2026-07-25",
+      "school": "西安美术学院",
+      "type": "policy",
+      "scope": "pending",
+      "important": false,
+      "title": "2026级艺术本科提前批校考类、统考类新生录取通知...",
+      "summary": "页面涉及：美术学、中国画、雕塑、工艺美术、动画；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学",
+        "中国画",
+        "雕塑",
+        "工艺美术",
+        "动画"
+      ],
+      "url": "https://zhshch.xafa.edu.cn/info/1014/4726.htm",
+      "source": "西安美术学院招生信息网",
+      "verified": false,
+      "automated": true,
+      "id": "72932f6823834b114978"
+    },
+    {
+      "date": "2026-07-24",
+      "school": "西安美术学院",
+      "type": "score",
+      "scope": "liaoning",
+      "important": false,
+      "title": "西安美术学院2026年本科招生艺术提前批统考类专业...",
+      "summary": "页面涉及：美术学、中国画、雕塑、视觉传达、环境设计、产品设计、数字媒体艺术、工艺美术、服装与服饰设计、公共艺术、摄影、动画；正文提及辽宁。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学",
+        "中国画",
+        "雕塑",
+        "视觉传达",
+        "环境设计",
+        "产品设计",
+        "数字媒体艺术",
+        "工艺美术",
+        "服装与服饰设计",
+        "公共艺术",
+        "摄影",
+        "动画"
+      ],
+      "url": "https://zhshch.xafa.edu.cn/info/1014/4716.htm",
+      "source": "西安美术学院招生信息网",
+      "verified": false,
+      "automated": true,
+      "id": "74491247479e3540afbe"
     },
     {
       "date": "2026-07-22",
@@ -1251,8 +1321,9 @@
       "scope": "pending",
       "important": false,
       "title": "2026.03.12 湖北美术学院2026年普通本科招生现场复试专业合格分数线及成绩查询公告",
-      "summary": "页面涉及：美术学；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "summary": "页面涉及：美术与设计、美术学；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
       "majors": [
+        "美术与设计",
         "美术学"
       ],
       "url": "https://zjc.hifa.edu.cn/info/1090/2695.htm",
@@ -1518,7 +1589,7 @@
     {
       "date": "2026-01-26",
       "school": "湖北美术学院",
-      "type": "notice",
+      "type": "score",
       "scope": "pending",
       "important": false,
       "title": "2026.01.26 湖北美术学院2026年普通本科招生现场复试递补报名公告",
@@ -1574,8 +1645,9 @@
       "scope": "pending",
       "important": false,
       "title": "2026.01.22 湖北美术学院2026年普通本科招生现场复试考生须知",
-      "summary": "页面涉及：美术学；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "summary": "页面涉及：美术与设计、美术学；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
       "majors": [
+        "美术与设计",
         "美术学"
       ],
       "url": "https://zjc.hifa.edu.cn/info/1090/2698.htm",
@@ -2389,12 +2461,12 @@
     }
   ],
   "status": {
-    "updatedAt": "2026-10-15T11:58:40.518Z",
+    "updatedAt": "2026-10-15T12:31:23.262Z",
     "cutoff": "2026-07-01",
     "configuredSources": 15,
-    "successfulSources": 7,
-    "failedSources": 8,
-    "discoveredRecords": 19,
+    "successfulSources": 13,
+    "failedSources": 2,
+    "discoveredRecords": 22,
     "discoveredHistoryRecords": 97,
     "results": [
       {
@@ -2414,21 +2486,18 @@
       },
       {
         "school": "鲁迅美术学院",
-        "ok": false,
-        "error": "fetch failed · ETIMEDOUT",
-        "preserved": 3
+        "ok": true,
+        "found": 13
       },
       {
         "school": "湖北美术学院",
-        "ok": false,
-        "error": "fetch failed · ETIMEDOUT",
-        "preserved": 0
+        "ok": true,
+        "found": 9
       },
       {
         "school": "西安美术学院",
-        "ok": false,
-        "error": "fetch failed · ETIMEDOUT",
-        "preserved": 0
+        "ok": true,
+        "found": 16
       },
       {
         "school": "北京服装学院",
@@ -2442,9 +2511,8 @@
       },
       {
         "school": "上海大学",
-        "ok": false,
-        "error": "fetch failed · ETIMEDOUT",
-        "preserved": 1
+        "ok": true,
+        "found": 2
       },
       {
         "school": "广西师范大学",
@@ -2465,15 +2533,13 @@
       },
       {
         "school": "清华大学美术学院",
-        "ok": false,
-        "error": "fetch failed · ETIMEDOUT",
-        "preserved": 0
+        "ok": true,
+        "found": 3
       },
       {
         "school": "天津美术学院",
-        "ok": false,
-        "error": "fetch failed · ETIMEDOUT",
-        "preserved": 5
+        "ok": true,
+        "found": 9
       },
       {
         "school": "广州美术学院",
