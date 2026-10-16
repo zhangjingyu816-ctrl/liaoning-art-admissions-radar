@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-16T07:29:48.756Z",
+  "updatedAt": "2026-10-16T08:06:59.758Z",
   "cutoff": "2026-07-01",
   "records": [
     {
@@ -2461,11 +2461,11 @@
     }
   ],
   "status": {
-    "updatedAt": "2026-10-16T07:29:48.756Z",
+    "updatedAt": "2026-10-16T08:06:59.758Z",
     "cutoff": "2026-07-01",
     "configuredSources": 15,
-    "successfulSources": 6,
-    "failedSources": 9,
+    "successfulSources": 5,
+    "failedSources": 10,
     "discoveredRecords": 22,
     "discoveredHistoryRecords": 97,
     "results": [
@@ -2505,8 +2505,9 @@
       },
       {
         "school": "北京服装学院",
-        "ok": true,
-        "found": 0
+        "ok": false,
+        "error": "fetch failed · ETIMEDOUT",
+        "preserved": 0
       },
       {
         "school": "四川美术学院",
