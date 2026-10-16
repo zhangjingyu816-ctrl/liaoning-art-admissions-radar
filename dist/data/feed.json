@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-16T05:01:33.044Z",
+  "updatedAt": "2026-10-16T05:30:58.462Z",
   "cutoff": "2026-07-01",
   "records": [
     {
@@ -2461,7 +2461,7 @@
     }
   ],
   "status": {
-    "updatedAt": "2026-10-16T05:01:33.044Z",
+    "updatedAt": "2026-10-16T05:30:58.462Z",
     "cutoff": "2026-07-01",
     "configuredSources": 15,
     "successfulSources": 10,
@@ -2513,9 +2513,8 @@
       },
       {
         "school": "上海大学",
-        "ok": false,
-        "error": "fetch failed · ETIMEDOUT",
-        "preserved": 1
+        "ok": true,
+        "found": 1
       },
       {
         "school": "广西师范大学",
@@ -2541,8 +2540,9 @@
       },
       {
         "school": "天津美术学院",
-        "ok": true,
-        "found": 9
+        "ok": false,
+        "error": "fetch failed · ETIMEDOUT",
+        "preserved": 5
       },
       {
         "school": "广州美术学院",
