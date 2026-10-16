@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-16T08:06:59.758Z",
+  "updatedAt": "2026-10-16T09:02:07.270Z",
   "cutoff": "2026-07-01",
   "records": [
     {
@@ -2461,11 +2461,11 @@
     }
   ],
   "status": {
-    "updatedAt": "2026-10-16T08:06:59.758Z",
+    "updatedAt": "2026-10-16T09:02:07.270Z",
     "cutoff": "2026-07-01",
     "configuredSources": 15,
-    "successfulSources": 5,
-    "failedSources": 10,
+    "successfulSources": 4,
+    "failedSources": 11,
     "discoveredRecords": 22,
     "discoveredHistoryRecords": 97,
     "results": [
@@ -2551,8 +2551,9 @@
       },
       {
         "school": "广州美术学院",
-        "ok": true,
-        "found": 9
+        "ok": false,
+        "error": "fetch failed · ETIMEDOUT",
+        "preserved": 3
       }
     ]
   }
