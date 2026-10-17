@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-17T12:16:46.765Z",
+  "updatedAt": "2026-10-17T13:02:02.126Z",
   "cutoff": "2026-07-01",
   "records": [
     {
@@ -406,6 +406,25 @@
       "verified": false,
       "automated": true,
       "id": "41306867543a61f189c2"
+    },
+    {
+      "date": "2026-07-10",
+      "school": "上海大学",
+      "type": "score",
+      "scope": "pending",
+      "important": false,
+      "title": "上海大学2026年艺术类本科专业录取分数线(校考)",
+      "summary": "页面涉及：绘画、中国画、雕塑；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "绘画",
+        "中国画",
+        "雕塑"
+      ],
+      "url": "https://mp.weixin.qq.com/s/wDJNQpLBZ4YqNP2Ds7WleA",
+      "source": "上海大学本科招生网",
+      "verified": false,
+      "automated": true,
+      "id": "8390bf7d8df5b58f3a4a"
     },
     {
       "date": "2026-07-05",
@@ -2442,12 +2461,12 @@
     }
   ],
   "status": {
-    "updatedAt": "2026-10-17T12:16:46.765Z",
+    "updatedAt": "2026-10-17T13:02:02.126Z",
     "cutoff": "2026-07-01",
     "configuredSources": 15,
-    "successfulSources": 5,
-    "failedSources": 10,
-    "discoveredRecords": 21,
+    "successfulSources": 13,
+    "failedSources": 2,
+    "discoveredRecords": 22,
     "discoveredHistoryRecords": 97,
     "results": [
       {
@@ -2462,33 +2481,28 @@
       },
       {
         "school": "中国传媒大学",
-        "ok": false,
-        "error": "fetch failed · ETIMEDOUT",
-        "preserved": 1
+        "ok": true,
+        "found": 9
       },
       {
         "school": "鲁迅美术学院",
-        "ok": false,
-        "error": "fetch failed · ETIMEDOUT",
-        "preserved": 3
+        "ok": true,
+        "found": 13
       },
       {
         "school": "湖北美术学院",
-        "ok": false,
-        "error": "fetch failed · ETIMEDOUT",
-        "preserved": 0
+        "ok": true,
+        "found": 9
       },
       {
         "school": "西安美术学院",
-        "ok": false,
-        "error": "fetch failed · ETIMEDOUT",
-        "preserved": 3
+        "ok": true,
+        "found": 16
       },
       {
         "school": "北京服装学院",
-        "ok": false,
-        "error": "fetch failed · ETIMEDOUT",
-        "preserved": 0
+        "ok": true,
+        "found": 0
       },
       {
         "school": "四川美术学院",
@@ -2497,9 +2511,8 @@
       },
       {
         "school": "上海大学",
-        "ok": false,
-        "error": "fetch failed · ETIMEDOUT",
-        "preserved": 0
+        "ok": true,
+        "found": 2
       },
       {
         "school": "广西师范大学",
@@ -2509,7 +2522,7 @@
       {
         "school": "中央美术学院",
         "ok": false,
-        "error": "fetch failed · UNABLE_TO_VERIFY_LEAF_SIGNATURE · unable to verify the first certificate",
+        "error": "fetch failed · UND_ERR_CONNECT_TIMEOUT · Connect Timeout Error (attempted address: www.cafa.edu.cn:80, timeout: 10000ms)",
         "preserved": 0
       },
       {
@@ -2520,15 +2533,13 @@
       },
       {
         "school": "清华大学美术学院",
-        "ok": false,
-        "error": "fetch failed · ETIMEDOUT",
-        "preserved": 0
+        "ok": true,
+        "found": 3
       },
       {
         "school": "天津美术学院",
-        "ok": false,
-        "error": "fetch failed · ETIMEDOUT",
-        "preserved": 5
+        "ok": true,
+        "found": 9
       },
       {
         "school": "广州美术学院",
