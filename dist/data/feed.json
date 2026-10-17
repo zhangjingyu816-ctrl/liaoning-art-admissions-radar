@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-17T01:56:33.483Z",
+  "updatedAt": "2026-10-17T02:21:19.654Z",
   "cutoff": "2026-07-01",
   "records": [
     {
@@ -1478,15 +1478,13 @@
     {
       "date": "2026-01-30",
       "school": "清华大学美术学院",
-      "type": "policy",
-      "scope": "national",
+      "type": "notice",
+      "scope": "pending",
       "important": false,
       "title": "招生简章 2026.01.30 清华大学2026年艺术类专业（美术学院）本科招生简章",
-      "summary": "页面涉及：美术与设计、美术学、设计学类；内容属于全国性信息。本条由规则自动发现，请以官方原文为准。",
+      "summary": "页面涉及：美术学；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
       "majors": [
-        "美术与设计",
-        "美术学",
-        "设计学类"
+        "美术学"
       ],
       "url": "https://www.join-tsinghua.edu.cn/info/1009/2146.htm",
       "source": "清华大学美术学院",
@@ -2461,11 +2459,11 @@
     }
   ],
   "status": {
-    "updatedAt": "2026-10-17T01:56:33.483Z",
+    "updatedAt": "2026-10-17T02:21:19.654Z",
     "cutoff": "2026-07-01",
     "configuredSources": 15,
-    "successfulSources": 13,
-    "failedSources": 2,
+    "successfulSources": 10,
+    "failedSources": 5,
     "discoveredRecords": 22,
     "discoveredHistoryRecords": 97,
     "results": [
@@ -2486,18 +2484,21 @@
       },
       {
         "school": "鲁迅美术学院",
-        "ok": true,
-        "found": 13
+        "ok": false,
+        "error": "fetch failed · ETIMEDOUT",
+        "preserved": 3
       },
       {
         "school": "湖北美术学院",
-        "ok": true,
-        "found": 9
+        "ok": false,
+        "error": "fetch failed · ETIMEDOUT",
+        "preserved": 0
       },
       {
         "school": "西安美术学院",
-        "ok": true,
-        "found": 16
+        "ok": false,
+        "error": "fetch failed · ETIMEDOUT",
+        "preserved": 3
       },
       {
         "school": "北京服装学院",
@@ -2512,7 +2513,7 @@
       {
         "school": "上海大学",
         "ok": true,
-        "found": 2
+        "found": 1
       },
       {
         "school": "广西师范大学",
