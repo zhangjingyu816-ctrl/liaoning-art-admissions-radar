@@ -1,9 +1,9 @@
 {
-  "updatedAt": "2026-10-17T13:02:02.126Z",
+  "updatedAt": "2026-10-17T13:30:23.619Z",
   "cutoff": "2026-07-01",
   "configuredSources": 15,
-  "successfulSources": 13,
-  "failedSources": 2,
+  "successfulSources": 12,
+  "failedSources": 3,
   "discoveredRecords": 22,
   "discoveredHistoryRecords": 97,
   "results": [
@@ -60,7 +60,7 @@
     {
       "school": "中央美术学院",
       "ok": false,
-      "error": "fetch failed · UND_ERR_CONNECT_TIMEOUT · Connect Timeout Error (attempted address: www.cafa.edu.cn:80, timeout: 10000ms)",
+      "error": "fetch failed · UNABLE_TO_VERIFY_LEAF_SIGNATURE · unable to verify the first certificate",
       "preserved": 0
     },
     {
@@ -76,8 +76,9 @@
     },
     {
       "school": "天津美术学院",
-      "ok": true,
-      "found": 9
+      "ok": false,
+      "error": "fetch failed · ETIMEDOUT",
+      "preserved": 5
     },
     {
       "school": "广州美术学院",
