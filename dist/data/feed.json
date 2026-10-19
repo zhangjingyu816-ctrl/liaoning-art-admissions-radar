@@ -1,7 +1,71 @@
 {
-  "updatedAt": "2026-10-19T05:38:42.105Z",
+  "updatedAt": "2026-10-19T11:56:49.377Z",
   "cutoff": "2026-07-01",
   "records": [
+    {
+      "date": "2026-10-19",
+      "school": "上海大学",
+      "type": "policy",
+      "scope": "national",
+      "important": false,
+      "title": "上海大学2027年本科艺术类专业招考方式公告",
+      "summary": "页面涉及：美术学、绘画、中国画、雕塑、视觉传达、环境设计、产品设计、数字媒体艺术、工艺美术、摄影、动画；内容属于全国性信息。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学",
+        "绘画",
+        "中国画",
+        "雕塑",
+        "视觉传达",
+        "环境设计",
+        "产品设计",
+        "数字媒体艺术",
+        "工艺美术",
+        "摄影",
+        "动画"
+      ],
+      "url": "https://bkzsw.shu.edu.cn/info/1798/38970.htm",
+      "source": "上海大学本科招生网",
+      "verified": false,
+      "automated": true,
+      "id": "556bbab1b3b4b2d0c7af"
+    },
+    {
+      "date": "2026-10-19",
+      "school": "上海大学",
+      "type": "score",
+      "scope": "pending",
+      "important": false,
+      "title": "上海大学2026年艺术类本科专业录取分数线(校考)",
+      "summary": "页面涉及：绘画、中国画、雕塑；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "绘画",
+        "中国画",
+        "雕塑"
+      ],
+      "url": "https://mp.weixin.qq.com/s/wDJNQpLBZ4YqNP2Ds7WleA",
+      "source": "上海大学本科招生网",
+      "verified": false,
+      "automated": true,
+      "id": "8390bf7d8df5b58f3a4a"
+    },
+    {
+      "date": "2026-10-14",
+      "school": "四川美术学院",
+      "type": "policy",
+      "scope": "pending",
+      "important": false,
+      "title": "四川美术学院2027年本科校考考试说...",
+      "summary": "页面涉及：美术学、绘画；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学",
+        "绘画"
+      ],
+      "url": "https://www.scfai.edu.cn/zsb/info/1002/4816.htm",
+      "source": "四川美术学院招生处",
+      "verified": false,
+      "automated": true,
+      "id": "683b69b8c5f886d5d197"
+    },
     {
       "date": "2026-10-10",
       "school": "广州美术学院",
@@ -408,25 +472,6 @@
       "id": "41306867543a61f189c2"
     },
     {
-      "date": "2026-07-10",
-      "school": "上海大学",
-      "type": "score",
-      "scope": "pending",
-      "important": false,
-      "title": "上海大学2026年艺术类本科专业录取分数线(校考)",
-      "summary": "页面涉及：绘画、中国画、雕塑；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
-      "majors": [
-        "绘画",
-        "中国画",
-        "雕塑"
-      ],
-      "url": "https://mp.weixin.qq.com/s/wDJNQpLBZ4YqNP2Ds7WleA",
-      "source": "上海大学本科招生网",
-      "verified": false,
-      "automated": true,
-      "id": "8390bf7d8df5b58f3a4a"
-    },
-    {
       "date": "2026-07-05",
       "school": "广州美术学院",
       "type": "score",
@@ -445,6 +490,70 @@
     }
   ],
   "historyRecords": [
+    {
+      "date": "2026-10-19",
+      "school": "上海大学",
+      "type": "score",
+      "scope": "pending",
+      "important": false,
+      "title": "上海大学2026年艺术类本科专业录取分数线(校考)",
+      "summary": "页面涉及：绘画、中国画、雕塑；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "绘画",
+        "中国画",
+        "雕塑"
+      ],
+      "url": "https://mp.weixin.qq.com/s/wDJNQpLBZ4YqNP2Ds7WleA",
+      "source": "上海大学本科招生网",
+      "verified": false,
+      "automated": true,
+      "id": "8390bf7d8df5b58f3a4a"
+    },
+    {
+      "date": "2026-10-19",
+      "school": "上海大学",
+      "type": "policy",
+      "scope": "national",
+      "important": false,
+      "title": "上海大学2027年本科艺术类专业招考方式公告",
+      "summary": "页面涉及：美术学、绘画、中国画、雕塑、视觉传达、环境设计、产品设计、数字媒体艺术、工艺美术、摄影、动画；内容属于全国性信息。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学",
+        "绘画",
+        "中国画",
+        "雕塑",
+        "视觉传达",
+        "环境设计",
+        "产品设计",
+        "数字媒体艺术",
+        "工艺美术",
+        "摄影",
+        "动画"
+      ],
+      "url": "https://bkzsw.shu.edu.cn/info/1798/38970.htm",
+      "source": "上海大学本科招生网",
+      "verified": false,
+      "automated": true,
+      "id": "556bbab1b3b4b2d0c7af"
+    },
+    {
+      "date": "2026-10-14",
+      "school": "四川美术学院",
+      "type": "policy",
+      "scope": "pending",
+      "important": false,
+      "title": "四川美术学院2027年本科校考考试说...",
+      "summary": "页面涉及：美术学、绘画；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学",
+        "绘画"
+      ],
+      "url": "https://www.scfai.edu.cn/zsb/info/1002/4816.htm",
+      "source": "四川美术学院招生处",
+      "verified": false,
+      "automated": true,
+      "id": "683b69b8c5f886d5d197"
+    },
     {
       "date": "2026-10-10",
       "school": "广州美术学院",
@@ -888,25 +997,6 @@
       "verified": false,
       "automated": true,
       "id": "b6b72d4ae8316ebd70ac"
-    },
-    {
-      "date": "2026-07-10",
-      "school": "上海大学",
-      "type": "score",
-      "scope": "pending",
-      "important": false,
-      "title": "上海大学2026年艺术类本科专业录取分数线(校考)",
-      "summary": "页面涉及：绘画、中国画、雕塑；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
-      "majors": [
-        "绘画",
-        "中国画",
-        "雕塑"
-      ],
-      "url": "https://mp.weixin.qq.com/s/wDJNQpLBZ4YqNP2Ds7WleA",
-      "source": "上海大学本科招生网",
-      "verified": false,
-      "automated": true,
-      "id": "8390bf7d8df5b58f3a4a"
     },
     {
       "date": "2026-07-05",
@@ -1478,13 +1568,15 @@
     {
       "date": "2026-01-30",
       "school": "清华大学美术学院",
-      "type": "notice",
-      "scope": "pending",
+      "type": "policy",
+      "scope": "national",
       "important": false,
       "title": "招生简章 2026.01.30 清华大学2026年艺术类专业（美术学院）本科招生简章",
-      "summary": "页面涉及：美术学；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "summary": "页面涉及：美术与设计、美术学、设计学类；内容属于全国性信息。本条由规则自动发现，请以官方原文为准。",
       "majors": [
-        "美术学"
+        "美术与设计",
+        "美术学",
+        "设计学类"
       ],
       "url": "https://www.join-tsinghua.edu.cn/info/1009/2146.htm",
       "source": "清华大学美术学院",
@@ -2459,13 +2551,13 @@
     }
   ],
   "status": {
-    "updatedAt": "2026-10-19T05:38:42.105Z",
+    "updatedAt": "2026-10-19T11:56:49.377Z",
     "cutoff": "2026-07-01",
     "configuredSources": 15,
-    "successfulSources": 5,
-    "failedSources": 10,
-    "discoveredRecords": 22,
-    "discoveredHistoryRecords": 97,
+    "successfulSources": 12,
+    "failedSources": 3,
+    "discoveredRecords": 24,
+    "discoveredHistoryRecords": 99,
     "results": [
       {
         "school": "上海戏剧学院",
@@ -2479,21 +2571,18 @@
       },
       {
         "school": "中国传媒大学",
-        "ok": false,
-        "error": "fetch failed · ETIMEDOUT",
-        "preserved": 1
+        "ok": true,
+        "found": 9
       },
       {
         "school": "鲁迅美术学院",
-        "ok": false,
-        "error": "fetch failed · ETIMEDOUT",
-        "preserved": 3
+        "ok": true,
+        "found": 13
       },
       {
         "school": "湖北美术学院",
-        "ok": false,
-        "error": "fetch failed · ETIMEDOUT",
-        "preserved": 0
+        "ok": true,
+        "found": 9
       },
       {
         "school": "西安美术学院",
@@ -2503,20 +2592,18 @@
       },
       {
         "school": "北京服装学院",
-        "ok": false,
-        "error": "fetch failed · ETIMEDOUT",
-        "preserved": 0
+        "ok": true,
+        "found": 0
       },
       {
         "school": "四川美术学院",
         "ok": true,
-        "found": 3
+        "found": 4
       },
       {
         "school": "上海大学",
-        "ok": false,
-        "error": "fetch failed · ETIMEDOUT",
-        "preserved": 1
+        "ok": true,
+        "found": 3
       },
       {
         "school": "广西师范大学",
@@ -2537,15 +2624,13 @@
       },
       {
         "school": "清华大学美术学院",
-        "ok": false,
-        "error": "fetch failed · ETIMEDOUT",
-        "preserved": 0
+        "ok": true,
+        "found": 3
       },
       {
         "school": "天津美术学院",
-        "ok": false,
-        "error": "fetch failed · ETIMEDOUT",
-        "preserved": 5
+        "ok": true,
+        "found": 9
       },
       {
         "school": "广州美术学院",
