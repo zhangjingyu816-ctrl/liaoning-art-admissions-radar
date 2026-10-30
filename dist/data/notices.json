@@ -1,7 +1,24 @@
 {
-  "updatedAt": "2026-10-30T06:44:29.139Z",
+  "updatedAt": "2026-10-30T13:47:27.098Z",
   "cutoff": "2026-07-01",
   "records": [
+    {
+      "date": "2026-10-30",
+      "school": "四川美术学院",
+      "type": "policy",
+      "scope": "pending",
+      "important": false,
+      "title": "四川美术学院关于2027年本科省统考...",
+      "summary": "页面涉及：美术学；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学"
+      ],
+      "url": "https://www.scfai.edu.cn/zsb/info/1002/4826.htm",
+      "source": "四川美术学院招生处",
+      "verified": false,
+      "automated": true,
+      "id": "357f130348ef16bc70ca"
+    },
     {
       "date": "2026-10-30",
       "school": "中央民族大学",
@@ -349,23 +366,6 @@
       "verified": false,
       "automated": true,
       "id": "74491247479e3540afbe"
-    },
-    {
-      "date": "2026-07-22",
-      "school": "四川美术学院",
-      "type": "score",
-      "scope": "national",
-      "important": false,
-      "title": "四川美术学院2026年本科录取分数线...",
-      "summary": "页面涉及：美术学；内容属于全国性信息。本条由规则自动发现，请以官方原文为准。",
-      "majors": [
-        "美术学"
-      ],
-      "url": "https://www.scfai.edu.cn/zsb/info/1002/4686.htm",
-      "source": "四川美术学院招生处",
-      "verified": false,
-      "automated": true,
-      "id": "eaee6961dc11065e4a98"
     },
     {
       "date": "2026-07-22",
