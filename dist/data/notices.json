@@ -1,7 +1,24 @@
 {
-  "updatedAt": "2026-10-29T13:55:41.599Z",
+  "updatedAt": "2026-10-30T06:44:29.139Z",
   "cutoff": "2026-07-01",
   "records": [
+    {
+      "date": "2026-10-30",
+      "school": "中央民族大学",
+      "type": "policy",
+      "scope": "national",
+      "important": false,
+      "title": "中央民族大学2027年艺术类本科招生统考专业与各省统考子科类对照表 2026-10-30",
+      "summary": "页面涉及：美术类；内容属于全国性信息。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术类"
+      ],
+      "url": "https://zb.muc.edu.cn/content/zs/ysl/7249ab0d-d369-11f1-98a5-6c92bf4353bb.htm",
+      "source": "中央民族大学本科招生网",
+      "verified": false,
+      "automated": true,
+      "id": "f059692bf9e980d50892"
+    },
     {
       "date": "2026-10-19",
       "school": "上海大学",
