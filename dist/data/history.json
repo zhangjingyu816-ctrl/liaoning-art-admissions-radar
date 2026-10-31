@@ -1,7 +1,24 @@
 {
-  "updatedAt": "2026-10-30T13:47:27.098Z",
+  "updatedAt": "2026-10-31T06:36:15.781Z",
   "cutoff": "2024-01-01",
   "records": [
+    {
+      "date": "2026-10-30",
+      "school": "鲁迅美术学院",
+      "type": "policy",
+      "scope": "pending",
+      "important": false,
+      "title": "鲁迅美术学院2027年本科招生各专业招考类别及省统考科类要求 2026.10.30",
+      "summary": "页面涉及：美术学；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学"
+      ],
+      "url": "https://www.lumei.edu.cn/info/1207/65985.htm",
+      "source": "鲁迅美术学院招生就业处",
+      "verified": false,
+      "automated": true,
+      "id": "f9fdfb943168fd528a84"
+    },
     {
       "date": "2026-10-30",
       "school": "四川美术学院",
@@ -21,6 +38,44 @@
     },
     {
       "date": "2026-10-30",
+      "school": "天津美术学院",
+      "type": "notice",
+      "scope": "pending",
+      "important": false,
+      "title": "天津美术学院2027年本科招生专业省统考科类对应要求",
+      "summary": "页面涉及：美术学；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学"
+      ],
+      "url": "https://zsbgs.tjarts.edu.cn/info/1003/3264.htm",
+      "source": "天津美术学院招生办公室",
+      "verified": false,
+      "automated": true,
+      "id": "830e5e88ee7e0152fdb8"
+    },
+    {
+      "date": "2026-10-30",
+      "school": "西安美术学院",
+      "type": "notice",
+      "scope": "pending",
+      "important": false,
+      "title": "西安美术学院2027年本科招生专业省统考科类对应要...",
+      "summary": "页面涉及：美术学、中国画、雕塑、工艺美术、动画；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术学",
+        "中国画",
+        "雕塑",
+        "工艺美术",
+        "动画"
+      ],
+      "url": "https://zhshch.xafa.edu.cn/info/1014/4866.htm",
+      "source": "西安美术学院招生信息网",
+      "verified": false,
+      "automated": true,
+      "id": "61d5f69b90488c2f9251"
+    },
+    {
+      "date": "2026-10-30",
       "school": "中央民族大学",
       "type": "policy",
       "scope": "national",
@@ -35,6 +90,28 @@
       "verified": false,
       "automated": true,
       "id": "f059692bf9e980d50892"
+    },
+    {
+      "date": "2026-10-28",
+      "school": "鲁迅美术学院",
+      "type": "policy",
+      "scope": "pending",
+      "important": false,
+      "title": "鲁迅美术学院2027年本科招生校考考试说明 2026.10.28",
+      "summary": "页面涉及：美术与设计、美术学、绘画、雕塑、数字媒体艺术、设计学类；辽宁适用范围待复核。本条由规则自动发现，请以官方原文为准。",
+      "majors": [
+        "美术与设计",
+        "美术学",
+        "绘画",
+        "雕塑",
+        "数字媒体艺术",
+        "设计学类"
+      ],
+      "url": "https://www.lumei.edu.cn/info/1207/65975.htm",
+      "source": "鲁迅美术学院招生就业处",
+      "verified": false,
+      "automated": true,
+      "id": "b643a18a6860a9165144"
     },
     {
       "date": "2026-10-19",
