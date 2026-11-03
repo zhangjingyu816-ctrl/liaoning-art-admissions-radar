@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-03T07:31:05.505Z",
+  "updatedAt": "2026-11-03T15:28:02.649Z",
   "cutoff": "2026-07-01",
   "records": [
     {
@@ -2756,11 +2756,11 @@
     }
   ],
   "status": {
-    "updatedAt": "2026-11-03T07:31:05.505Z",
+    "updatedAt": "2026-11-03T15:28:02.649Z",
     "cutoff": "2026-07-01",
     "configuredSources": 15,
-    "successfulSources": 7,
-    "failedSources": 8,
+    "successfulSources": 9,
+    "failedSources": 6,
     "discoveredRecords": 29,
     "discoveredHistoryRecords": 105,
     "results": [
@@ -2832,15 +2832,13 @@
       },
       {
         "school": "清华大学美术学院",
-        "ok": false,
-        "error": "fetch failed · ETIMEDOUT",
-        "preserved": 0
+        "ok": true,
+        "found": 3
       },
       {
         "school": "天津美术学院",
-        "ok": false,
-        "error": "fetch failed · ETIMEDOUT",
-        "preserved": 6
+        "ok": true,
+        "found": 9
       },
       {
         "school": "广州美术学院",
