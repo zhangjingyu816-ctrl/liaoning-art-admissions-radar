@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-12T07:56:47.139Z",
+  "updatedAt": "2026-11-12T16:31:45.570Z",
   "cutoff": "2026-07-01",
   "records": [
     {
@@ -2544,12 +2544,11 @@
       "scope": "national",
       "important": false,
       "title": "招生简章 2025.01.27 清华大学2025年艺术类专业（美术学院）本科招生简章",
-      "summary": "页面涉及：美术与设计、美术学、绘画、雕塑、设计学类；内容属于全国性信息。本条由规则自动发现，请以官方原文为准。",
+      "summary": "页面涉及：美术与设计、美术学、艺术与科技、设计学类；内容属于全国性信息。本条由规则自动发现，请以官方原文为准。",
       "majors": [
         "美术与设计",
         "美术学",
-        "绘画",
-        "雕塑",
+        "艺术与科技",
         "设计学类"
       ],
       "url": "https://www.ad.tsinghua.edu.cn/info/1526/31599.htm",
@@ -2756,11 +2755,11 @@
     }
   ],
   "status": {
-    "updatedAt": "2026-11-12T07:56:47.139Z",
+    "updatedAt": "2026-11-12T16:31:45.570Z",
     "cutoff": "2026-07-01",
     "configuredSources": 15,
-    "successfulSources": 7,
-    "failedSources": 8,
+    "successfulSources": 9,
+    "failedSources": 6,
     "discoveredRecords": 29,
     "discoveredHistoryRecords": 105,
     "results": [
@@ -2777,7 +2776,7 @@
       {
         "school": "中国传媒大学",
         "ok": true,
-        "found": 8
+        "found": 9
       },
       {
         "school": "鲁迅美术学院",
@@ -2832,15 +2831,13 @@
       },
       {
         "school": "清华大学美术学院",
-        "ok": false,
-        "error": "fetch failed · ETIMEDOUT",
-        "preserved": 0
+        "ok": true,
+        "found": 3
       },
       {
         "school": "天津美术学院",
-        "ok": false,
-        "error": "fetch failed · ETIMEDOUT",
-        "preserved": 6
+        "ok": true,
+        "found": 9
       },
       {
         "school": "广州美术学院",
