@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-14T07:19:01.879Z",
+  "updatedAt": "2026-11-14T14:25:10.949Z",
   "cutoff": "2026-07-01",
   "records": [
     {
@@ -2755,7 +2755,7 @@
     }
   ],
   "status": {
-    "updatedAt": "2026-11-14T07:19:01.879Z",
+    "updatedAt": "2026-11-14T14:25:10.949Z",
     "cutoff": "2026-07-01",
     "configuredSources": 15,
     "successfulSources": 11,
@@ -2824,7 +2824,7 @@
       {
         "school": "中国美术学院",
         "ok": false,
-        "error": "fetch failed · UND_ERR_SOCKET · other side closed",
+        "error": "fetch failed · EAI_AGAIN · getaddrinfo EAI_AGAIN zb.caa.edu.cn",
         "preserved": 0
       },
       {
