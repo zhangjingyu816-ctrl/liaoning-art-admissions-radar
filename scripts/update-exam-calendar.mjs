@@ -116,7 +116,8 @@ function holdFromAmendment(school, notice, entries) {
 }
 
 export function isCurrentNotice(title) {
-  return /2027\s*年/.test(title) && NOTICE_TITLE.test(title) && !EXCLUDED_TITLE.test(title)
+  const provinceOnly = /统考/.test(title) && !/校考/.test(title) && /对照|省统考(?:报名|时间|考试)|子科类|科类对应/.test(title)
+  return /2027\s*年/.test(title) && NOTICE_TITLE.test(title) && !EXCLUDED_TITLE.test(title) && !provinceOnly
 }
 
 export function extractSchedules(body, school, notice) {

@@ -28,6 +28,8 @@ test('extracts complete dates and distinguishes school-wide registration, online
 test('rejects earlier cycles, undated policy notices, ambiguous and reserved admission sections', () => {
   assert.equal(isCurrentNotice('2027年本科留学生招生简章'), false)
   assert.equal(isCurrentNotice('鲁迅美术学院2026年本科校考招生简章'), false)
+  assert.equal(isCurrentNotice('中央民族大学2027年艺术类本科招生统考专业与各省统考子科类对照表'), false)
+  assert.equal(isCurrentNotice('中央民族大学2027年艺术类本科招生校考专业与各省统考子科类对照表'), true)
   assert.deepEqual(extractSchedules('考试时间：2027年1月1日', school, {
     ...notice, title: '鲁迅美术学院2027年本科招生校考专业考试说明'
   }), [])
