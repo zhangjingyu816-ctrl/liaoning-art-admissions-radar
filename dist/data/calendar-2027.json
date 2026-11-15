@@ -1,7 +1,7 @@
 {
   "version": 1,
   "season": 2027,
-  "updatedAt": "2026-11-15T00:00:00.000Z",
+  "updatedAt": "2026-11-15T15:19:24.973Z",
   "schools": [
     {
       "id": "zhejiang-media",
@@ -62,9 +62,9 @@
       "id": "ccom",
       "name": "中央音乐学院",
       "sourceUrl": "https://zhaoban.ccom.edu.cn/login",
-      "noticeUrl": "https://zhaoban.ccom.edu.cn/oa/news/newsInfo/newsShow?id=f5312de99cba4d51a832e0b1e60efefe",
-      "noticeTitle": "中央音乐学院关于2027年本科招生招考方向调整的预告",
-      "publishedAt": "2026-07-17"
+      "noticeUrl": "https://zhaoban.ccom.edu.cn/oa/news/newsInfo/newsShow?id=6113cd7176e3404788274655b0c213c1",
+      "noticeTitle": "中央音乐学院2027年本科招生校考专业与省统考子科类对照表",
+      "publishedAt": "2026-10-08"
     },
     {
       "id": "beijing-dance",
@@ -75,9 +75,9 @@
       "id": "minzu",
       "name": "中央民族大学",
       "sourceUrl": "https://zb.muc.edu.cn/content/zs/ysl/",
-      "noticeUrl": "https://zb.muc.edu.cn/content/zs/ysl/15724ff1-ae89-11f1-98a5-6c92bf4353bb.htm",
-      "noticeTitle": "中央民族大学2027年艺术类本科专业招生录取方式公告",
-      "publishedAt": "2026-09-14"
+      "noticeUrl": "https://zb.muc.edu.cn/content/zs/ysl/2cbc0b7b-bcb1-11f1-98a5-6c92bf4353bb.htm",
+      "noticeTitle": "中央民族大学2027年艺术类本科招生校考专业与各省统考子科类对照表",
+      "publishedAt": "2026-09-30"
     },
     {
       "id": "tsinghua-art",
