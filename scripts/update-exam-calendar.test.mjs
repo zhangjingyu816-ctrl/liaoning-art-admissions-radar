@@ -1,8 +1,10 @@
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
-import { extractSchedules, isCurrentNotice, mergeScheduleEvents } from './update-exam-calendar.mjs'
+import {
+  extractSchedules, identifySupplement, isCurrentNotice, mergeScheduleEvents, processSupplement
+} from './update-exam-calendar.mjs'
 
-const school = { id: 'lumei', name: '鲁迅美术学院' }
+const school = { id: 'lumei', name: '鲁迅美术学院', sourceUrl: 'https://www.lumei.edu.cn/zsjy/bkszs.htm' }
 const notice = {
   title: '鲁迅美术学院2027年艺术类本科校考招生简章',
   url: 'https://www.lumei.edu.cn/info/example-only.htm',
@@ -88,5 +90,72 @@ test('accepts exact newer correction, suspends unresolved amendments and does no
   assert.deepEqual(mergeScheduleEvents([original], [
     { ...replacement, sourceTitle: notice.title }
   ], review), [])
+  assert.equal(review.length, 1)
+})
+
+test('accepts one public official link for the fixed schools', () => {
+  assert.deepEqual(identifySupplement('  ' + notice.url + '#section  ', [school]), {
+    schoolId: school.id, url: notice.url
+  })
+  assert.deepEqual(identifySupplement('https://admission.lumei.edu.cn/detail?id=2027', [school], {
+    lumei: ['https://admission.lumei.edu.cn/news/']
+  }), { schoolId: school.id, url: 'https://admission.lumei.edu.cn/detail?id=2027' })
+  for (const url of [
+    'http://www.lumei.edu.cn/',
+    'https://www.lumei.edu.cn.example.org/',
+    'https://www.bda.edu.cn/zsjy/bkzsxx/index.htm',
+    'https://www.lumei.edu.cn/?token=private',
+    'https://public.example.org/\n' + notice.url
+  ]) {
+    assert.throws(() => identifySupplement(url, [school]))
+  }
+})
+
+test('verifies the submitted article itself and extracts announced date ranges', async t => {
+  t.mock.method(globalThis, 'fetch', async () => new Response(
+    '<html><head><title>本科招生</title></head><body><h1>招生就业</h1>' +
+      '<h4>' + notice.title + '</h4><p>发布时间：2026年12月28日</p>' +
+      '<p>网上报名时间：2027年1月6日9:00至1月10日17:00。</p>' +
+      '<p>现场复试考试时间：2027年2月26日–27日</p></body></html>',
+    { headers: { 'Content-Type': 'text/html; charset=utf-8' } }
+  ))
+  const review = []
+  const result = await processSupplement(school, identifySupplement(notice.url, [school]), new Set(['www.lumei.edu.cn']), review)
+  assert.equal(result.status, 'dates-extracted')
+  assert.equal(result.notice.title, notice.title)
+  assert.deepEqual(result.notice.entries.map(event => [event.type, event.start, event.end]), [
+    ['registration', '2027-01-06', '2027-01-10'],
+    ['offline', '2027-02-26', '2027-02-27']
+  ])
+  assert.deepEqual(review, [])
+})
+
+test('keeps unavailable and undated sources separate from confirmed dates', async t => {
+  const approvedHosts = new Set(['www.lumei.edu.cn'])
+  const submission = identifySupplement(notice.url, [school])
+  let body = '<h1>鲁迅美术学院2027年本科招生校考考试说明</h1><p>时间另行公布。</p>'
+  t.mock.method(globalThis, 'fetch', async () => new Response(body, { headers: { 'Content-Type': 'text/html' } }))
+  const pending = await processSupplement(school, submission, approvedHosts, [])
+  assert.equal(pending.status, 'dates-pending')
+  assert.equal(pending.notice.entries.length, 0)
+
+  body = '<h1>鲁迅美术学院2026年艺术类本科校考招生简章</h1><p>考试时间：2027年2月26日</p>'
+  const outside = await processSupplement(school, submission, approvedHosts, [])
+  assert.deepEqual(outside, { notice: null, status: 'out-of-scope' })
+
+  body = '<h1>正在验证，请稍候</h1>'
+  assert.deepEqual(await processSupplement(school, submission, approvedHosts, []), { notice: null, status: 'source-pending' })
+})
+
+test('does not follow a redirect away from the approved official host', async t => {
+  let requests = 0
+  t.mock.method(globalThis, 'fetch', async () => {
+    requests++
+    return new Response(null, { status: 302, headers: { Location: 'https://public.example.org/notice' } })
+  })
+  const review = []
+  const result = await processSupplement(school, identifySupplement(notice.url, [school]), new Set(['www.lumei.edu.cn']), review)
+  assert.deepEqual(result, { notice: null, status: 'out-of-scope' })
+  assert.equal(requests, 1)
   assert.equal(review.length, 1)
 })

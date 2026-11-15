@@ -1,6 +1,6 @@
 import { createHash } from 'node:crypto'
 import { spawnSync } from 'node:child_process'
-import { readFile, writeFile, rename, mkdir } from 'node:fs/promises'
+import { appendFile, readFile, writeFile, rename, mkdir } from 'node:fs/promises'
 import { dirname, resolve } from 'node:path'
 import { pathToFileURL } from 'node:url'
 
@@ -8,9 +8,9 @@ const SEASON = 2027
 const MAX_DOCUMENT_BYTES = 8 * 1024 * 1024
 const MAX_HTML_BYTES = 2 * 1024 * 1024
 const MAX_NOTICE_DOCUMENTS = 8
+const MAX_SUPPLEMENTS_PER_SCAN = 40
 const RADAR_FEED = 'https://raw.githubusercontent.com/zhangjingyu816-ctrl/liaoning-art-admissions-radar/main/dist/data/feed.json'
 const ZHEJIANG_HOST = 'zsw.cuz.edu.cn'
-const CONSERVATORY_HOST = 'zhaoban.ccom.edu.cn'
 const ZHEJIANG_CATEGORIES = [
   'e8659322e16240d296178402510b34f2', // 通知公告
   '4c5e94d3b4c74098bfc6bfc5f1c7c785', // 招生资讯
@@ -29,6 +29,9 @@ const LAST = '(?:' + YEAR + '\\s*)?(?:(\\d{1,2})\\s*月\\s*)?(\\d{1,2})\\s*日' 
 const DATE_SLOT = new RegExp('^' + FIRST + '(?:\\s*(?:至|到|[-–—~～])\\s*(?:' + LAST + '|(\\d{1,2}:\\d{2})(?::\\d{2})?))?')
 const DETAIL_LABEL = /^(?:(?:更正后|调整后|延期后|新的|现行)\s*)?((?:(?:校考|本科|专业|网上|线上|网络|线下|现场|远程|统一|初试|复试|三试|终试)\s*){0,4}(?:报名(?:(?:及|和|、|,)\s*缴费)?|(?:初试|复试|三试|终试)(?:考试)?|考试))\s*(?:起止)?\s*(?:日期|时间|时段)\s*[:：]?\s*/
 const CONFIRMED_RANGE_NOTE = /^[,，；;]?\s*(具体(?:考试)?(?:场次(?:和|与|及)?时间|场次|时间)(?:详见|以)准考证(?:为准)?)[。.]?$/
+
+class OutsideCalendarScope extends Error {}
+class UnsafeNoticeLink extends Error {}
 
 function decodeHtml(value) {
   const entities = { amp: '&', lt: '<', gt: '>', quot: '"', apos: "'", nbsp: ' ', ndash: '–', mdash: '—' }
@@ -191,9 +194,27 @@ function officialUrl(value, allowedHosts, base) {
   }
 }
 
+export function identifySupplement(value, schools, watch = {}) {
+  const url = typeof value === 'string' ? value.trim() : ''
+  if (url.length > 1800 || !/^https:\/\//i.test(url) || /[\\\s\u0000-\u001f\u007f]/.test(url)) {
+    throw new Error('请输入一条完整的院校官方 HTTPS 公告链接')
+  }
+  const matches = schools.flatMap(school => {
+    const address = officialUrl(url, safeHostSet(school, watch[school.id] || []))
+    return address ? [{ schoolId: school.id, url: address }] : []
+  })
+  if (matches.length !== 1) throw new Error('链接不属于本日历固定跟踪名单中的院校官网')
+  const parsed = new URL(matches[0].url)
+  const hasCredentials = [...parsed.searchParams.keys()].some(key =>
+    /^(?:access[_-]?token|api[_-]?key|authorization|code|credential|password|secret|signature|session(?:id)?|token)$/i.test(key))
+  if (hasCredentials) throw new Error('请使用无需登录、没有鉴权参数的公开公告链接')
+  return matches[0]
+}
+
 async function incoming(url, allowedHosts, maxBytes, form) {
   let next = officialUrl(url, allowedHosts)
-  for (let redirect = 0; next && redirect <= 3; redirect += 1) {
+  if (!next) throw new UnsafeNoticeLink('链接超出院校官方 HTTPS 来源')
+  for (let redirect = 0; redirect <= 3; redirect += 1) {
     const response = await fetch(next, {
       redirect: 'manual',
       signal: AbortSignal.timeout(14000),
@@ -203,6 +224,7 @@ async function incoming(url, allowedHosts, maxBytes, form) {
     if ([301, 302, 303, 307, 308].includes(response.status)) {
       if (form) throw new Error('官方公告查询接口已改址')
       next = officialUrl(response.headers.get('location'), allowedHosts, next)
+      if (!next) throw new UnsafeNoticeLink('公告跳转到院校官方来源范围以外')
       continue
     }
     if (!response.ok) throw new Error('HTTP ' + response.status)
@@ -217,7 +239,7 @@ async function incoming(url, allowedHosts, maxBytes, form) {
     }
     return { bytes: Buffer.concat(chunks), type, url: next }
   }
-  throw new Error('地址或跳转超出官方 HTTPS 来源')
+  throw new Error('公告链接跳转次数过多')
 }
 
 function decodeDocument({ bytes, type }) {
@@ -269,25 +291,12 @@ async function officialDynamicIndex(school, allowedHosts) {
       }))
     })
   }
-  if (school.id === 'ccom' && allowedHosts.has(CONSERVATORY_HOST)) {
-    const base = 'https://' + CONSERVATORY_HOST
-    const pages = await Promise.all(['10', '20'].map(type => queryJson(
-      base + '/oa/news/newsInfo/list?pageNo=1&pageSize=18&newsTypeId=' + type, allowedHosts
-    )))
-    return pages.flatMap(page => {
-      if (!Array.isArray(page?.data?.list)) throw new Error('中央音乐学院公开公告目录格式已变更')
-      return page.data.list.map(item => ({
-        title: item.newsTitle || '',
-        url: base + '/oa/news/newsInfo/newsShow?id=' + encodeURIComponent(item.id),
-        publishedAt: validPublishedAt(item.createDate)
-      }))
-    })
-  }
   return []
 }
 
 function dynamicNotice(html, title, publishedAt, attachments, notice, allowedHosts) {
-  if (!html || !isCurrentNotice(title)) throw new Error('官方公告正文或招生年度待核对')
+  if (!html || !title) throw new Error('未读取到官方公告正文')
+  if (!isCurrentNotice(title)) throw new OutsideCalendarScope('该链接不是所跟踪年度的艺术类本科校考公告')
   return {
     body: htmlText(html),
     title,
@@ -306,16 +315,17 @@ async function officialDynamicDocument(notice, allowedHosts) {
     const item = result?.data?.article
     return dynamicNotice(item?.articleData?.content, item?.title, shanghaiDate(item?.releaseDate), [], notice, allowedHosts)
   }
-  if (url.hostname === CONSERVATORY_HOST && url.pathname === '/oa/news/newsInfo/newsShow') {
-    const result = await queryJson(url.origin + '/oa/news/newsInfo/getNewsById?id=' + id, allowedHosts)
-    const item = result?.data
-    const attachments = (item?.attachList || []).map(file => ({
-      url: officialUrl(file.newsAttachLink, allowedHosts, notice.url),
-      title: file.newsAttachName || ''
-    }))
-    return dynamicNotice(item?.newsContent, item?.newsTitle, validPublishedAt(item?.createDate), attachments, notice, allowedHosts)
-  }
   return null
+}
+
+function directNoticeTitle(candidates) {
+  const headings = candidates.map(value => value.replace(/\s+/g, ' ').trim()).filter(Boolean)
+  const chosen = headings.find(value => isCurrentNotice(value))
+  if (chosen) return chosen
+  if (headings.some(value => /20\d{2}\s*年/.test(value))) {
+    throw new OutsideCalendarScope('该链接不是所跟踪年度的艺术类本科校考公告')
+  }
+  throw new Error('未读取到明确的 2027 年艺术类本科招生公告标题')
 }
 
 function screenDocument(document, notice, allowedHosts) {
@@ -327,21 +337,41 @@ function screenDocument(document, notice, allowedHosts) {
       maxBuffer: 2 * 1024 * 1024,
       timeout: 9000
     })
-    if (result.status !== 0 || !result.stdout?.trim() || !/2027\s*年/.test(result.stdout.slice(0, 3000))) throw new Error('PDF 待人工核对')
-    return { body: result.stdout, title: notice.title, publishedAt: publicationDate(result.stdout), attachments: [] }
+    if (result.status !== 0 || !result.stdout?.trim()) throw new Error('PDF 未能读取文字')
+    const title = notice.supplement
+      ? directNoticeTitle(result.stdout.slice(0, 1500).split(/\r?\n/).slice(0, 6))
+      : notice.title
+    if (!/2027\s*年/.test(result.stdout.slice(0, 3000))) throw new Error('PDF 招生年度待核对')
+    return { body: result.stdout, title, publishedAt: publicationDate(result.stdout), attachments: [] }
   }
   if (!/html|text\/plain/i.test(document.type)) throw new Error('公告格式待人工核对')
   const html = decodeDocument(document)
   const typeTitle = articleTitle(html)
-  if (typeTitle && EXCLUDED_TITLE.test(typeTitle)) throw new Error('不属于本科校考公告')
+  if (typeTitle && EXCLUDED_TITLE.test(typeTitle)) throw new OutsideCalendarScope('不属于本科校考公告')
   const body = htmlText(html)
+  if (notice.supplement) {
+    const headings = [...html.matchAll(/<h[1-4]\b[^>]*>([\s\S]*?)<\/h[1-4]>/gi)].slice(0, 15).map(match => htmlText(match[1]))
+    const pageTitle = html.match(/<title\b[^>]*>([\s\S]*?)<\/title>/i)?.[1] || ''
+    const title = directNoticeTitle([typeTitle, ...headings, htmlText(pageTitle)])
+    return {
+      body,
+      title,
+      publishedAt: publicationDate(body),
+      attachments: scheduleAttachments(html, document.url, allowedHosts)
+    }
+  }
   if (!/2027\s*年/.test(typeTitle) && !/2027\s*年/.test(body.slice(0, 7000))) throw new Error('原文招生年度待核对')
   return {
     body,
     title: isCurrentNotice(typeTitle) ? typeTitle : notice.title,
     publishedAt: publicationDate(body),
-    attachments: pageLinks(html, document.url, allowedHosts).filter(link => /\.pdf(?:\?|$)/i.test(link.url) && /简章|通知|安排/.test(link.title)).slice(0, 2)
+    attachments: scheduleAttachments(html, document.url, allowedHosts)
   }
+}
+
+function scheduleAttachments(html, base, allowedHosts) {
+  return pageLinks(html, base, allowedHosts).filter(link =>
+    /\.pdf(?:\?|$)/i.test(link.url) && /简章|通知|安排/.test(link.title)).slice(0, 2)
 }
 
 function pageLinks(html, base, allowedHosts) {
@@ -360,7 +390,40 @@ function safeHostSet(school, watchUrls) {
   return new Set(addresses.map(address => new URL(address).hostname))
 }
 
-async function lookupSchool(school, watchUrls, radar, review) {
+async function readSchoolNotice(school, notice, allowedHosts, review) {
+  const dynamic = await officialDynamicDocument(notice, allowedHosts)
+  const doc = dynamic ? null : await incoming(notice.url, allowedHosts, MAX_DOCUMENT_BYTES)
+  const read = dynamic || screenDocument(doc, notice, allowedHosts)
+  const verified = { url: doc?.url || notice.url, title: read.title, publishedAt: read.publishedAt || notice.publishedAt }
+  let entries = extractSchedules(read.body, school, verified)
+  for (const attachment of read.attachments) {
+    try {
+      const file = await incoming(attachment.url, allowedHosts, MAX_DOCUMENT_BYTES)
+      // The verified official article supplies the title for its attached announcement.
+      const attached = screenDocument(file, verified, allowedHosts)
+      entries = entries.concat(extractSchedules(attached.body, school, { ...verified, url: file.url }))
+    } catch (error) {
+      review.push({ schoolId: school.id, url: attachment.url, reason: error.message })
+    }
+  }
+  if (SCHEDULE_TITLE.test(verified.title) && !entries.length) {
+    review.push({ schoolId: school.id, url: verified.url, title: verified.title, reason: UPDATE_TITLE.test(verified.title) ? '调整公告日期或场次待核对' : '未提取到明确完整的日程' })
+  }
+  return { ...verified, entries, hold: holdFromAmendment(school, verified, entries) }
+}
+
+export async function processSupplement(school, supplement, allowedHosts, review) {
+  try {
+    const notice = await readSchoolNotice(school, { url: supplement.url, supplement: true }, allowedHosts, review)
+    return { notice, status: notice.entries.length ? 'dates-extracted' : 'dates-pending' }
+  } catch (error) {
+    const status = error instanceof OutsideCalendarScope || error instanceof UnsafeNoticeLink ? 'out-of-scope' : 'source-pending'
+    review.push({ schoolId: school.id, url: supplement.url, reason: error.message })
+    return { notice: null, status }
+  }
+}
+
+async function lookupSchool(school, watchUrls, radar, review, excludedUrls = new Set()) {
   const allowedHosts = safeHostSet(school, watchUrls)
   const records = radar.filter(record => record.school === school.name && isCurrentNotice(record.title || ''))
   const fromRadar = records.map(record => ({
@@ -394,30 +457,11 @@ async function lookupSchool(school, watchUrls, radar, review) {
   } catch (error) {
     review.push({ schoolId: school.id, url: school.sourceUrl, reason: error.message })
   }
-  const notices = [...byUrl.values()].sort((left, right) => {
+  const notices = [...byUrl.values()].filter(notice => !excludedUrls.has(notice.url)).sort((left, right) => {
     return Number(SCHEDULE_TITLE.test(right.title)) - Number(SCHEDULE_TITLE.test(left.title)) ||
       (right.publishedAt || '').localeCompare(left.publishedAt || '')
   }).slice(0, MAX_NOTICE_DOCUMENTS)
-  const outcomes = await Promise.allSettled(notices.map(async notice => {
-    const dynamic = await officialDynamicDocument(notice, allowedHosts)
-    const doc = dynamic ? null : await incoming(notice.url, allowedHosts, MAX_DOCUMENT_BYTES)
-    const read = dynamic || screenDocument(doc, notice, allowedHosts)
-    const verified = { url: doc?.url || notice.url, title: read.title, publishedAt: read.publishedAt || notice.publishedAt }
-    let entries = extractSchedules(read.body, school, verified)
-    for (const attachment of read.attachments) {
-      try {
-        const file = await incoming(attachment.url, allowedHosts, MAX_DOCUMENT_BYTES)
-        const attached = screenDocument(file, verified, allowedHosts)
-        entries = entries.concat(extractSchedules(attached.body, school, { ...verified, url: file.url }))
-      } catch (error) {
-        review.push({ schoolId: school.id, url: attachment.url, reason: error.message })
-      }
-    }
-    if (SCHEDULE_TITLE.test(verified.title) && !entries.length) {
-      review.push({ schoolId: school.id, url: verified.url, title: verified.title, reason: UPDATE_TITLE.test(verified.title) ? '调整公告日期或场次待核对' : '未提取到明确完整的日程' })
-    }
-    return { ...verified, entries, hold: holdFromAmendment(school, verified, entries) }
-  }))
+  const outcomes = await Promise.allSettled(notices.map(notice => readSchoolNotice(school, notice, allowedHosts, review)))
   return outcomes.flatMap((outcome, index) => {
     if (outcome.status === 'fulfilled') return [outcome.value]
     review.push({ schoolId: school.id, url: notices[index].url, reason: outcome.reason.message })
@@ -484,12 +528,24 @@ function seedShape(feed) {
   return feed?.version === 1 && feed?.season === SEASON && Array.isArray(feed.schools) && Array.isArray(feed.events)
 }
 
+function saveSupplementResult(record, result) {
+  const updated = { ...record, status: result.status }
+  if (result.notice) updated.title = result.notice.title
+  return updated
+}
+
+async function supplementSummary(message) {
+  console.log(message)
+  if (process.env.GITHUB_STEP_SUMMARY) await appendFile(process.env.GITHUB_STEP_SUMMARY, '### 公告补录\n\n' + message + '\n', 'utf8')
+}
+
 async function run() {
   const root = process.cwd()
   const seedPath = resolve(root, process.env.CALENDAR_SEED_FILE || 'config/calendar-2027.json')
   const outputPath = resolve(root, process.env.CALENDAR_OUTPUT_FILE || 'dist/data/calendar-2027.json')
   const feedPath = resolve(root, process.env.CALENDAR_RADAR_FILE || 'dist/data/feed.json')
   const watchPath = resolve(root, process.env.CALENDAR_WATCH_FILE || 'config/calendar-watch-2027.json')
+  const supplementPath = resolve(root, process.env.CALENDAR_SUPPLEMENT_FILE || 'config/calendar-supplements-2027.json')
   const reviewPath = resolve(root, process.env.CALENDAR_REVIEW_FILE || 'work/calendar-review-2027.json')
   const seed = await optionalJson(seedPath, null)
   if (!seedShape(seed)) throw new Error('2027 日历配置缺失或版本不符')
@@ -501,9 +557,17 @@ async function run() {
   const prior = await optionalJson(outputPath, seed)
   if (!seedShape(prior)) throw new Error('上一版日历格式无效')
   const watch = await optionalJson(watchPath, {})
+  const rawSubmission = process.env.CALENDAR_SUPPLEMENT_URL
+  const submission = rawSubmission ? identifySupplement(rawSubmission, seed.schools, watch) : null
+  const saved = await optionalJson(supplementPath, { version: 1, season: SEASON, links: [] })
+  if (saved?.version !== 1 || saved.season !== SEASON || !Array.isArray(saved.links)) {
+    throw new Error('补录链接文件格式无效')
+  }
+  const allowedIds = new Set(seed.schools.map(school => school.id))
+  const links = saved.links.filter(item => allowedIds.has(item.schoolId))
   const review = []
   let publishedRadar = local
-  if (!publishedRadar) {
+  if (!submission && !publishedRadar) {
     try {
       const downloaded = await incoming(RADAR_FEED, new Set([new URL(RADAR_FEED).hostname]), MAX_HTML_BYTES)
       publishedRadar = JSON.parse(decodeDocument(downloaded))
@@ -512,18 +576,58 @@ async function run() {
     }
   }
   const now = new Date().toISOString()
+  let submittedNotice
+  if (submission) {
+    const school = seed.schools.find(item => item.id === submission.schoolId)
+    const previous = links.findIndex(item => item.url === submission.url)
+    submittedNotice = await processSupplement(school, submission, safeHostSet(school, watch[school.id] || []), review)
+    if (submittedNotice.status === 'out-of-scope') {
+      const reason = review.findLast(item => item.url === submission.url)?.reason
+      throw new Error('未收录：' + (reason || '公告超出校考日历范围'))
+    }
+    const priorLink = previous === -1 ? { ...submission, submittedAt: now } : links[previous]
+    const updatedLink = saveSupplementResult(priorLink, submittedNotice)
+    if (previous === -1) links.push(updatedLink)
+    else links[previous] = updatedLink
+  }
+
   const reads = await Promise.all(seed.schools.map(async school => {
-    const notices = await lookupSchool(school, watch[school.id] || [], publishedRadar?.records || [], review)
-    const matchingNotice = notices.filter(notice => notice.publishedAt)
-      .sort((left, right) => right.publishedAt.localeCompare(left.publishedAt))[0]
+    const watchUrls = watch[school.id] || []
+    const schoolLinks = links.filter(item => item.schoolId === school.id)
+    const notices = []
+    if (submission) {
+      if (school.id === submission.schoolId && submittedNotice.notice) notices.push(submittedNotice.notice)
+    } else {
+      const blocked = new Set(schoolLinks.map(item => item.url))
+      notices.push(...await lookupSchool(school, watchUrls, publishedRadar?.records || [], review, blocked))
+      const hosts = safeHostSet(school, watchUrls)
+      const activeLinks = schoolLinks.filter(item => item.status !== 'out-of-scope').slice(-MAX_SUPPLEMENTS_PER_SCAN)
+      for (let index = 0; index < activeLinks.length; index += 4) {
+        const batch = activeLinks.slice(index, index + 4)
+        const outcomes = await Promise.all(batch.map(item => processSupplement(school, item, hosts, review)))
+        for (let position = 0; position < batch.length; position++) {
+          const outcome = outcomes[position]
+          Object.assign(batch[position], saveSupplementResult(batch[position], outcome))
+          if (outcome.notice) notices.push(outcome.notice)
+        }
+      }
+    }
+    const matchingNotice = notices.sort((left, right) =>
+      (right.publishedAt || '').localeCompare(left.publishedAt || ''))[0]
     const previousSchool = prior.schools.find(item => item.id === school.id) || school
-    const retained = previousSchool.publishedAt >= (school.publishedAt || '') ? previousSchool : school
-    const summary = matchingNotice && matchingNotice.publishedAt > (retained.publishedAt || '')
-      ? { ...school, noticeUrl: matchingNotice.url, noticeTitle: matchingNotice.title, publishedAt: matchingNotice.publishedAt }
+    const retained = !school.noticeUrl || (previousSchool.publishedAt || '') >= (school.publishedAt || '')
+      ? previousSchool : school
+    const useNewNotice = matchingNotice &&
+      (!retained.noticeUrl || (matchingNotice.publishedAt || '') > (retained.publishedAt || ''))
+    const summary = useNewNotice
+      ? {
+          id: school.id, name: school.name, sourceUrl: school.sourceUrl,
+          noticeUrl: matchingNotice.url, noticeTitle: matchingNotice.title,
+          ...(matchingNotice.publishedAt ? { publishedAt: matchingNotice.publishedAt } : {})
+        }
       : { ...retained, id: school.id, name: school.name, sourceUrl: school.sourceUrl }
     return { summary, events: notices.flatMap(notice => notice.entries), holds: notices.map(notice => notice.hold).filter(Boolean) }
   }))
-  const allowedIds = new Set(seed.schools.map(school => school.id))
   const automaticallyFound = mergeScheduleEvents(
     prior.events.filter(event => allowedIds.has(event.schoolId)),
     reads.flatMap(read => read.events),
@@ -540,9 +644,23 @@ async function run() {
       JSON.stringify(prior.events) !== JSON.stringify(events) || !await optionalJson(outputPath, null)) {
     await writeJson(outputPath, payload)
   }
+  if (JSON.stringify(saved.links) !== JSON.stringify(links)) {
+    await writeJson(supplementPath, { version: 1, season: SEASON, links })
+  }
   const sortedReview = review.sort((left, right) => (left.schoolId || '').localeCompare(right.schoolId || '') || left.url.localeCompare(right.url))
   await writeJson(reviewPath, { version: 1, season: SEASON, checkedAt: now, records: sortedReview })
   console.log(SEASON + ' 校考日历：' + schools.length + ' 所院校，' + events.length + ' 条日程，' + review.length + ' 项来源需查看')
+  if (submission) {
+    const school = seed.schools.find(item => item.id === submission.schoolId)
+    const extracted = submittedNotice.notice?.entries || []
+    const published = extracted.filter(entry => events.some(item => item.id === entry.id && item.sourceUrl === entry.sourceUrl))
+    const outcome = submittedNotice.status === 'source-pending'
+      ? '原文暂未读取成功，后续定时重试'
+      : extracted.length
+        ? '提取 ' + extracted.length + ' 项日期，当前日历收录 ' + new Set(published.map(item => item.id)).size + ' 项'
+        : '已读取官方公告，时间待公布或原文暂未给出完整日程'
+    await supplementSummary(school.name + '：' + outcome)
+  }
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {

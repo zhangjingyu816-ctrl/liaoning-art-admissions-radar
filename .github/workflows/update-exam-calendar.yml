@@ -1,7 +1,13 @@
-name: Update 2027 exam calendar
+name: 2027 提前批校考日历
+run-name: ${{ github.event_name == 'workflow_dispatch' && inputs.official_url != '' && '处理补录链接' || '更新提前批日历' }}
 
 on:
   workflow_dispatch:
+    inputs:
+      official_url:
+        description: "粘贴名单内院校公开的 2027 年校考公告网页或 PDF 链接（留空时全量刷新）"
+        required: false
+        type: string
   schedule:
     - cron: "7,37 * * * *"
   push:
@@ -19,7 +25,7 @@ permissions:
 
 concurrency:
   group: admissions-radar-update
-  cancel-in-progress: false
+  queue: max
 
 jobs:
   update:
@@ -28,6 +34,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
@@ -38,6 +46,7 @@ jobs:
       - name: Update calendar from school notices
         env:
           CALENDAR_REVIEW_FILE: ${{ runner.temp }}/calendar-review-2027.json
+          CALENDAR_SUPPLEMENT_URL: ${{ inputs.official_url }}
         run: node --use-system-ca scripts/update-exam-calendar.mjs
       - name: Save source audit
         if: always()
@@ -49,13 +58,16 @@ jobs:
           if-no-files-found: ignore
       - name: Save changed calendar
         run: |
-          git add dist/data/calendar-2027.json
+          git add -- dist/data/calendar-2027.json
+          if test -f config/calendar-supplements-2027.json; then
+            git add -- config/calendar-supplements-2027.json
+          fi
           if git diff --cached --quiet; then
             exit 0
           fi
           git config user.name "admissions-radar-bot"
           git config user.email "admissions-radar-bot@users.noreply.github.com"
-          git commit -m "data: refresh 2027 exam calendar"
+          git commit -m "data: refresh 2027 early admission calendar"
           if ! git push; then
             git pull --rebase origin main
             git push

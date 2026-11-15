@@ -1,22 +1,73 @@
 {
   "version": 1,
   "season": 2027,
-  "updatedAt": "2026-11-15T15:19:24.973Z",
+  "updatedAt": "2026-11-15T15:25:22.101Z",
   "schools": [
     {
-      "id": "zhejiang-media",
-      "name": "浙江传媒学院",
-      "sourceUrl": "https://zsw.cuz.edu.cn/",
-      "noticeUrl": "https://zsw.cuz.edu.cn/static/front/cuz/basic/html_cms/frontViewArticle.html?id=75f43f23953b4070abb9a59d74f77f62",
-      "noticeTitle": "浙江传媒学院2027年艺术类本科校考专业招生录取方式公告",
+      "id": "lumei",
+      "name": "鲁迅美术学院",
+      "sourceUrl": "https://www.lumei.edu.cn/zsjy/bkszs.htm",
+      "noticeUrl": "https://www.lumei.edu.cn/info/1207/65975.htm",
+      "noticeTitle": "鲁迅美术学院2027年本科招生校考考试说明",
+      "publishedAt": "2026-10-28"
+    },
+    {
+      "id": "cafa",
+      "name": "中央美术学院",
+      "sourceUrl": "https://www.cafa.edu.cn/sp/nl/?ci=802",
+      "noticeUrl": "https://www.cafa.edu.cn/st/2026/80233747.htm",
+      "noticeTitle": "中央美术学院2027年艺术类本科专业招生考试公告",
       "publishedAt": "2026-09-30"
     },
     {
-      "id": "beijing-film",
-      "name": "北京电影学院",
-      "sourceUrl": "https://zs.bfa.edu.cn/",
-      "noticeUrl": "https://zs.bfa.edu.cn/tgpdf/bfa2027xkstkzkldyczb.pdf",
-      "noticeTitle": "北京电影学院2027年艺术类校考本科拟招生专业与各省级艺术类统考子科类对应参照表"
+      "id": "caa",
+      "name": "中国美术学院",
+      "sourceUrl": "https://zb.caa.edu.cn/bkzs.htm"
+    },
+    {
+      "id": "tsinghua-art",
+      "name": "清华大学美术学院",
+      "sourceUrl": "https://www.ad.tsinghua.edu.cn/zs/bkszs/bkzs.htm"
+    },
+    {
+      "id": "guangzhou-art",
+      "name": "广州美术学院",
+      "sourceUrl": "https://zs.gzarts.edu.cn/zsdl1/bkszs.htm",
+      "noticeUrl": "https://zs.gzarts.edu.cn/info/1037/4899.htm",
+      "noticeTitle": "广州美术学院2027年本科招生专业省统考科类对应要求",
+      "publishedAt": "2026-10-10"
+    },
+    {
+      "id": "tianjin-art",
+      "name": "天津美术学院",
+      "sourceUrl": "https://zsbgs.tjarts.edu.cn/index/bkzs.htm",
+      "noticeUrl": "https://zsbgs.tjarts.edu.cn/info/1003/3204.htm",
+      "noticeTitle": "天津美术学院2027年本科招生校考专业省统考科类对应要求",
+      "publishedAt": "2026-09-30"
+    },
+    {
+      "id": "sichuan-art",
+      "name": "四川美术学院",
+      "sourceUrl": "https://www.scfai.edu.cn/zsb/bkzs.htm",
+      "noticeUrl": "https://www.scfai.edu.cn/zsb/info/1002/4816.htm",
+      "noticeTitle": "四川美术学院2027年本科校考考试说明",
+      "publishedAt": "2026-10-14"
+    },
+    {
+      "id": "hubei-art",
+      "name": "湖北美术学院",
+      "sourceUrl": "https://zjc.hifa.edu.cn/bkzs.htm",
+      "noticeUrl": "https://zjc.hifa.edu.cn/info/1079/2811.htm",
+      "noticeTitle": "湖北美术学院2027年本科招生校考专业省统考科类对应要求",
+      "publishedAt": "2026-09-30"
+    },
+    {
+      "id": "xian-art",
+      "name": "西安美术学院",
+      "sourceUrl": "https://zhshch.xafa.edu.cn/bkszs1/zxdt.htm",
+      "noticeUrl": "https://zhshch.xafa.edu.cn/info/1014/4826.htm",
+      "noticeTitle": "西安美术学院2027年本科招生校考专业省统考科类对应要求",
+      "publishedAt": "2026-09-30"
     },
     {
       "id": "beijing-fashion",
@@ -35,12 +86,11 @@
       "publishedAt": "2026-09-30"
     },
     {
-      "id": "cuc",
-      "name": "中国传媒大学",
-      "sourceUrl": "https://zhaosheng.cuc.edu.cn/yslzs_5865/list.htm",
-      "noticeUrl": "https://zhaosheng.cuc.edu.cn/2026/0922/c5865a274228/page.htm",
-      "noticeTitle": "中国传媒大学2027年艺术类本科校考专业与省统考子科类对照关系",
-      "publishedAt": "2026-09-30"
+      "id": "beijing-film",
+      "name": "北京电影学院",
+      "sourceUrl": "https://zs.bfa.edu.cn/",
+      "noticeUrl": "https://zs.bfa.edu.cn/tgpdf/bfa2027xkstkzkldyczb.pdf",
+      "noticeTitle": "北京电影学院2027年艺术类校考本科拟招生专业与各省级艺术类统考子科类对应参照表"
     },
     {
       "id": "jingdezhen",
@@ -51,25 +101,28 @@
       "publishedAt": "2026-10-14"
     },
     {
-      "id": "cafa",
-      "name": "中央美术学院",
-      "sourceUrl": "https://www.cafa.edu.cn/sp/nl/?ci=802",
-      "noticeUrl": "https://www.cafa.edu.cn/st/2026/80233747.htm",
-      "noticeTitle": "中央美术学院2027年艺术类本科专业招生考试公告",
+      "id": "shanghai-university",
+      "name": "上海大学",
+      "sourceUrl": "https://bkzsw.shu.edu.cn/zsxm/ysl.htm",
+      "noticeUrl": "https://bkzsw.shu.edu.cn/info/1798/38970.htm",
+      "noticeTitle": "上海大学2027年本科艺术类专业招考方式公告",
+      "publishedAt": "2026-10-19"
+    },
+    {
+      "id": "shanghai-conservatory",
+      "name": "上海音乐学院",
+      "sourceUrl": "https://jwc.shcmusic.edu.cn/437/list.htm",
+      "noticeUrl": "https://jwc.shcmusic.edu.cn/2026/1102/c493a62546/page.htm",
+      "noticeTitle": "上海音乐学院2027年本科艺术类招生专业目录及考试大纲",
+      "publishedAt": "2026-11-04"
+    },
+    {
+      "id": "cuc",
+      "name": "中国传媒大学",
+      "sourceUrl": "https://zhaosheng.cuc.edu.cn/yslzs_5865/list.htm",
+      "noticeUrl": "https://zhaosheng.cuc.edu.cn/2026/0922/c5865a274228/page.htm",
+      "noticeTitle": "中国传媒大学2027年艺术类本科校考专业与省统考子科类对照关系",
       "publishedAt": "2026-09-30"
-    },
-    {
-      "id": "ccom",
-      "name": "中央音乐学院",
-      "sourceUrl": "https://zhaoban.ccom.edu.cn/login",
-      "noticeUrl": "https://zhaoban.ccom.edu.cn/oa/news/newsInfo/newsShow?id=6113cd7176e3404788274655b0c213c1",
-      "noticeTitle": "中央音乐学院2027年本科招生校考专业与省统考子科类对照表",
-      "publishedAt": "2026-10-08"
-    },
-    {
-      "id": "beijing-dance",
-      "name": "北京舞蹈学院",
-      "sourceUrl": "https://www.bda.edu.cn/zsjy/bkzsxx/index.htm"
     },
     {
       "id": "minzu",
@@ -80,17 +133,20 @@
       "publishedAt": "2026-09-30"
     },
     {
-      "id": "tsinghua-art",
-      "name": "清华大学美术学院",
-      "sourceUrl": "https://www.ad.tsinghua.edu.cn/zs/bkszs/bkzs.htm"
+      "id": "central-drama",
+      "name": "中央戏剧学院",
+      "sourceUrl": "https://zhaosheng.zhongxi.cn/",
+      "noticeUrl": "https://zhaosheng.zhongxi.cn/tzgg/detail/14502.html",
+      "noticeTitle": "中央戏剧学院2027年本科艺术类专业招生公告",
+      "publishedAt": "2026-10-08"
     },
     {
-      "id": "lumei",
-      "name": "鲁迅美术学院",
-      "sourceUrl": "https://www.lumei.edu.cn/zsjy/bkszs.htm",
-      "noticeUrl": "https://www.lumei.edu.cn/info/1207/65975.htm",
-      "noticeTitle": "鲁迅美术学院2027年本科招生校考考试说明",
-      "publishedAt": "2026-10-28"
+      "id": "zhejiang-media",
+      "name": "浙江传媒学院",
+      "sourceUrl": "https://zsw.cuz.edu.cn/",
+      "noticeUrl": "https://zsw.cuz.edu.cn/static/front/cuz/basic/html_cms/frontViewArticle.html?id=75f43f23953b4070abb9a59d74f77f62",
+      "noticeTitle": "浙江传媒学院2027年艺术类本科校考专业招生录取方式公告",
+      "publishedAt": "2026-09-30"
     }
   ],
   "events": []
