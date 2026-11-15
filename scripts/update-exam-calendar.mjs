@@ -350,9 +350,12 @@ function screenDocument(document, notice, allowedHosts) {
   if (typeTitle && EXCLUDED_TITLE.test(typeTitle)) throw new OutsideCalendarScope('不属于本科校考公告')
   const body = htmlText(html)
   if (notice.supplement) {
-    const headings = [...html.matchAll(/<h[1-4]\b[^>]*>([\s\S]*?)<\/h[1-4]>/gi)].slice(0, 15).map(match => htmlText(match[1]))
     const pageTitle = html.match(/<title\b[^>]*>([\s\S]*?)<\/title>/i)?.[1] || ''
-    const title = directNoticeTitle([typeTitle, ...headings, htmlText(pageTitle)])
+    const primaryTitle = [typeTitle, htmlText(pageTitle)].find(value =>
+      /20\d{2}\s*年/.test(value) && (NOTICE_TITLE.test(value) || EXCLUDED_TITLE.test(value)))
+    const headings = [...html.matchAll(/<h[1-4]\b[^>]*>([\s\S]*?)<\/h[1-4]>/gi)]
+      .slice(0, 15).filter(match => !/<a\b/i.test(match[1])).map(match => htmlText(match[1]))
+    const title = directNoticeTitle(primaryTitle ? [primaryTitle] : headings)
     return {
       body,
       title,

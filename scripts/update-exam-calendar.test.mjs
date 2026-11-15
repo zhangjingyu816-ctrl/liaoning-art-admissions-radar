@@ -139,7 +139,7 @@ test('keeps unavailable and undated sources separate from confirmed dates', asyn
   assert.equal(pending.status, 'dates-pending')
   assert.equal(pending.notice.entries.length, 0)
 
-  body = '<h1>鲁迅美术学院2026年艺术类本科校考招生简章</h1><p>考试时间：2027年2月26日</p>'
+  body = '<h1>鲁迅美术学院2026年艺术类本科校考招生简章</h1><p>考试时间：2027年2月26日</p><h4>' + notice.title + '</h4>'
   const outside = await processSupplement(school, submission, approvedHosts, [])
   assert.deepEqual(outside, { notice: null, status: 'out-of-scope' })
 
