@@ -26,8 +26,6 @@ jobs:
     if: github.ref == 'refs/heads/main'
     timeout-minutes: 12
     runs-on: ubuntu-latest
-    env:
-      CALENDAR_REVIEW_FILE: ${{ runner.temp }}/calendar-review-2027.json
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -38,7 +36,9 @@ jobs:
       - name: Validate the calendar extraction rules
         run: node --test scripts/update-exam-calendar.test.mjs
       - name: Update calendar from school notices
-        run: node scripts/update-exam-calendar.mjs
+        env:
+          CALENDAR_REVIEW_FILE: ${{ runner.temp }}/calendar-review-2027.json
+        run: node --use-system-ca scripts/update-exam-calendar.mjs
       - name: Save source audit
         if: always()
         uses: actions/upload-artifact@v4
