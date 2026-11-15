@@ -1,0 +1,72 @@
+name: Update 2027 exam calendar
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "7,37 * * * *"
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/update-exam-calendar.yml"
+      - "config/calendar-2027.json"
+      - "config/calendar-watch-2027.json"
+      - "scripts/update-exam-calendar.mjs"
+      - "scripts/update-exam-calendar.test.mjs"
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: admissions-radar-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    if: github.ref == 'refs/heads/main'
+    timeout-minutes: 12
+    runs-on: ubuntu-latest
+    env:
+      CALENDAR_REVIEW_FILE: ${{ runner.temp }}/calendar-review-2027.json
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Ensure PDF text extraction is available
+        run: command -v pdftotext || (sudo apt-get update && sudo apt-get install -y poppler-utils)
+      - name: Validate the calendar extraction rules
+        run: node --test scripts/update-exam-calendar.test.mjs
+      - name: Update calendar from school notices
+        run: node scripts/update-exam-calendar.mjs
+      - name: Save source audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: calendar-source-audit
+          path: ${{ runner.temp }}/calendar-review-2027.json
+          retention-days: 7
+          if-no-files-found: ignore
+      - name: Save changed calendar
+        run: |
+          git add dist/data/calendar-2027.json
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git config user.name "admissions-radar-bot"
+          git config user.email "admissions-radar-bot@users.noreply.github.com"
+          git commit -m "data: refresh 2027 exam calendar"
+          if ! git push; then
+            git pull --rebase origin main
+            git push
+          fi
+      - name: Publish calendar on the existing radar site
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          url="https://zhangjingyu816-ctrl.github.io/liaoning-art-admissions-radar/data/calendar-2027.json"
+          if curl -fsS --max-time 15 "$url" -o "$RUNNER_TEMP/calendar-live.json" &&
+              cmp -s dist/data/calendar-2027.json "$RUNNER_TEMP/calendar-live.json"; then
+            exit 0
+          fi
+          gh workflow run deploy-pages.yml --ref main

@@ -19,6 +19,13 @@
 
 自动发现记录会标注“待人工复核”。抓取脚本只使用院校官方域名，不调用 OpenAI 或其他生成式 AI 服务。
 
+### 2027 校考日历
+
+- `config/calendar-2027.json` 保存首批 12 所跟踪院校、核实过的公告及人工校正后的日程。其他官方栏目见 `config/calendar-watch-2027.json`。
+- 独立工作流每 30 分钟检查一次，继续使用雷达已发现的线索，并复核院校公开原文。具有明确场次和完整日期的记录会进入 `dist/data/calendar-2027.json`。图片、读不到的公告和不能确认适用范围的日期保留在运行产物「calendar-source-audit」供核对。
+- 已确认的新日期或院校公告会触发既有 Pages 发布。小程序可读取网页的 `data/calendar-2027.json`。同一固定事件 ID 的人工日期更新以 `config/calendar-2027.json` 中的记录为准。
+- 本地运行 `node scripts/update-exam-calendar.mjs`。如需读取可选 PDF 附件，使用 Poppler 的 `pdftotext`。用 `node --test scripts/update-exam-calendar.test.mjs` 验证识别规则。
+
 ## 本地运行
 
 ```powershell
