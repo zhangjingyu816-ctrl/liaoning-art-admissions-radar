@@ -1,9 +1,9 @@
 {
-  "updatedAt": "2026-11-16T17:51:06.221Z",
+  "updatedAt": "2026-11-17T08:46:52.754Z",
   "cutoff": "2026-07-01",
   "configuredSources": 15,
-  "successfulSources": 12,
-  "failedSources": 3,
+  "successfulSources": 8,
+  "failedSources": 7,
   "discoveredRecords": 30,
   "discoveredHistoryRecords": 106,
   "results": [
@@ -34,8 +34,9 @@
     },
     {
       "school": "西安美术学院",
-      "ok": true,
-      "found": 17
+      "ok": false,
+      "error": "fetch failed · ETIMEDOUT",
+      "preserved": 4
     },
     {
       "school": "北京服装学院",
@@ -49,8 +50,9 @@
     },
     {
       "school": "上海大学",
-      "ok": true,
-      "found": 2
+      "ok": false,
+      "error": "fetch failed · ETIMEDOUT",
+      "preserved": 2
     },
     {
       "school": "广西师范大学",
@@ -66,8 +68,9 @@
     },
     {
       "school": "中国美术学院",
-      "ok": true,
-      "found": 10
+      "ok": false,
+      "error": "fetch failed · EAI_AGAIN · getaddrinfo EAI_AGAIN zb.caa.edu.cn",
+      "preserved": 1
     },
     {
       "school": "清华大学美术学院",
@@ -77,8 +80,9 @@
     },
     {
       "school": "天津美术学院",
-      "ok": true,
-      "found": 9
+      "ok": false,
+      "error": "fetch failed · ETIMEDOUT",
+      "preserved": 6
     },
     {
       "school": "广州美术学院",
