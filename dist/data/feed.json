@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-24T20:59:46.792Z",
+  "updatedAt": "2026-11-25T09:30:06.104Z",
   "cutoff": "2026-07-01",
   "records": [
     {
@@ -2811,11 +2811,11 @@
     }
   ],
   "status": {
-    "updatedAt": "2026-11-24T20:59:46.792Z",
+    "updatedAt": "2026-11-25T09:30:06.104Z",
     "cutoff": "2026-07-01",
     "configuredSources": 15,
-    "successfulSources": 12,
-    "failedSources": 3,
+    "successfulSources": 11,
+    "failedSources": 4,
     "discoveredRecords": 30,
     "discoveredHistoryRecords": 106,
     "results": [
@@ -2861,8 +2861,9 @@
       },
       {
         "school": "上海大学",
-        "ok": true,
-        "found": 2
+        "ok": false,
+        "error": "fetch failed · ETIMEDOUT",
+        "preserved": 2
       },
       {
         "school": "广西师范大学",
@@ -2879,7 +2880,7 @@
       {
         "school": "中国美术学院",
         "ok": false,
-        "error": "fetch failed · EAI_AGAIN · getaddrinfo EAI_AGAIN zb.caa.edu.cn",
+        "error": "fetch failed · UND_ERR_SOCKET · other side closed",
         "preserved": 1
       },
       {
